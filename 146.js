@@ -1,0 +1,1 @@
+(self.webpackChunk_dev_web=self.webpackChunk_dev_web||[]).push([[146],{146:(e,u,t)=>{"use strict";t.r(u),t.d(u,{default:()=>l});var n=t(784);function l(){return n.createElement("div",null,"About")}}}]);
