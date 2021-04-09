@@ -53,6 +53,7 @@ const config = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
+      events: "events",
       "react-dom": "@hot-loader/react-dom",
     },
   },
