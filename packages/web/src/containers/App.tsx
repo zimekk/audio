@@ -15,6 +15,8 @@ import styles from "./App.module.scss";
 
 const Piano = lazy(() => import("./Piano"));
 
+const Tones = lazy(() => import("./Tones"));
+
 const Tuner = lazy(() => import("./Tuner"));
 
 const About = lazy(() => import("./About"));
@@ -25,6 +27,9 @@ function Navigation() {
       <ul>
         <li>
           <Link to="/piano/">Piano</Link>
+        </li>
+        <li>
+          <Link to="/tones/">Tones</Link>
         </li>
         <li>
           <Link to="/tuner/">Tuner</Link>
@@ -52,6 +57,9 @@ function App() {
             <Switch>
               <Route path="/about/">
                 <About />
+              </Route>
+              <Route path="/tones/">
+                <Tones />
               </Route>
               <Route path="/tuner/">
                 <Tuner />
