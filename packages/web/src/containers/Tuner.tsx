@@ -401,7 +401,6 @@ const useTuner = ({
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    console.log(["useEffect"], started);
     if (started) {
       const audioProcessor = new AudioProcessor();
       audioProcessor.attached();
@@ -413,14 +412,14 @@ const useTuner = ({
       });
     }
   }, [started]);
-  return [started, setStarted];
+  return [setStarted];
 };
 
 export default function () {
   const frequencyMessage = useRef();
   const stringFrequencyMessage = useRef();
   const smallestDistanceKey = useRef();
-  const [started, setStarted] = useTuner({
+  const [setStarted] = useTuner({
     frequencyMessage,
     stringFrequencyMessage,
     smallestDistanceKey,

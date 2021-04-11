@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import * as Tone from "tone";
 import styles from "./Piano.module.scss";
 

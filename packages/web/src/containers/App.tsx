@@ -1,5 +1,5 @@
 import { hot } from "react-hot-loader/root";
-import React, { Suspense, lazy, useEffect, useRef } from "react";
+import React, { Suspense, lazy } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   HashRouter as Router,
@@ -9,7 +9,6 @@ import {
   Link,
 } from "react-router-dom";
 import { increment } from "../actions";
-import { delay } from "../utils";
 import Spinner from "../components/Spinner";
 import styles from "./App.module.scss";
 
