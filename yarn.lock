@@ -4353,7 +4353,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^17.0.1:
+react-dom@17.0.1, react-dom@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.1.tgz#1de2560474ec9f0e334285662ede52dbc5426fc6"
   integrity sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug==
@@ -4427,7 +4427,7 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react@^17.0.1:
+react@17.0.1, react@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
   integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
@@ -5396,23 +5396,23 @@ tsutils@3:
   dependencies:
     tslib "^1.8.1"
 
-type-coverage-core@^2.17.1:
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.17.1.tgz#a7f741182e81f2fa35cdc2493c057010d3ed62d6"
-  integrity sha512-I6R3FRwHWIsm6ykEwVuOm6CIJlYCf3Dw5n5K6bsNgTiP7ogqOuTtAED+FqAtg3/jwVyBMnO2w5fCDpFZpwM9Mw==
+type-coverage-core@^2.17.2:
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.17.2.tgz#fd6f077cfcf32b8e82e5784b08e5f6465decd8c3"
+  integrity sha512-J+kKjdJIJetfXkpl1Fg5CFzx09xmFX3aID5w3KJh/RmFSdT05APdPhGxTPMpSSbqNlcDVVnGcVm1LvDZNrlE7A==
   dependencies:
     fast-glob "3"
     minimatch "3"
     tslib "1 || 2"
     tsutils "3"
 
-type-coverage@^2.17.0:
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.17.1.tgz#e8a91f454139633c8d78ce2b53392b01e6bc42c8"
-  integrity sha512-1nAUwjNv6UYI7wFF0DYGWR9zJJlO/lNrCTcaF0eC2EQtnL1njI9rdOM9G6yf3I3mvyQffk228rBkm/08lidWDg==
+type-coverage@^2.17.2:
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.17.2.tgz#efd29c88372805caae0f8b5cfc9222e1a5775eb8"
+  integrity sha512-kP3uJRZwP+RaXIvJfW9s0ICiHW/9YuIfa06FQmiaARLmqpU5vWgeDZNEDMLuHXZhDt4xnwO5kZVdoK2mPXu4aQ==
   dependencies:
     minimist "1"
-    type-coverage-core "^2.17.1"
+    type-coverage-core "^2.17.2"
 
 type-fest@^0.8.1:
   version "0.8.1"
@@ -5748,10 +5748,10 @@ webpack@^5:
     watchpack "^2.0.0"
     webpack-sources "^2.1.1"
 
-webpack@^5.28.0:
-  version "5.31.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.31.1.tgz#95fd1c713514200b582fd60b5fa1ff5d62e647b8"
-  integrity sha512-5qwWBZ50ntjXtPbNpCNvvufX3+zuYBcXMmLYnFiLJMJdSP/YMh7Yamx0um7GZqQoDVs6pMOiQKU/zbKglqdoag==
+webpack@^5.31.2:
+  version "5.31.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.31.2.tgz#40d9b9d15b7d76af73d3f1cae895b82613a544d6"
+  integrity sha512-0bCQe4ybo7T5Z0SC5axnIAH+1WuIdV4FwLYkaAlLtvfBhIx8bPS48WHTfiRZS1VM+pSiYt7e/rgLs3gLrH82lQ==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"

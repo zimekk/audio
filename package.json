@@ -15,8 +15,9 @@
   },
   "lint-staged": {},
   "scripts": {
-    "clean": "rm -rf packages/*/public packages/*/lib",
     "build": "yarn workspaces run build",
+    "clean": "rm -rf packages/*/public packages/*/lib",
+    "reset": "rm -rf node_modules packages/*/node_modules",
     "serve": "yarn workspace @dev/app serve",
     "start": "yarn workspace @dev/app start",
     "update": "yarn upgrade-interactive --latest"
@@ -28,7 +29,7 @@
     "husky": "^4.3.7",
     "prettier": "^2.2.0",
     "pretty-quick": "^3.1.0",
-    "type-coverage": "^2.17.0",
+    "type-coverage": "^2.17.2",
     "typescript": "^4.2.4"
   },
   "resolutions": {
