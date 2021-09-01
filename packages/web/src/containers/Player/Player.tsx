@@ -8,6 +8,7 @@ const track = require("./assets/running_out.webm").default;
 
 export function Player() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const [play, { sound, stop }] = useSound(track);
 
@@ -17,7 +18,8 @@ export function Player() {
       sound.on("stop", () => setIsPlaying(false));
       sound.on("end", () => setIsPlaying(false));
       const interval = setInterval(
-        () => console.log({ seek: sound.seek() }),
+        () =>
+          setProgress(sound.duration() ? sound.seek() / sound.duration() : 0),
         1000
       );
       return () => {
@@ -49,7 +51,7 @@ export function Player() {
             Play
           </button>
         )}
-        <Waveform src={track} />
+        <Waveform src={track} progress={progress} />
       </div>
     </div>
   );

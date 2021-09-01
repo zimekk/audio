@@ -27,9 +27,20 @@
 .Waveform {
   flex: 1;
   margin: 1em;
+  position: relative;
   canvas {
     display: block;
     width: 100%;
     height: 8em;
+  }
+
+  .Progress {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 0;
+    top: 0;
+    bottom: 0;
+    background-color: lightgray;
   }
 }

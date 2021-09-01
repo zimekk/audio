@@ -60,7 +60,7 @@ const draw = (canvas, normalizedData, dpr = window.devicePixelRatio || 1) => {
 };
 
 // https://css-tricks.com/making-an-audio-waveform-visualizer-with-vanilla-javascript/
-export function Waveform({ src }) {
+export function Waveform({ src, progress }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -75,6 +75,10 @@ export function Waveform({ src }) {
 
   return (
     <div className={styles.Waveform}>
+      <div
+        className={styles.Progress}
+        style={{ width: `${100 * progress}%` }}
+      ></div>
       <canvas ref={canvasRef} />
     </div>
   );
