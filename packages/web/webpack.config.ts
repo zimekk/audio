@@ -64,7 +64,9 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.EnvironmentPlugin(["NODE_ENV"]),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      favicon: require.resolve("./src/assets/favicon.ico"),
+    }),
   ],
 };
 
