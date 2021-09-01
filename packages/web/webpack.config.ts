@@ -36,7 +36,7 @@ const config = {
         ],
       },
       {
-        test: /\.(png)$/,
+        test: /\.(png|webm)$/,
         use: ["file-loader"],
       },
       {

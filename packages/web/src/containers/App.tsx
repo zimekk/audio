@@ -12,6 +12,8 @@ import { increment } from "../actions";
 import Spinner from "../components/Spinner";
 import styles from "./App.module.scss";
 
+const Player = lazy(() => import("./Player"));
+
 const Piano = lazy(() => import("./Piano"));
 
 const Tones = lazy(() => import("./Tones"));
@@ -24,6 +26,9 @@ function Navigation() {
   return (
     <nav>
       <ul>
+        <li>
+          <Link to="/player/">Player</Link>
+        </li>
         <li>
           <Link to="/piano/">Piano</Link>
         </li>
@@ -54,6 +59,9 @@ function App() {
           <Suspense fallback={<Spinner />}>
             <Navigation />
             <Switch>
+              <Route path="/player/">
+                <Player />
+              </Route>
               <Route path="/about/">
                 <About />
               </Route>
@@ -66,7 +74,7 @@ function App() {
               <Route path="/piano/">
                 <Piano />
               </Route>
-              <Redirect to={"/piano/"} />
+              <Redirect to={"/player/"} />
             </Switch>
           </Suspense>
         </Router>
