@@ -4,7 +4,9 @@ import cx from "classnames";
 import { Waveform } from "./Waveform";
 import styles from "./styles.module.scss";
 
-const track = require("./assets/running_out.webm").default;
+// https://github.com/goldfire/howler.js/tree/master/examples/player/audio
+const track = require("./assets/running_out.mp3").default;
+// const track = require("./assets/running_out.webm").default;
 
 export function Player() {
   const [isPlaying, setIsPlaying] = useState(false);

@@ -38,7 +38,6 @@ const drawLineSegment = (ctx, x, y, width, isEven) => {
 };
 
 const draw = (canvas, normalizedData, dpr = window.devicePixelRatio || 1) => {
-  alert(dpr);
   // Set up the canvas
   // const canvas = document.querySelector("canvas");
   // const dpr = window.devicePixelRatio || 1;
@@ -76,7 +75,7 @@ export function Waveform({ src, progress }) {
       .then((audioBuffer) =>
         draw(canvasRef.current, normalizeData(filterData(audioBuffer)))
       )
-      .catch((e) => alert(e));
+      .catch(console.error);
   }, [src]);
 
   return (

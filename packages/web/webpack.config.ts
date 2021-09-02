@@ -36,7 +36,7 @@ const config = {
         ],
       },
       {
-        test: /\.(png|webm)$/,
+        test: /\.(mp3|png|webm)$/,
         use: ["file-loader"],
       },
       {
