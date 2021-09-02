@@ -1,5 +1,8 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import React, { useRef, useEffect } from "react";
+import { decodeAudioData } from "standardized-audio-context";
 import styles from "./styles.module.scss";
+
+const AudioContext = window.AudioContext || window.webkitAudioContext;
 
 const filterData = (audioBuffer) => {
   const rawData = audioBuffer.getChannelData(0); // We only need to work with one channel of data
@@ -35,6 +38,7 @@ const drawLineSegment = (ctx, x, y, width, isEven) => {
 };
 
 const draw = (canvas, normalizedData, dpr = window.devicePixelRatio || 1) => {
+  alert(dpr);
   // Set up the canvas
   // const canvas = document.querySelector("canvas");
   // const dpr = window.devicePixelRatio || 1;
@@ -64,13 +68,15 @@ export function Waveform({ src, progress }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const audioContext = new AudioContext();
+    const nativeAudioContext = new AudioContext();
     fetch(src)
       .then((response) => response.arrayBuffer())
-      .then((arrayBuffer) => audioContext.decodeAudioData(arrayBuffer))
+      // https://stackoverflow.com/questions/66450267/webaudioapi-decodeaudiodata-giving-null-error-on-ios-14-safari
+      .then((arrayBuffer) => decodeAudioData(nativeAudioContext, arrayBuffer))
       .then((audioBuffer) =>
         draw(canvasRef.current, normalizeData(filterData(audioBuffer)))
-      );
+      )
+      .catch((e) => alert(e));
   }, [src]);
 
   return (
