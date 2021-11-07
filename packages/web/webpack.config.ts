@@ -63,7 +63,7 @@ const config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.EnvironmentPlugin(["NODE_ENV"]),
+    new webpack.EnvironmentPlugin(["NODE_ENV", "SPOTIFY_TOKEN"]),
     new HtmlWebpackPlugin({
       favicon: require.resolve("./src/assets/favicon.ico"),
     }),
