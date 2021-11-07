@@ -34,12 +34,6 @@
     "lib",
     "public"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "commit-msg": "commitlint --edit \"$1\""
-    }
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -51,28 +45,29 @@
     "reset": "rm -rf node_modules packages/*/node_modules",
     "serve": "yarn workspace @dev/app serve",
     "start": "yarn workspace @dev/app start",
-    "dedupe": "yarn-deduplicate",
+    "dedupe": "yarn-deduplicate && yarn",
     "dedupe:list": "yarn-deduplicate --list",
     "update": "yarn upgrade-interactive",
-    "update:latest": "yarn upgrade-interactive --latest"
+    "update:latest": "yarn upgrade-interactive --latest",
+    "prepare": "husky install"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.29.3",
-    "@typescript-eslint/parser": "^4.29.3",
-    "eslint": "^7.32.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "husky": "^4.3.7",
-    "prettier": "^2.3.2",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
     "pretty-quick": "^3.1.1",
-    "type-coverage": "^2.18.2",
-    "typescript": "^4.4.2",
+    "type-coverage": "^2.19.0",
+    "typescript": "^4.4.4",
     "yarn-deduplicate": "^3.1.0"
   },
   "resolutions": {
