@@ -14,6 +14,8 @@ import styles from "./App.module.scss";
 
 const Player = lazy(() => import("./Player"));
 
+const Search = lazy(() => import("./Search"));
+
 const Piano = lazy(() => import("./Piano"));
 
 const Tones = lazy(() => import("./Tones"));
@@ -28,6 +30,9 @@ function Navigation() {
       <ul>
         <li>
           <Link to="/player/">Player</Link>
+        </li>
+        <li>
+          <Link to="/search/">Search</Link>
         </li>
         <li>
           <Link to="/piano/">Piano</Link>
@@ -61,6 +66,9 @@ function App() {
             <Switch>
               <Route path="/player/">
                 <Player />
+              </Route>
+              <Route path="/search/">
+                <Search />
               </Route>
               <Route path="/about/">
                 <About />
