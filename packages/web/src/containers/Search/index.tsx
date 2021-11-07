@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
+import { Waveform } from "../Player/Waveform";
+import { Beats } from "./Beats";
 import styles from "./styles.module.scss";
 
 // https://github.com/JMPerez/spotify-web-api-js#usage
@@ -63,6 +65,8 @@ export default function Search() {
           <video key={track} controls={true} autoPlay={false} name="media">
             <source src={track} type="audio/mpeg" />
           </video>
+          <Waveform src={track} />
+          <Beats src={track} />
         </div>
       )}
       <ul>
@@ -90,7 +94,7 @@ export default function Search() {
                 <div>name: {name}</div>
                 <div>
                   {images
-                    .sort(({ width: a }, { width: b }) => (a > b ? 1 : -1))
+                    .sort(({ width: a }, { width: b }) => a - b)
                     .slice(0, 1)
                     .map(({ width, height, url }, key) => (
                       <img
