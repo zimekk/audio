@@ -101,7 +101,6 @@ function getIntervals(peaks) {
 
 export function Beats({ src, progress }) {
   const [peaks, setPeaks] = useState(null);
-  const progressRef = useRef(null);
 
   useEffect(() => {
     const nativeAudioContext = new AudioContext();
@@ -151,9 +150,15 @@ export function Beats({ src, progress }) {
       ></div>
       <svg width="100%">
         {peaks?.map((x, key) => (
-          <rect key={key} x={x} y="0" width="1" height="100%" />
+          <rect key={key} x={x} y="10%" width="1" height="80%" />
         ))}
-        <rect ref={progressRef} id="progress" y="0" width="1" height="100%" />
+        <rect
+          className={styles.ProgressBar}
+          x={`${100 * progress}%`}
+          y="0"
+          width="1"
+          height="100%"
+        />
       </svg>
     </div>
   );

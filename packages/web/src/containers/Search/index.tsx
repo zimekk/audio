@@ -7,6 +7,46 @@ import styles from "./styles.module.scss";
 // https://github.com/JMPerez/spotify-web-api-js#usage
 const spotifyApi = new SpotifyWebApi();
 
+function Audio({ src: track }) {
+  const [progress, setProgress] = useState(0);
+  const audioRef = useRef();
+  const requestRef = useRef();
+
+  useEffect(() => {
+    const audioTag = audioRef.current;
+
+    function updateProgressState() {
+      if (audioTag.paused) {
+        return;
+      }
+      if (audioTag.duration) {
+        setProgress(audioTag.currentTime / audioTag.duration);
+      }
+      requestRef.current = requestAnimationFrame(updateProgressState);
+    }
+
+    audioTag.addEventListener("play", updateProgressState);
+    audioTag.addEventListener("playing", updateProgressState);
+
+    return () => {
+      audioTag.removeEventListener("play", updateProgressState);
+      audioTag.removeEventListener("playing", updateProgressState);
+      // https://css-tricks.com/using-requestanimationframe-with-react-hooks/
+      cancelAnimationFrame(requestRef.current);
+    };
+  }, []);
+
+  return (
+    <div>
+      <video ref={audioRef} controls={true} autoPlay={false}>
+        <source src={track} type="audio/mpeg" />
+      </video>
+      <Waveform src={track} progress={progress} />
+      <Beats src={track} progress={progress} />
+    </div>
+  );
+}
+
 export default function Search() {
   const [token, setToken] = useState(null);
   const [track, setTrack] = useState(null);
@@ -21,16 +61,7 @@ export default function Search() {
     }
     // https://github.com/JMPerez/spotify-web-api-js#more-examples
     spotifyApi.setAccessToken(token);
-    // search tracks whose artist's name contains 'Love'
-    spotifyApi
-      .searchTracks(query)
-      .then(
-        (data) =>
-          Boolean(
-            console.log(`Search tracks by "${query}" in the artist name`, data)
-          ) || setData(data),
-        console.error
-      );
+    spotifyApi.searchTracks(query).then(setData, console.error);
   }, [token, query]);
 
   return (
@@ -60,15 +91,7 @@ export default function Search() {
           Find
         </button>
       </div>
-      {track && (
-        <div>
-          <video key={track} controls={true} autoPlay={false} name="media">
-            <source src={track} type="audio/mpeg" />
-          </video>
-          <Waveform src={track} />
-          <Beats src={track} />
-        </div>
-      )}
+      {track && <Audio key={track} src={track} />}
       <ul>
         {data?.tracks?.items.map(({ album, id, name, preview_url, type }) => (
           <li key={id}>
