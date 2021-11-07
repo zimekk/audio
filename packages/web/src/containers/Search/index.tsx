@@ -76,6 +76,15 @@ export default function Search() {
             onFocus={(e) => e.target.select()}
           />
         </label>
+        <button
+          onClick={(e) =>
+            fetch(process.env.GET_TOKEN_URL)
+              .then((res) => res.json())
+              .then(({ token }) => setToken((tokenRef.current.value = token)))
+          }
+        >
+          Get
+        </button>
       </div>
       <div>
         <label>
