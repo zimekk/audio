@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
-import { Waveform } from "../Player/Waveform";
 import { Beats } from "./Beats";
+import { Spectrogram } from "./Spectrogram";
+import { Waveform } from "../Player/Waveform";
 import styles from "./styles.module.scss";
 
 // https://github.com/JMPerez/spotify-web-api-js#usage
@@ -41,6 +42,7 @@ function Audio({ src: track }) {
       <video ref={audioRef} controls={true} autoPlay={false}>
         <source src={track} type="audio/mpeg" />
       </video>
+      <Spectrogram src={track} progress={progress} />
       <Waveform src={track} progress={progress} />
       <Beats src={track} progress={progress} />
     </div>
@@ -49,7 +51,9 @@ function Audio({ src: track }) {
 
 export default function Search() {
   const [token, setToken] = useState(null);
-  const [track, setTrack] = useState(null);
+  const [track, setTrack] = useState(
+    "https://geo-samples.beatport.com/track/b0fa2729-248f-4fd8-8e7d-bd427c30919c.LOFI.mp3"
+  );
   const [query, setQuery] = useState(null);
   const [data, setData] = useState(null);
   const queryRef = useRef();
