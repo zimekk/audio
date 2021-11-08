@@ -9,6 +9,12 @@
     "start": "NODE_ENV=development webpack serve --mode development"
   },
   "dependencies": {
+    "@tensorflow-models/speech-commands": "^0.5.4",
+    "@tensorflow/tfjs-backend-cpu": "^3.11.0",
+    "@tensorflow/tfjs-core": "^3.11.0",
+    "@tensorflow/tfjs-data": "^3.11.0",
+    "@tensorflow/tfjs-layers": "^3.11.0",
+    "buffer": "^6.0.3",
     "chroma-js": "^2.1.2",
     "classnames": "^2.3.1",
     "events": "^3.3.0",
@@ -23,6 +29,8 @@
     "spectrogram": "^0.0.7",
     "spotify-web-api-js": "^1.5.2",
     "standardized-audio-context": "^25.3.14",
+    "stream-audio-fingerprint": "^1.0.4",
+    "stream-browserify": "^3.0.0",
     "tone": "^14.7.77",
     "use-sound": "^4.0.1"
   },

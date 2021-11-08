@@ -12,7 +12,7 @@ const config = {
   devServer: {
     port: 8080,
   },
-  devtool: dev && "inline-source-map",
+  devtool: false, //dev && "inline-source-map",
   entry: ["react-hot-loader/patch"].concat(require.resolve("./src")),
   module: {
     rules: [
@@ -51,10 +51,18 @@ const config = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
     alias: {
       events: "events",
       "react-dom": "@hot-loader/react-dom",
+    },
+    extensions: [".tsx", ".ts", ".js"],
+    fallback: {
+      // https://viglucci.io/how-to-polyfill-buffer-with-webpack-5
+      buffer: require.resolve("buffer"),
+      fs: false,
+      stream: require.resolve("stream-browserify"),
+      util: false,
+      zlib: false,
     },
   },
   output: {
@@ -68,6 +76,9 @@ const config = {
       "NODE_ENV",
       "SPOTIFY_TOKEN",
     ]),
+    new webpack.ProvidePlugin({
+      Buffer: ["buffer", "Buffer"],
+    }),
     new HtmlWebpackPlugin({
       favicon: require.resolve("./src/assets/favicon.ico"),
     }),

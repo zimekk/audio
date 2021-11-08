@@ -72,8 +72,10 @@ export function Waveform({ src, progress }) {
       .then((response) => response.arrayBuffer())
       // https://stackoverflow.com/questions/66450267/webaudioapi-decodeaudiodata-giving-null-error-on-ios-14-safari
       .then((arrayBuffer) => decodeAudioData(nativeAudioContext, arrayBuffer))
-      .then((audioBuffer) =>
-        draw(canvasRef.current, normalizeData(filterData(audioBuffer)))
+      .then(
+        (audioBuffer) =>
+          console.log({ audioBuffer }) ||
+          draw(canvasRef.current, normalizeData(filterData(audioBuffer)))
       )
       .catch(console.error);
   }, [src]);
