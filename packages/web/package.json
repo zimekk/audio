@@ -26,6 +26,7 @@
     "redux-actions": "^2.6.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "rxjs": "^7.5.5",
     "spectrogram": "^0.0.7",
     "spotify-web-api-js": "^1.5.2",
     "standardized-audio-context": "^25.3.21",
