@@ -26,7 +26,8 @@ const About = lazy(() => import("./About"));
 
 function Navigation() {
   return (
-    <nav>
+    <nav className={styles.Nav}>
+      <h1>Audio</h1>
       <ul>
         <li>
           <Link to="/player/">Player</Link>
@@ -57,7 +58,6 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <h1>Audio</h1>
       <div>
         <button onClick={(e) => dispatch(increment())}>{counter}</button>
         <Router>
