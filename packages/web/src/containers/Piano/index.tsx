@@ -8,7 +8,16 @@ import React, {
 } from "react";
 import * as Tone from "tone";
 import { Observable, Subject, of } from "rxjs";
-import { expand, filter, map, share, withLatestFrom } from "rxjs/operators";
+import {
+  delay,
+  distinctUntilChanged,
+  expand,
+  filter,
+  map,
+  share,
+  tap,
+  withLatestFrom,
+} from "rxjs/operators";
 import cx from "classnames";
 import styles from "./styles.module.scss";
 
@@ -127,10 +136,26 @@ const calculateStep: (prevFrame: IFrameData) => Observable<IFrameData> = (
 const positionNote = (n: number, m = 12) =>
   n + ((k) => (k - (k % m)) / m)(n + 7) + ((k) => (k - (k % m)) / m)(n);
 
-function Roll({ notes }: { notes: string[] }) {
+function RollNote({ note, synth }) {
+  return (
+    <button
+      className={cx(styles.RollNote, note.match(/#/) && styles.sharp)}
+      style={{
+        left: `${positionNote(Tone.Midi(note).toMidi() - 48)}em`,
+      }}
+      onMouseDown={(e) => synth.triggerAttack(note)}
+      onMouseUp={(e) => synth.triggerRelease(note)}
+    >
+      <span>{note}</span>
+    </button>
+  );
+}
+
+function Roll({ notes, synth }: { notes: string[] }) {
   const [playing, setPlaying] = useState(false);
   const rollRef = useRef<HTMLDivElement>(null);
   const player$ = useMemo(() => new Subject<any>(), []);
+  const scroll$ = useMemo(() => new Subject<any>(), []);
   const frames$ = useMemo(
     () =>
       of(undefined).pipe(
@@ -156,7 +181,9 @@ function Roll({ notes }: { notes: string[] }) {
           const target = rollRef.current;
           // console.log(target.scrollTop, target.scrollHeight, target.offsetHeight)
           if (target.scrollTop > 0) {
-            target.scrollTop -= 1;
+            target.scrollTop -= 2;
+          } else {
+            player$.next(false);
           }
         }
       });
@@ -164,11 +191,42 @@ function Roll({ notes }: { notes: string[] }) {
   }, [frames$]);
 
   useEffect(() => {
+    const subscription = scroll$
+      .pipe(
+        // tap((target) =>
+        //   console.log(
+        //     target.scrollTop,
+        //     target.scrollHeight,
+        //     target.offsetHeight
+        //   )
+        // ),
+        map(
+          (target) =>
+            notes[Math.round((target.scrollTop + 500 - 100 - 410) / 36)]
+        ),
+        distinctUntilChanged(),
+        tap((note) => console.log({ note })),
+        filter(Boolean),
+        tap((note) => synth.triggerAttack(note)),
+        delay(250),
+        tap((note) => synth.triggerRelease(note))
+      )
+      .subscribe((note) => {});
+    return () => subscription.unsubscribe();
+  }, [scroll$]);
+
+  useEffect(() => {
     const subscription = player$.subscribe((player) => {
+      const target = rollRef.current;
+      if (player && target && target.scrollTop === 0) {
+        target.scrollTop = target.scrollHeight;
+      }
       setPlaying(player);
     });
     return () => subscription.unsubscribe();
   }, [player$]);
+
+  // console.log({ notes });
 
   return (
     <div>
@@ -185,29 +243,14 @@ function Roll({ notes }: { notes: string[] }) {
         ref={rollRef}
         className={styles.Roll}
         onScroll={useCallback<UIEventHandler<HTMLDivElement>>(
-          ({ target }) =>
-            console.log(
-              target.scrollTop,
-              target.scrollHeight,
-              target.offsetHeight
-            ),
+          ({ target }) => scroll$.next(target),
           []
         )}
       >
         <div className={styles.Inner}>
-          {notes
-            .map((note) => note.replace(/(\d)SH/, "#$1"))
-            .map((note, i) => (
-              <div
-                key={i}
-                className={cx(styles.RollNote, note.match(/#/) && styles.sharp)}
-                style={{
-                  left: `${positionNote(Tone.Midi(note).toMidi() - 48)}em`,
-                }}
-              >
-                <span alt={Tone.Midi(note).toMidi()}>{note}</span>
-              </div>
-            ))}
+          {notes.map((note, key) => (
+            <RollNote key={key} note={note} synth={synth} />
+          ))}
         </div>
       </div>
     </div>
@@ -323,7 +366,12 @@ export default function () {
   return (
     <div>
       Piano
-      <Roll notes={song.pnm_list[0].notes} />
+      <Roll
+        notes={song.pnm_list[0].notes
+          .reverse()
+          .map((note) => note.replace(/(\d)SH/, "#$1"))}
+        synth={synth}
+      />
       <Keyboard synth={synth} />
       <div>
         <a href="#">https://musiclab.chromeexperiments.com/Shared-Piano/</a>

@@ -66,20 +66,28 @@
   height: 500px;
   overflow-y: scroll;
   .RollNote {
+    display: flex;
     position: relative;
     font-size: calc(100vw / 4 / 7 / 2);
     border: 1px solid red;
     box-sizing: border-box;
     background: rgba(255, 0, 0, 0.6);
+    opacity: 0.8;
     color: white;
-    text-align: center;
     width: 2em;
-    height: 1.5em;
+    height: 1.4em;
+    padding: 0;
     margin: 0.5em 0;
+    align-items: center;
+    justify-content: center;
 
     &.sharp {
       background: rgba(255, 128, 0, 0.2);
       color: red;
+    }
+
+    &:hover {
+      opacity: 1;
     }
 
     span {
@@ -90,7 +98,7 @@
   .Inner {
     display: flex;
     flex-direction: column;
-    padding-bottom: 300px;
+    padding: 25em 0;
     flex-grow: 1;
     background: #fff
       url('data:image/svg+xml,\
@@ -98,6 +106,6 @@
         <rect x="100" width="100" height="100" />\
         <rect y="100" width="100" height="100" />\
         </svg>');
-    background-size: 20px 20px;
+    background-size: 36px 36px;
   }
 }
