@@ -9,6 +9,7 @@ import React, {
 import * as Tone from "tone";
 import { Observable, Subject, of } from "rxjs";
 import { expand, filter, map, share, withLatestFrom } from "rxjs/operators";
+import cx from "classnames";
 import styles from "./styles.module.scss";
 
 // https://github.com/Tonejs/Tone.js/blob/dev/examples/monoSynth.html
@@ -41,7 +42,7 @@ const usePiano = () => {
 
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/note.ts
 function Note({ note, color, synth }) {
-  console.log({ note, synth });
+  // console.log({ note, synth });
   return note ? (
     <button
       className={styles.Note}
@@ -73,17 +74,12 @@ function Octave({ octave = 1, synth }) {
         {whiteNotes
           .map((note) => Tone.Midi(note).toNote())
           .map((note, key) => (
-            <Note key={key} color="#aaa" note={note} synth={synth} />
+            <Note key={key} color="white" note={note} synth={synth} />
           ))}
       </div>
       <div className={styles.BlackNotes}>
         {blackNotes
-          // .filter(Boolean)
-          .map(
-            (note) =>
-              Boolean(console.log({ note })) ||
-              (note && Tone.Midi(note).toNote())
-          )
+          .map((note) => note && Tone.Midi(note).toNote())
           .map((note, key) => (
             <Note key={key} color="black" note={note} synth={synth} />
           ))}
@@ -111,7 +107,6 @@ interface IFrameData {
 }
 
 // https://www.learnrxjs.io/learn-rxjs/recipes/gameloop
-
 const calculateStep: (prevFrame: IFrameData) => Observable<IFrameData> = (
   prevFrame: IFrameData
 ) => {
@@ -128,6 +123,9 @@ const calculateStep: (prevFrame: IFrameData) => Observable<IFrameData> = (
     });
   });
 };
+
+const positionNote = (n: number, m = 12) =>
+  n + ((k) => (k - (k % m)) / m)(n + 7) + ((k) => (k - (k % m)) / m)(n);
 
 function Roll({ notes }: { notes: string[] }) {
   const [playing, setPlaying] = useState(false);
@@ -202,9 +200,9 @@ function Roll({ notes }: { notes: string[] }) {
             .map((note, i) => (
               <div
                 key={i}
-                className={styles.RollNote}
+                className={cx(styles.RollNote, note.match(/#/) && styles.sharp)}
                 style={{
-                  left: `${Tone.Midi(note).toMidi() - 48}em`,
+                  left: `${positionNote(Tone.Midi(note).toMidi() - 48)}em`,
                 }}
               >
                 <span alt={Tone.Midi(note).toMidi()}>{note}</span>
@@ -226,56 +224,63 @@ export default function () {
       {
         text: "(playing home from undertale)",
         style: "monika_credits_text",
-        notes: [
-          // "C3",
-          // "C4",
-          // "C5",
-          // "C6",
-          // "B6",
-          // "C3",
-          // "C4",
-          // "C5",
-          // "C6",
-          // "B6",
-          "F4",
-          "A4SH",
-          "C5",
-          "D5",
-          "A4SH",
-          "C5",
-          "D5",
-          "G4",
-          "A4SH",
-          "C5",
-          "F5",
-          "A4SH",
-          "C5",
-          "D5",
-          "A4SH",
-          "C5",
-          "F5",
-          "F4",
-          "A4SH",
-          "C5",
-          "D5",
-          "A4SH",
-          "C5",
-          "D5",
-          "G4",
-          "A4SH",
-          "C5",
-          "D5",
-          "A4SH",
-          "C5",
-          "D5",
-          "A4",
-          "A4SH",
-          "C5",
-          "F5",
-          "A4SH",
-          "C5",
-          "D5",
-        ],
+        notes: ([] as string[])
+          .concat(
+            [] || [
+                "C3",
+                "C3SH",
+                "D3",
+                "D3SH",
+                "E3",
+                "F3",
+                "F3SH",
+                "G3",
+                "G3SH",
+                "A3",
+                "A3SH",
+                "B3",
+              ] || ["C4", "C5", "C6", "B6", "C3", "C4", "C5", "C6", "B6"]
+          )
+          .concat([
+            "F4",
+            "A4SH",
+            "C5",
+            "D5",
+            "A4SH",
+            "C5",
+            "D5",
+            "G4",
+            "A4SH",
+            "C5",
+            "F5",
+            "A4SH",
+            "C5",
+            "D5",
+            "A4SH",
+            "C5",
+            "F5",
+            "F4",
+            "A4SH",
+            "C5",
+            "D5",
+            "A4SH",
+            "C5",
+            "D5",
+            "G4",
+            "A4SH",
+            "C5",
+            "D5",
+            "A4SH",
+            "C5",
+            "D5",
+            "A4",
+            "A4SH",
+            "C5",
+            "F5",
+            "A4SH",
+            "C5",
+            "D5",
+          ]),
         express: "1eub",
         postexpress: "1eua",
         vis_timeout: 2.0,
@@ -319,6 +324,7 @@ export default function () {
     <div>
       Piano
       <Roll notes={song.pnm_list[0].notes} />
+      <Keyboard synth={synth} />
       <div>
         <a href="#">https://musiclab.chromeexperiments.com/Shared-Piano/</a>
         <a href="#">
@@ -407,7 +413,6 @@ export default function () {
           </div>
         </footer>
       </div> */}
-      <Keyboard synth={synth} />
     </div>
   );
 }
