@@ -18,6 +18,8 @@ const Search = lazy(() => import("./Search"));
 
 const Piano = lazy(() => import("./Piano"));
 
+const Midi = lazy(() => import("./Midi"));
+
 const Tones = lazy(() => import("./Tones"));
 
 const Tuner = lazy(() => import("./Tuner"));
@@ -37,6 +39,9 @@ function Navigation() {
         </li>
         <li>
           <Link to="/piano/">Piano</Link>
+        </li>
+        <li>
+          <Link to="/midi/">Midi</Link>
         </li>
         <li>
           <Link to="/tones/">Tones</Link>
@@ -81,6 +86,9 @@ function App() {
               </Route>
               <Route path="/piano/">
                 <Piano />
+              </Route>
+              <Route path="/midi/">
+                <Midi />
               </Route>
               <Redirect to={"/player/"} />
             </Switch>
