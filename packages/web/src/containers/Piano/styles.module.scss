@@ -17,11 +17,18 @@
   .Space {
     display: flex;
     flex: 1;
+    flex-direction: column;
   }
   .Note {
     z-index: 1;
-    align-items: end;
-    justify-content: center;
+    align-items: center;
+    justify-content: end;
+
+    i {
+      margin: 0.5em 0;
+      font-size: larger;
+      font-weight: bold;
+    }
   }
   .Space {
     pointer-events: none;
@@ -75,9 +82,11 @@
     opacity: 0.8;
     color: white;
     width: 2em;
-    height: 1.4em;
+    // height: 1.4em;
+    // margin: 0.5em 0;
+    height: 20px;
+    margin: 8px 0;
     padding: 0;
-    margin: 0.5em 0;
     align-items: center;
     justify-content: center;
 
@@ -98,7 +107,7 @@
   .Inner {
     display: flex;
     flex-direction: column;
-    padding: 25em 0;
+    padding: calc(72px * 5) 0;
     flex-grow: 1;
     background: #fff
       url('data:image/svg+xml,\
@@ -106,6 +115,6 @@
         <rect x="100" width="100" height="100" />\
         <rect y="100" width="100" height="100" />\
         </svg>');
-    background-size: 36px 36px;
+    background-size: calc(100vw / 2 / 7) 72px;
   }
 }

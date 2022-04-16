@@ -18,8 +18,36 @@ import {
   tap,
   withLatestFrom,
 } from "rxjs/operators";
+import notes from "./notes";
 import cx from "classnames";
 import styles from "./styles.module.scss";
+
+const keys = Object.entries({
+  C5: "a",
+  "C#5": "w",
+  D5: "s",
+  "D#5": "e",
+  E5: "d",
+  F5: "f",
+  "F#5": "t",
+  G5: "g",
+  "G#5": "y",
+  A5: "h",
+  "A#5": "u",
+  B5: "j",
+  C6: "k",
+  "C#6": "o",
+  D6: "l",
+  "D#6": "p",
+  E6: ";",
+  F6: "'",
+}).reduce(
+  (notes, [note, key]) =>
+    Object.assign(notes, {
+      [Tone.Midi(note).transpose(-24).toNote()]: key,
+    }),
+  {}
+);
 
 // https://github.com/Tonejs/Tone.js/blob/dev/examples/monoSynth.html
 const usePiano = () => {
@@ -59,6 +87,7 @@ function Note({ note, color, synth }) {
       onMouseDown={(e) => synth.triggerAttack(note)}
       onMouseUp={(e) => synth.triggerRelease(note)}
     >
+      {keys[note] && <i>{keys[note]}</i>}
       {note}
     </button>
   ) : (
@@ -202,7 +231,7 @@ function Roll({ notes, synth }: { notes: string[] }) {
         // ),
         map(
           (target) =>
-            notes[Math.round((target.scrollTop + 500 - 100 - 410) / 36)]
+            notes[Math.round((target.scrollTop + 500 - 100 - 72 * 5) / 36)]
         ),
         distinctUntilChanged(),
         tap((note) => console.log({ note })),
@@ -257,121 +286,42 @@ function Roll({ notes, synth }: { notes: string[] }) {
   );
 }
 
+const useKeyboard = (synth) => {
+  const notes = Object.entries(keys).reduce(
+    (notes, [note, key]) =>
+      Object.assign(notes, {
+        [{
+          ";": "Semicolon",
+          "'": "Quote",
+        }[key] || `Key${key.toUpperCase()}`]: note,
+      }),
+    {}
+  );
+
+  useEffect(() => {
+    const handleKeyDown = (e) =>
+      notes[e.code] && synth.triggerAttack(notes[e.code]);
+    const handleKeyUp = (e) =>
+      notes[e.code] && synth.triggerRelease(notes[e.code]);
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keyup", handleKeyUp);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, []);
+};
+
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/piano.ts
-export default function () {
+export default function Piano() {
   const synth = usePiano();
-  const song = {
-    name: "Home",
-    verse_list: [0, 10, 20, 30],
-    pnm_list: [
-      {
-        text: "(playing home from undertale)",
-        style: "monika_credits_text",
-        notes: ([] as string[])
-          .concat(
-            [] || [
-                "C3",
-                "C3SH",
-                "D3",
-                "D3SH",
-                "E3",
-                "F3",
-                "F3SH",
-                "G3",
-                "G3SH",
-                "A3",
-                "A3SH",
-                "B3",
-              ] || ["C4", "C5", "C6", "B6", "C3", "C4", "C5", "C6", "B6"]
-          )
-          .concat([
-            "F4",
-            "A4SH",
-            "C5",
-            "D5",
-            "A4SH",
-            "C5",
-            "D5",
-            "G4",
-            "A4SH",
-            "C5",
-            "F5",
-            "A4SH",
-            "C5",
-            "D5",
-            "A4SH",
-            "C5",
-            "F5",
-            "F4",
-            "A4SH",
-            "C5",
-            "D5",
-            "A4SH",
-            "C5",
-            "D5",
-            "G4",
-            "A4SH",
-            "C5",
-            "D5",
-            "A4SH",
-            "C5",
-            "D5",
-            "A4",
-            "A4SH",
-            "C5",
-            "F5",
-            "A4SH",
-            "C5",
-            "D5",
-          ]),
-        express: "1eub",
-        postexpress: "1eua",
-        vis_timeout: 2.0,
-        verse: 0,
-        posttext: true,
-      },
-      {
-        text: "(Playing home from undertale)",
-        style: "monika_credits_text",
-        notes: [
-          "A4SH",
-          "C5",
-          "A4SH",
-          "F4",
-          "A4SH",
-          "C5",
-          "D5",
-          "A4SH",
-          "C5",
-          "D5",
-          "G4",
-          "A4SH",
-          "C5",
-          "D5",
-          "A4SH",
-          "C5",
-          "D5",
-          "F4SH",
-          "A4SH",
-          "C5",
-          "D5",
-        ],
-        postnotes: ["F4SH", "A4SH", "D5", "A4SH", "A4SH", "C5", "A4SH"],
-        express: "1eub",
-        postexpress: "1eua",
-        ev_timeout: 1.0,
-      },
-    ],
-  };
+
+  useKeyboard(synth);
+
   return (
     <div>
       Piano
-      <Roll
-        notes={song.pnm_list[0].notes
-          .reverse()
-          .map((note) => note.replace(/(\d)SH/, "#$1"))}
-        synth={synth}
-      />
+      <Roll notes={notes} synth={synth} />
       <Keyboard synth={synth} />
       <div>
         <a href="#">https://musiclab.chromeexperiments.com/Shared-Piano/</a>
