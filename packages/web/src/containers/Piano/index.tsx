@@ -7,18 +7,18 @@ import React, {
   useState,
 } from "react";
 import * as Tone from "tone";
+import { Midi } from "@tonejs/midi";
 import { Observable, Subject, of } from "rxjs";
 import {
-  delay,
-  distinctUntilChanged,
   expand,
   filter,
   map,
+  pairwise,
   share,
   tap,
   withLatestFrom,
 } from "rxjs/operators";
-import notes from "./notes";
+import { createAsset } from "use-asset";
 import cx from "classnames";
 import styles from "./styles.module.scss";
 
@@ -76,6 +76,15 @@ const usePiano = () => {
 
   return synth;
 };
+
+const asset = createAsset(async () => {
+  // https://freemidi.org/request-detail-1730
+  return await Midi.fromUrl(
+    // require("../../assets/midi/BillieEilish-Notimetodie.mid")
+    // require("../../assets/midi/BillieEilish-Badguy.mid")
+    require("../../assets/midi/Coldplay_-_Hymn_for_the_Weekend.mid").default
+  );
+});
 
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/note.ts
 function Note({ note, color, synth }) {
@@ -168,19 +177,32 @@ const positionNote = (n: number, m = 12) =>
 function RollNote({ note, synth }) {
   return (
     <button
-      className={cx(styles.RollNote, note.match(/#/) && styles.sharp)}
+      className={cx(styles.RollNote, note.name.match(/#/) && styles.sharp)}
       style={{
-        left: `${positionNote(Tone.Midi(note).toMidi() - 48)}em`,
+        position: "absolute",
+        top: `${(note.ticks - note.durationTicks) / 10}px`,
+        left: `${positionNote(note.midi - 48)}em`,
+        height: `${note.durationTicks / 10}px`,
       }}
-      onMouseDown={(e) => synth.triggerAttack(note)}
-      onMouseUp={(e) => synth.triggerRelease(note)}
+      onMouseDown={(e) => (
+        e.preventDefault(),
+        ((now) =>
+          synth.triggerAttackRelease(
+            note.name,
+            note.duration,
+            now,
+            note.velocity
+          ))(Tone.now())
+      )}
     >
-      <span>{note}</span>
+      <span>{note.name}</span>
     </button>
   );
 }
 
-function Roll({ notes, synth }: { notes: string[] }) {
+function Roll({ synth }) {
+  const { name, duration, durationTicks, tracks } = asset.read();
+  const [track, setTrack] = useState(0);
   const [playing, setPlaying] = useState(false);
   const rollRef = useRef<HTMLDivElement>(null);
   const player$ = useMemo(() => new Subject<any>(), []);
@@ -198,6 +220,12 @@ function Roll({ notes, synth }: { notes: string[] }) {
       ),
     []
   );
+
+  console.log({ name, duration, tracks });
+
+  const { notes } = useMemo(() => tracks[track], [tracks, track]);
+
+  // console.log({notes})
 
   useEffect(() => {
     const subscription = frames$
@@ -222,25 +250,25 @@ function Roll({ notes, synth }: { notes: string[] }) {
   useEffect(() => {
     const subscription = scroll$
       .pipe(
-        // tap((target) =>
-        //   console.log(
-        //     target.scrollTop,
-        //     target.scrollHeight,
-        //     target.offsetHeight
-        //   )
-        // ),
-        map(
-          (target) =>
-            notes[Math.round((target.scrollTop + 500 - 100 - 72 * 5) / 36)]
-        ),
-        distinctUntilChanged(),
-        tap((note) => console.log({ note })),
-        filter(Boolean),
-        tap((note) => synth.triggerAttack(note)),
-        delay(250),
-        tap((note) => synth.triggerRelease(note))
+        map((target) => target.scrollTop),
+        pairwise(),
+        map(([curr, prev]) =>
+          notes.filter((note) =>
+            ((that) => prev <= that && that < curr)(note.ticks / 10)
+          )
+        )
       )
-      .subscribe((note) => {});
+      .subscribe((notes) =>
+        ((now) =>
+          notes.forEach((note) =>
+            synth.triggerAttackRelease(
+              note.name,
+              note.duration,
+              now,
+              note.velocity
+            )
+          ))(Tone.now())
+      );
     return () => subscription.unsubscribe();
   }, [scroll$]);
 
@@ -259,15 +287,33 @@ function Roll({ notes, synth }: { notes: string[] }) {
 
   return (
     <div>
-      {playing ? (
-        <button onClick={(e) => (e.stopPropagation(), player$.next(false))}>
-          stop
-        </button>
-      ) : (
-        <button onClick={(e) => (e.stopPropagation(), player$.next(true))}>
-          play
-        </button>
-      )}
+      <fieldset>
+        <label>
+          <span>Track</span>
+          <select
+            value={track}
+            onChange={useCallback<ChangeEventHandler<HTMLSelectElement>>(
+              ({ target }) => setTrack(Number(target.value)),
+              []
+            )}
+          >
+            {tracks.map(({ name }, i) => (
+              <option key={i} value={i}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </label>
+        {playing ? (
+          <button onClick={(e) => (e.stopPropagation(), player$.next(false))}>
+            stop
+          </button>
+        ) : (
+          <button onClick={(e) => (e.stopPropagation(), player$.next(true))}>
+            play
+          </button>
+        )}
+      </fieldset>
       <div
         ref={rollRef}
         className={styles.Roll}
@@ -276,7 +322,12 @@ function Roll({ notes, synth }: { notes: string[] }) {
           []
         )}
       >
-        <div className={styles.Inner}>
+        <div
+          className={styles.Inner}
+          style={{
+            height: `${durationTicks / 10}px`,
+          }}
+        >
           {notes.map((note, key) => (
             <RollNote key={key} note={note} synth={synth} />
           ))}
@@ -321,7 +372,7 @@ export default function Piano() {
   return (
     <div>
       Piano
-      <Roll notes={notes} synth={synth} />
+      <Roll synth={synth} />
       <Keyboard synth={synth} />
       <div>
         <a href="#">https://musiclab.chromeexperiments.com/Shared-Piano/</a>

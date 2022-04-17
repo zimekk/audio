@@ -10,10 +10,39 @@ const asset = createAsset(async () => {
   // https://www.mididb.com/billie-eilish/bad-guy-midi/
   // return await Midi.fromUrl(require('../../assets/midi/AUD_MB1582.mid').default)
   // https://www.nonstop2k.com/midi-files/14743-billie-eilish-bad-guy-midi.html
+  // return await Midi.fromUrl(
+  //   require("../../assets/midi/Billie-Eilish-Bad-Guy-Anonymous-20220216212718-nonstop2k.com.mid")
+  //     .default
+  // );
+  // https://www.nonstop2k.com/midi-files/17501-nintendo-super-mario-bros-theme-midi.html
+  // return await Midi.fromUrl(
+  //   require("../../assets/midi/Nintendo-Super-Mario-Bros-Theme-Anonymous-20220413125321-nonstop2k.com.mid")
+  //     .default
+  // );
+  // https://www.mididb.com/billie-eilish/everything-i-wanted-midi/
+  // return await Midi.fromUrl(
+  //   require("../../assets/midi/AUD_MB1608.mid")
+  //     .default
+  // );
+  // https://www.midi.com.au/billie-eilish/everything-i-wanted-midi/
+  // return await Midi.fromUrl(
+  //   require("../../assets/midi/AUD_MB1608.mid")
+  //     .default
+  // );
+  // https://freemidi.org/request-detail-1730
   return await Midi.fromUrl(
-    require("../../assets/midi/Billie-Eilish-Bad-Guy-Anonymous-20220216212718-nonstop2k.com.mid")
-      .default
+    require("../../assets/midi/Coldplay_-_Hymn_for_the_Weekend.mid").default
   );
+  // https://freemidi.org/request-detail-2900
+  // return await Midi.fromUrl(
+  //   require("../../assets/midi/BillieEilish-Badguy.mid")
+  //     .default
+  // );
+  // https://freemidi.org/request-detail-2932
+  // return await Midi.fromUrl(
+  //   require("../../assets/midi/BillieEilish-Notimetodie.mid")
+  //     .default
+  // );
 });
 
 // https://github.com/Tonejs/Midi
