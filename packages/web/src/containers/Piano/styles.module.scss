@@ -23,6 +23,8 @@
     z-index: 1;
     align-items: center;
     justify-content: end;
+    font-family: Arial;
+    font-size: 9px;
 
     i {
       margin: 0.5em 0;
@@ -47,10 +49,26 @@
   .WhiteNotes {
     width: 100%;
     height: 100%;
+
+    .Note {
+      background-color: white;
+      color: black;
+      &.pressed {
+        border-color: red;
+      }
+    }
   }
   .BlackNotes {
     width: 100%;
     height: 55%;
+
+    .Note {
+      background-color: black;
+      color: #ccc;
+      &.pressed {
+        border-color: red;
+      }
+    }
   }
 }
 .Keyboard {
@@ -77,9 +95,9 @@
     font-size: calc(100vw / 4 / 7 / 2);
     border: 1px solid red;
     box-sizing: border-box;
-    background: rgba(255, 0, 0, 0.6);
+    background: rgba(255, 128, 0, 0.2);
+    color: red;
     opacity: 0.8;
-    color: white;
     width: 2em;
     margin: 400px 0 0;
     padding: 0;
@@ -87,8 +105,8 @@
     justify-content: center;
 
     &.sharp {
-      background: rgba(255, 128, 0, 0.2);
-      color: red;
+      background: rgba(255, 0, 0, 0.6);
+      color: white;
     }
 
     &:hover {

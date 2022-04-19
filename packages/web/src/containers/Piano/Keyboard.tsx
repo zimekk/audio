@@ -1,5 +1,11 @@
-import React, { KeyboardEventHandler, useEffect } from "react";
+import React, {
+  KeyboardEventHandler,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import * as Tone from "tone";
+import cx from "classnames";
 import styles from "./styles.module.scss";
 
 const keys = Object.entries({
@@ -56,18 +62,36 @@ const useKeyboard = (keyDown, keyUp) => {
 };
 
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/note.ts
-function Note({ note, color, keyDown, keyUp }) {
-  // console.log({ note, synth });
+function Note({ note, keyDown, keyUp }) {
+  const [{ enter, press }, setState] = useState({
+    enter: false,
+    press: false,
+  });
+  const state = useMemo(() => enter && press, [enter, press]);
+
+  useEffect(() => (state ? keyDown(note) : keyUp(note)), [state]);
+
+  // console.log({ note, enter, press, state });
+
   return note ? (
-    <button
-      className={styles.Note}
-      style={{ background: color, color: color === "black" ? "#ccc" : "black" }}
-      onMouseDown={(e) => keyDown(note)}
-      onMouseUp={(e) => keyUp(note)}
+    <span
+      className={cx(styles.Note, state && styles.pressed)}
+      onMouseEnter={(e) =>
+        setState((state) => ({
+          ...state,
+          enter: true,
+          press: e.buttons ? true : false,
+        }))
+      }
+      onMouseLeave={() => setState((state) => ({ ...state, enter: false }))}
+      onMouseDown={(e) => (
+        e.preventDefault(), setState((state) => ({ ...state, press: true }))
+      )}
+      onMouseUp={() => setState((state) => ({ ...state, press: false }))}
     >
       {keys[note] && <i>{keys[note]}</i>}
       {note}
-    </button>
+    </span>
   ) : (
     <span className={styles.Space}></span>
   );
@@ -86,26 +110,14 @@ function Octave({ octave = 1, keyDown, keyUp }) {
         {whiteNotes
           .map((note) => Tone.Midi(note).toNote())
           .map((note, key) => (
-            <Note
-              key={key}
-              color="white"
-              note={note}
-              keyDown={keyDown}
-              keyUp={keyUp}
-            />
+            <Note key={key} note={note} keyDown={keyDown} keyUp={keyUp} />
           ))}
       </div>
       <div className={styles.BlackNotes}>
         {blackNotes
           .map((note) => note && Tone.Midi(note).toNote())
           .map((note, key) => (
-            <Note
-              key={key}
-              color="black"
-              note={note}
-              keyDown={keyDown}
-              keyUp={keyUp}
-            />
+            <Note key={key} note={note} keyDown={keyDown} keyUp={keyUp} />
           ))}
       </div>
     </div>
