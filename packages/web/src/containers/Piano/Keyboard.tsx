@@ -35,7 +35,8 @@ const keys = Object.entries({
   {}
 );
 
-const useKeyboard = (keyDown, keyUp) => {
+const useKeyboard = () => {
+  const [pressed, setPressed] = useState(() => []);
   const notes = Object.entries(keys).reduce(
     (notes, [note, key]) =>
       Object.assign(notes, {
@@ -49,25 +50,31 @@ const useKeyboard = (keyDown, keyUp) => {
 
   useEffect(() => {
     const handleKeyDown: KeyboardEventHandler = (e) =>
-      notes[e.code] && keyDown(notes[e.code]);
+      notes[e.code] && setPressed((pressed) => pressed.concat(notes[e.code]));
     const handleKeyUp: KeyboardEventHandler = (e) =>
-      notes[e.code] && keyUp(notes[e.code]);
+      notes[e.code] &&
+      setPressed((pressed) => pressed.filter((note) => note !== notes[e.code]));
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [keyDown, keyUp]);
+  }, [setPressed]);
+
+  return pressed;
 };
 
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/note.ts
-function Note({ note, keyDown, keyUp }) {
+function Note({ note, keyDown, keyUp, pressed }) {
   const [{ enter, press }, setState] = useState({
     enter: false,
     press: false,
   });
-  const state = useMemo(() => enter && press, [enter, press]);
+  const state = useMemo(
+    () => pressed || (enter && press),
+    [enter, press, pressed]
+  );
 
   useEffect(() => (state ? keyDown(note) : keyUp(note)), [state]);
 
@@ -98,7 +105,7 @@ function Note({ note, keyDown, keyUp }) {
 }
 
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/octave.ts
-function Octave({ octave = 1, keyDown, keyUp }) {
+function Octave({ octave = 1, keys, keyDown, keyUp }) {
   const startNote = 12 * octave;
   const whiteNotes = [0, 2, 4, 5, 7, 9, 11].map((i) => i + startNote);
   const blackNotes = [0, 1, 3, 0, 6, 8, 10, 0].map((i) =>
@@ -110,14 +117,26 @@ function Octave({ octave = 1, keyDown, keyUp }) {
         {whiteNotes
           .map((note) => Tone.Midi(note).toNote())
           .map((note, key) => (
-            <Note key={key} note={note} keyDown={keyDown} keyUp={keyUp} />
+            <Note
+              key={key}
+              note={note}
+              keyDown={keyDown}
+              keyUp={keyUp}
+              pressed={keys.includes(note)}
+            />
           ))}
       </div>
       <div className={styles.BlackNotes}>
         {blackNotes
           .map((note) => note && Tone.Midi(note).toNote())
           .map((note, key) => (
-            <Note key={key} note={note} keyDown={keyDown} keyUp={keyUp} />
+            <Note
+              key={key}
+              note={note}
+              keyDown={keyDown}
+              keyUp={keyUp}
+              pressed={keys.includes(note)}
+            />
           ))}
       </div>
     </div>
@@ -131,14 +150,20 @@ export default function Keyboard({
   keyDown,
   keyUp,
 }) {
-  useKeyboard(keyDown, keyUp);
+  const keys = useKeyboard();
 
   return (
     <div className={styles.Keyboard}>
       {[...Array(octaves)]
         .map((_, octave) => octave + rootoctave)
         .map((octave, key) => (
-          <Octave key={key} octave={octave} keyDown={keyDown} keyUp={keyUp} />
+          <Octave
+            key={key}
+            octave={octave}
+            keys={keys}
+            keyDown={keyDown}
+            keyUp={keyUp}
+          />
         ))}
     </div>
   );
