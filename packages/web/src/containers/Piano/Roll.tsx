@@ -51,20 +51,20 @@ const positionNote = (n: number, m = 12) =>
 const asset = createAsset(async () => {
   // https://freemidi.org/request-detail-1730
   return await Midi.fromUrl(
-    // require("../../assets/midi/BillieEilish-Notimetodie.mid")
-    // require("../../assets/midi/BillieEilish-Badguy.mid")
+    // require("../../assets/midi/BillieEilish-Notimetodie.mid").default
+    // require("../../assets/midi/BillieEilish-Badguy.mid").default
     require("../../assets/midi/Coldplay_-_Hymn_for_the_Weekend.mid").default
     // require("../../assets/midi/bach_846.mid").default
   );
 });
 
-function RollNote({ note, notes$ }) {
+function RollNote({ note, durationTicks, notes$ }) {
   return (
     <button
       className={cx(styles.RollNote, note.name.match(/#/) && styles.sharp)}
       style={{
         position: "absolute",
-        top: `${(note.ticks - note.durationTicks) / 10}px`,
+        top: `${(durationTicks - note.ticks - note.durationTicks) / 10}px`,
         left: `${positionNote(note.midi - 48)}em`,
         height: `${note.durationTicks / 10}px`,
       }}
@@ -113,7 +113,7 @@ export default function Roll({ notes$ }) {
           const target = rollRef.current;
           // console.log(target.scrollTop, target.scrollHeight, target.offsetHeight)
           if (target.scrollTop > 0) {
-            target.scrollTop -= 2;
+            target.scrollTop -= 1;
           } else {
             player$.next(false);
           }
@@ -129,13 +129,15 @@ export default function Roll({ notes$ }) {
         pairwise(),
         map(([curr, prev]) =>
           notes.filter((note) =>
-            ((that) => prev <= that && that < curr)(note.ticks / 10)
+            ((that) => prev <= that && that < curr)(
+              (durationTicks - note.ticks) / 10
+            )
           )
         )
       )
       .subscribe((notes) => notes$.next(notes));
     return () => subscription.unsubscribe();
-  }, [scroll$, notes$, notes]);
+  }, [scroll$, notes$, notes, durationTicks]);
 
   useEffect(() => {
     const subscription = player$.subscribe((player) => {
@@ -194,7 +196,12 @@ export default function Roll({ notes$ }) {
           }}
         >
           {notes.map((note, key) => (
-            <RollNote key={key} note={note} notes$={notes$} />
+            <RollNote
+              key={key}
+              note={note}
+              durationTicks={durationTicks}
+              notes$={notes$}
+            />
           ))}
         </div>
       </div>

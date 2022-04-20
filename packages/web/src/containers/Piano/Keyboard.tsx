@@ -149,6 +149,7 @@ export default function Keyboard({
   octaves = 4,
   keyDown,
   keyUp,
+  pressed,
 }) {
   const keys = useKeyboard();
 
@@ -160,7 +161,7 @@ export default function Keyboard({
           <Octave
             key={key}
             octave={octave}
-            keys={keys}
+            keys={keys.concat(pressed)}
             keyDown={keyDown}
             keyUp={keyUp}
           />

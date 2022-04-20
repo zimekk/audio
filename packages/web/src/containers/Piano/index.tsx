@@ -75,6 +75,7 @@ const usePiano = () => {
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/piano.ts
 export default function Piano() {
   const notes$ = useMemo(() => new Subject<any>(), []);
+  const [pressed, setPressed] = useState(() => []);
   const synth = usePiano();
 
   const keyDown = useCallback((note) => synth.triggerAttack(note), [synth]);
@@ -83,23 +84,31 @@ export default function Piano() {
   useEffect(() => {
     const subscription = notes$.subscribe((notes) =>
       ((now) =>
-        notes.forEach((note) =>
+        notes.forEach((note) => {
           synth.triggerAttackRelease(
             note.name,
             note.duration,
             now,
             note.velocity
-          )
-        ))(Tone.now())
+          );
+          Tone.Draw.schedule(() => {
+            setPressed((pressed) => pressed.concat(note.name));
+          }, now);
+          Tone.Draw.schedule(() => {
+            setPressed((pressed) =>
+              pressed.filter((name) => name !== note.name)
+            );
+          }, now + note.duration);
+        }))(Tone.now())
     );
     return () => subscription.unsubscribe();
-  }, [notes$]);
+  }, [notes$, setPressed]);
 
   return (
     <div>
       Piano
       <Roll notes$={notes$} />
-      <Keyboard keyDown={keyDown} keyUp={keyUp} />
+      <Keyboard keyDown={keyDown} keyUp={keyUp} pressed={pressed} />
       {/* <a href="#">https://musiclab.chromeexperiments.com/Shared-Piano/</a> */}
       {/* <div id="wrapper">
         <piano-banner></piano-banner>
