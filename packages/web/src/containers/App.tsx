@@ -1,12 +1,12 @@
 import { hot } from "react-hot-loader/root";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   HashRouter as Router,
-  Switch,
-  Redirect,
   Route,
+  Routes,
   Link,
+  useNavigate,
 } from "react-router-dom";
 import { increment } from "../actions";
 import Spinner from "../components/Spinner";
@@ -25,6 +25,14 @@ const Tones = lazy(() => import("./Tones"));
 const Tuner = lazy(() => import("./Tuner"));
 
 const About = lazy(() => import("./About"));
+
+function Redirect({ to }) {
+  let navigate = useNavigate();
+  useEffect(() => {
+    navigate(to);
+  });
+  return null;
+}
 
 function Navigation() {
   return (
@@ -66,32 +74,18 @@ function App() {
       <div>
         <button onClick={(e) => dispatch(increment())}>{counter}</button>
         <Router>
+          <Navigation />
           <Suspense fallback={<Spinner />}>
-            <Navigation />
-            <Switch>
-              <Route path="/player/">
-                <Player />
-              </Route>
-              <Route path="/search/">
-                <Search />
-              </Route>
-              <Route path="/about/">
-                <About />
-              </Route>
-              <Route path="/tones/">
-                <Tones />
-              </Route>
-              <Route path="/tuner/">
-                <Tuner />
-              </Route>
-              <Route path="/piano/">
-                <Piano />
-              </Route>
-              <Route path="/midi/">
-                <Midi />
-              </Route>
-              <Redirect to={"/player/"} />
-            </Switch>
+            <Routes>
+              <Route path="/player/" element={<Player />} />
+              <Route path="/search/" element={<Search />} />
+              <Route path="/about/" element={<About />} />
+              <Route path="/tones/" element={<Tones />} />
+              <Route path="/tuner/" element={<Tuner />} />
+              <Route path="/piano/" element={<Piano />} />
+              <Route path="/midi/" element={<Midi />} />
+              <Route path="/" element={<Redirect to="/player/" />} />
+            </Routes>
           </Suspense>
         </Router>
       </div>
