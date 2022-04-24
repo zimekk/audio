@@ -4,6 +4,8 @@ import { Subject } from "rxjs";
 import Keyboard from "./Keyboard";
 import Roll from "./Roll";
 
+import type { Note } from "@tonejs/midi/dist/note";
+
 // https://github.com/Tonejs/Tone.js/blob/dev/examples/monoSynth.html
 const usePiano = () => {
   const [synth] = useState(() =>
@@ -74,12 +76,18 @@ const usePiano = () => {
 
 // https://github.com/Tonejs/ui/blob/master/src/gui/piano/piano.ts
 export default function Piano() {
-  const notes$ = useMemo(() => new Subject<any>(), []);
-  const [pressed, setPressed] = useState(() => []);
+  const notes$ = useMemo(() => new Subject<Note[]>(), []);
+  const [pressed, setPressed] = useState<string[]>(() => []);
   const synth = usePiano();
 
-  const keyDown = useCallback((note) => synth.triggerAttack(note), [synth]);
-  const keyUp = useCallback((note) => synth.triggerRelease(note), [synth]);
+  const keyDown = useCallback(
+    (note: string) => synth.triggerAttack(note),
+    [synth]
+  );
+  const keyUp = useCallback(
+    (note: string) => synth.triggerRelease(note),
+    [synth]
+  );
 
   useEffect(() => {
     const subscription = notes$.subscribe((notes) =>

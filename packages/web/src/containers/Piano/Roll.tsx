@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useRef,
   useState,
+  MouseEventHandler,
 } from "react";
 import { Observable, Subject, of } from "rxjs";
 import {
@@ -21,6 +22,8 @@ import { Midi } from "@tonejs/midi";
 import { createAsset } from "use-asset";
 import cx from "classnames";
 import styles from "./styles.module.scss";
+
+import type { Note } from "@tonejs/midi/dist/note";
 
 interface IFrameData {
   frameStartTime: number;
@@ -64,12 +67,20 @@ const asset = createAsset(async (file) => {
       name: e.message,
       duration: 0,
       durationTicks: 0,
-      tracks: [{ notes: [] }],
+      tracks: [],
     };
   }
 });
 
-function RollNote({ note, durationTicks, notes$ }) {
+function RollNote({
+  note,
+  durationTicks,
+  ...props
+}: {
+  note: Note;
+  durationTicks: number;
+  onMouseDown?: MouseEventHandler;
+}) {
   return (
     <button
       className={cx(styles.RollNote, note.name.match(/#/) && styles.sharp)}
@@ -79,18 +90,18 @@ function RollNote({ note, durationTicks, notes$ }) {
         left: `${positionNote(note.midi - 48)}em`,
         height: `${note.durationTicks / 10}px`,
       }}
-      onMouseDown={(e) => (e.preventDefault(), notes$.next([note]))}
+      {...props}
     >
       <span>{note.name}</span>
     </button>
   );
 }
 
-export default function Roll({ notes$ }) {
+export default function Roll({ notes$ }: { notes$: Subject<Note[]> }) {
   const [files, setFiles] = useState(() => FILES);
   const [file, setFile] = useState(() => files[0]);
   const { name, duration, durationTicks, tracks } = asset.read(file);
-  const [track, setTrack] = useState(0);
+  const [selected, setSelected] = useState(() => [0]);
   const [speed, setSpeed] = useState(1);
   const [playing, setPlaying] = useState(false);
   const speedRef = useRef(speed);
@@ -111,11 +122,7 @@ export default function Roll({ notes$ }) {
     []
   );
 
-  console.log({ name, duration, tracks });
-
-  const { notes } = useMemo(() => tracks[track], [tracks, track]);
-
-  // console.log({notes})
+  console.log({ name, duration, tracks, selected });
 
   useEffect(() => {
     speedRef.current = speed;
@@ -147,16 +154,21 @@ export default function Roll({ notes$ }) {
         map((target) => target.scrollTop),
         pairwise(),
         map(([curr, prev]) =>
-          notes.filter((note) =>
-            ((that) => prev <= that && that < curr)(
-              (durationTicks - note.ticks) / 10
+          tracks
+            .filter((_, i) => selected.includes(i))
+            .map(({ notes }) =>
+              notes.filter((note) =>
+                ((that) => prev <= that && that < curr)(
+                  (durationTicks - note.ticks) / 10
+                )
+              )
             )
-          )
+            .flat()
         )
       )
       .subscribe((notes) => notes$.next(notes));
     return () => subscription.unsubscribe();
-  }, [scroll$, notes$, notes, durationTicks]);
+  }, [scroll$, notes$, tracks, selected, durationTicks]);
 
   useEffect(() => {
     const subscription = player$.subscribe((player) => {
@@ -169,7 +181,16 @@ export default function Roll({ notes$ }) {
     return () => subscription.unsubscribe();
   }, [player$]);
 
-  // console.log({ notes });
+  const onChangeTrack = useCallback<ChangeEventHandler<HTMLInputElement>>(
+    ({ target }) =>
+      setSelected((selected) =>
+        Boolean(console.log({ selected, value: target.value })) ||
+        target.checked
+          ? selected.concat(Number(target.value))
+          : selected.filter((i) => i !== Number(target.value))
+      ),
+    [setSelected]
+  );
 
   return (
     <div>
@@ -180,7 +201,7 @@ export default function Roll({ notes$ }) {
             <select
               value={file}
               onChange={useCallback<ChangeEventHandler<HTMLSelectElement>>(
-                ({ target }) => (setFile(target.value), setTrack(0)),
+                ({ target }) => (setFile(target.value), setSelected([0])),
                 []
               )}
             >
@@ -198,7 +219,7 @@ export default function Roll({ notes$ }) {
                 file?.match(/.+$/) &&
                 (setFiles((files) => files.concat(file)),
                 setFile(file),
-                setTrack(0)))(
+                setSelected([0])))(
                 prompt(
                   "Midi file URL",
                   "https://www.midiworld.com/download/3731"
@@ -210,21 +231,29 @@ export default function Roll({ notes$ }) {
           </button>
         </div>
         <div>
+          <span>Track</span>
+          {tracks.map(({ name }, i) => (
+            <label key={i}>
+              <input
+                type="checkbox"
+                value={i}
+                checked={selected.includes(i)}
+                onChange={onChangeTrack}
+              />
+              <span>{`#${i} ${name}`}</span>
+            </label>
+          ))}
           <label>
-            <span>Track</span>
-            <select
-              value={track}
-              onChange={useCallback<ChangeEventHandler<HTMLSelectElement>>(
-                ({ target }) => setTrack(Number(target.value)),
-                []
+            <input
+              type="checkbox"
+              checked={selected.length === tracks.length}
+              onChange={useCallback<ChangeEventHandler<HTMLInputElement>>(
+                ({ target }) =>
+                  setSelected(target.checked ? tracks.map((_, i) => i) : []),
+                [tracks]
               )}
-            >
-              {tracks.map(({ name }, i) => (
-                <option key={i} value={i}>
-                  {name}
-                </option>
-              ))}
-            </select>
+            />
+            <strong>toggle all</strong>
           </label>
         </div>
         <div>
@@ -269,14 +298,18 @@ export default function Roll({ notes$ }) {
             height: `${durationTicks / 10}px`,
           }}
         >
-          {notes.map((note, key) => (
-            <RollNote
-              key={key}
-              note={note}
-              durationTicks={durationTicks}
-              notes$={notes$}
-            />
-          ))}
+          {tracks
+            .filter((_, i) => selected.includes(i))
+            .map(({ notes }) =>
+              notes.map((note, key) => (
+                <RollNote
+                  key={key}
+                  note={note}
+                  durationTicks={durationTicks}
+                  onMouseDown={(e) => (e.preventDefault(), notes$.next([note]))}
+                />
+              ))
+            )}
         </div>
       </div>
     </div>
