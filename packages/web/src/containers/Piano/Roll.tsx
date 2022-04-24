@@ -222,7 +222,7 @@ export default function Roll({ notes$ }: { notes$: Subject<Note[]> }) {
                 setSelected([0])))(
                 prompt(
                   "Midi file URL",
-                  "https://www.midiworld.com/download/3731"
+                  "https://tonejs.github.io/Midi/examples/bach_846.mid"
                 )
               )
             )}
