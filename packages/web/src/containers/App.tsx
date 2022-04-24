@@ -12,19 +12,15 @@ import { increment } from "../actions";
 import Spinner from "../components/Spinner";
 import styles from "./App.module.scss";
 
-const Player = lazy(() => import("./Player"));
-
-const Search = lazy(() => import("./Search"));
-
-const Piano = lazy(() => import("./Piano"));
-
-const Midi = lazy(() => import("./Midi"));
-
-const Tones = lazy(() => import("./Tones"));
-
-const Tuner = lazy(() => import("./Tuner"));
-
-const About = lazy(() => import("./About"));
+const PAGES = {
+  about: lazy(() => import("./About")),
+  midi: lazy(() => import("./Midi")),
+  piano: lazy(() => import("./Piano")),
+  player: lazy(() => import("./Player")),
+  search: lazy(() => import("./Search")),
+  tones: lazy(() => import("./Tones")),
+  tuner: lazy(() => import("./Tuner")),
+};
 
 function Redirect({ to }) {
   let navigate = useNavigate();
@@ -39,27 +35,11 @@ function Navigation() {
     <nav className={styles.Nav}>
       <h1>Audio</h1>
       <ul>
-        <li>
-          <Link to="/player/">Player</Link>
-        </li>
-        <li>
-          <Link to="/search/">Search</Link>
-        </li>
-        <li>
-          <Link to="/piano/">Piano</Link>
-        </li>
-        <li>
-          <Link to="/midi/">Midi</Link>
-        </li>
-        <li>
-          <Link to="/tones/">Tones</Link>
-        </li>
-        <li>
-          <Link to="/tuner/">Tuner</Link>
-        </li>
-        <li>
-          <Link to="/about/">About</Link>
-        </li>
+        {Object.keys(PAGES).map((path) => (
+          <li key={path}>
+            <Link to={`/${path}/`}>{path}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
@@ -77,14 +57,10 @@ function App() {
           <Navigation />
           <Suspense fallback={<Spinner />}>
             <Routes>
-              <Route path="/player/" element={<Player />} />
-              <Route path="/search/" element={<Search />} />
-              <Route path="/about/" element={<About />} />
-              <Route path="/tones/" element={<Tones />} />
-              <Route path="/tuner/" element={<Tuner />} />
-              <Route path="/piano/" element={<Piano />} />
-              <Route path="/midi/" element={<Midi />} />
-              <Route path="/" element={<Redirect to="/player/" />} />
+              {Object.entries(PAGES).map(([path, Page]) => (
+                <Route key={path} path={`/${path}/`} element={<Page />} />
+              ))}
+              <Route path="/" element={<Redirect to="/piano/" />} />
             </Routes>
           </Suspense>
         </Router>
