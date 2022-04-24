@@ -48,14 +48,25 @@ const calculateStep: (prevFrame: IFrameData) => Observable<IFrameData> = (
 const positionNote = (n: number, m = 12) =>
   n + ((k) => (k - (k % m)) / m)(n + 7) + ((k) => (k - (k % m)) / m)(n);
 
-const asset = createAsset(async () => {
-  // https://freemidi.org/request-detail-1730
-  return await Midi.fromUrl(
-    // require("../../assets/midi/BillieEilish-Notimetodie.mid").default
-    // require("../../assets/midi/BillieEilish-Badguy.mid").default
-    require("../../assets/midi/Coldplay_-_Hymn_for_the_Weekend.mid").default
-    // require("../../assets/midi/bach_846.mid").default
-  );
+const FILES = [
+  require("../../assets/midi/Coldplay_-_Hymn_for_the_Weekend.mid").default,
+  require("../../assets/midi/BillieEilish-Notimetodie.mid").default,
+  require("../../assets/midi/BillieEilish-Badguy.mid").default,
+  require("../../assets/midi/bach_846.mid").default,
+];
+
+const asset = createAsset(async (file) => {
+  try {
+    return await Midi.fromUrl(file);
+  } catch (e) {
+    console.error(e);
+    return {
+      name: e.message,
+      duration: 0,
+      durationTicks: 0,
+      tracks: [{ notes: [] }],
+    };
+  }
 });
 
 function RollNote({ note, durationTicks, notes$ }) {
@@ -76,9 +87,13 @@ function RollNote({ note, durationTicks, notes$ }) {
 }
 
 export default function Roll({ notes$ }) {
-  const { name, duration, durationTicks, tracks } = asset.read();
+  const [files, setFiles] = useState(() => FILES);
+  const [file, setFile] = useState(() => files[0]);
+  const { name, duration, durationTicks, tracks } = asset.read(file);
   const [track, setTrack] = useState(0);
+  const [speed, setSpeed] = useState(1);
   const [playing, setPlaying] = useState(false);
+  const speedRef = useRef(speed);
   const rollRef = useRef<HTMLDivElement>(null);
   const player$ = useMemo(() => new Subject<any>(), []);
   const scroll$ = useMemo(() => new Subject<any>(), []);
@@ -103,6 +118,10 @@ export default function Roll({ notes$ }) {
   // console.log({notes})
 
   useEffect(() => {
+    speedRef.current = speed;
+  }, [frames$, speedRef, speed]);
+
+  useEffect(() => {
     const subscription = frames$
       .pipe(
         withLatestFrom(player$),
@@ -113,14 +132,14 @@ export default function Roll({ notes$ }) {
           const target = rollRef.current;
           // console.log(target.scrollTop, target.scrollHeight, target.offsetHeight)
           if (target.scrollTop > 0) {
-            target.scrollTop -= 1;
+            target.scrollTop -= speedRef.current;
           } else {
             player$.next(false);
           }
         }
       });
     return () => subscription.unsubscribe();
-  }, [frames$]);
+  }, [frames$, speedRef]);
 
   useEffect(() => {
     const subscription = scroll$
@@ -155,31 +174,86 @@ export default function Roll({ notes$ }) {
   return (
     <div>
       <fieldset>
-        <label>
-          <span>Track</span>
-          <select
-            value={track}
-            onChange={useCallback<ChangeEventHandler<HTMLSelectElement>>(
-              ({ target }) => setTrack(Number(target.value)),
-              []
+        <div>
+          <label>
+            <span>Midi</span>
+            <select
+              value={file}
+              onChange={useCallback<ChangeEventHandler<HTMLSelectElement>>(
+                ({ target }) => (setFile(target.value), setTrack(0)),
+                []
+              )}
+            >
+              {files.map((name, i) => (
+                <option key={i} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button
+            onClick={(e) => (
+              e.stopPropagation(),
+              ((file) =>
+                file?.match(/.+$/) &&
+                (setFiles((files) => files.concat(file)),
+                setFile(file),
+                setTrack(0)))(
+                prompt(
+                  "Midi file URL",
+                  "https://www.midiworld.com/download/3731"
+                )
+              )
             )}
           >
-            {tracks.map(({ name }, i) => (
-              <option key={i} value={i}>
-                {name}
-              </option>
-            ))}
-          </select>
-        </label>
-        {playing ? (
-          <button onClick={(e) => (e.stopPropagation(), player$.next(false))}>
-            stop
+            add
           </button>
-        ) : (
-          <button onClick={(e) => (e.stopPropagation(), player$.next(true))}>
-            play
-          </button>
-        )}
+        </div>
+        <div>
+          <label>
+            <span>Track</span>
+            <select
+              value={track}
+              onChange={useCallback<ChangeEventHandler<HTMLSelectElement>>(
+                ({ target }) => setTrack(Number(target.value)),
+                []
+              )}
+            >
+              {tracks.map(({ name }, i) => (
+                <option key={i} value={i}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Speed</span>
+            <select
+              value={speed}
+              onChange={useCallback<ChangeEventHandler<HTMLSelectElement>>(
+                ({ target }) => setSpeed(Number(target.value)),
+                []
+              )}
+            >
+              {[1, 2, 3, 4].map((value, i) => (
+                <option key={i} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
+          {playing ? (
+            <button onClick={(e) => (e.stopPropagation(), player$.next(false))}>
+              stop
+            </button>
+          ) : (
+            <button onClick={(e) => (e.stopPropagation(), player$.next(true))}>
+              play
+            </button>
+          )}
+        </div>
       </fieldset>
       <div
         ref={rollRef}
