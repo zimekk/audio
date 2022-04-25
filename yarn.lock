@@ -5335,6 +5335,11 @@ spotify-web-api-js@^1.5.2:
   resolved "https://registry.yarnpkg.com/spotify-web-api-js/-/spotify-web-api-js-1.5.2.tgz#ab69cab0809e357061c5684d6215bcf107822e0c"
   integrity sha512-ie1gbg1wCabfobIkXTIBLUMyULS/hMCpF44Cdx2pAO0/+FrjhNSDjlDzcwCEDy+ZIo3Fscs+Gkg/GTeQ/ijo+Q==
 
+staffrender@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/staffrender/-/staffrender-1.2.4.tgz#d06cd03461dad192086936563cc1b83c0d657ca0"
+  integrity sha512-/Pm3goI0hdzudc32hnJzP4BxkZbiy0YtB5IEu2F4/8Qi6nv60REEzvUqOdZySL/DahWydjXO4CNnxiDnqL0BSw==
+
 standardized-audio-context@^25.1.8, standardized-audio-context@^25.3.23:
   version "25.3.23"
   resolved "https://registry.yarnpkg.com/standardized-audio-context/-/standardized-audio-context-25.3.23.tgz#f0634c802629e54e9cadf8e02dfb2474f8435ec0"

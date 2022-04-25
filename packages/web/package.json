@@ -30,6 +30,7 @@
     "rxjs": "^7.5.5",
     "spectrogram": "^0.0.7",
     "spotify-web-api-js": "^1.5.2",
+    "staffrender": "^1.2.4",
     "standardized-audio-context": "^25.3.23",
     "stream-audio-fingerprint": "^1.0.4",
     "stream-browserify": "^3.0.0",

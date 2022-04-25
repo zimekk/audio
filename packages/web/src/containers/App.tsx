@@ -18,6 +18,7 @@ const PAGES = {
   piano: lazy(() => import("./Piano")),
   player: lazy(() => import("./Player")),
   search: lazy(() => import("./Search")),
+  staff: lazy(() => import("./Staff")),
   tones: lazy(() => import("./Tones")),
   tuner: lazy(() => import("./Tuner")),
 };
