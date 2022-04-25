@@ -9,6 +9,7 @@
     "start": "NODE_ENV=development webpack serve --mode development"
   },
   "dependencies": {
+    "@magenta/music": "^1.23.1",
     "@tensorflow-models/speech-commands": "^0.5.4",
     "@tensorflow/tfjs-backend-cpu": "^3.16.0",
     "@tensorflow/tfjs-core": "^3.16.0",

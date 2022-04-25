@@ -1,38 +1,73 @@
-import React, { useEffect, useRef } from "react";
-import { ScrollType, StaffInfo, StaffSVGRender } from "staffrender";
+import React, { useEffect, useRef, useState } from "react";
+import * as mm from "@magenta/music/esm/core.js";
+import { NoteSequence } from "@magenta/music/esm/protobuf.js";
+import { createAsset } from "use-asset";
 import styles from "./styles.module.scss";
 
-export default function Section() {
+const MIDI =
+  "https://cdn.jsdelivr.net/gh/cifkao/html-midi-player@2b12128/twinkle_twinkle.mid";
+
+const music = createAsset(async () => await mm.urlToNoteSequence(MIDI));
+
+function Player() {
+  const sequence = music.read();
+  const [playing, setPlaying] = useState(false);
+
   const scoreRef = useRef(null);
+  const playerRef = useRef<mm.Player | null>(null);
 
-  const config = {
-    noteHeight: 15,
-    pixelsPerTimeStep: 0,
-    instruments: [0],
-    defaultKey: 0,
-    scrollType: ScrollType.BAR,
-  };
+  const config = {};
 
-  const data: StaffInfo = {
-    notes: [
-      { start: 0, length: 1, pitch: 69, intensity: 127 },
-      { start: 1, length: 1, pitch: 71, intensity: 127 },
-      { start: 2, length: 1, pitch: 72, intensity: 127 },
-      { start: 3, length: 1, pitch: 74, intensity: 127 },
-    ],
-  };
+  console.log({ sequence });
 
   useEffect(() => {
     const scoreDiv = scoreRef.current;
     if (scoreDiv) {
-      new StaffSVGRender(data, config, scoreDiv);
+      const visualizer = new mm.StaffSVGVisualizer(sequence, scoreDiv, config);
+      playerRef.current = new mm.Player(false, {
+        run: (note: NoteSequence.INote) => {
+          visualizer.redraw(note);
+        },
+        stop: () => {
+          setPlaying(false);
+        },
+      });
     }
-  }, [scoreRef, data]);
+  }, [scoreRef, playerRef, sequence]);
+
+  return (
+    <div>
+      <div ref={scoreRef}></div>
+      {playing ? (
+        <button onClick={(e) => (setPlaying(false), playerRef.current?.stop())}>
+          stop
+        </button>
+      ) : (
+        <button
+          onClick={(e) => (
+            setPlaying(true), playerRef.current?.start(sequence, undefined, 0)
+          )}
+        >
+          play
+        </button>
+      )}
+    </div>
+  );
+}
+
+export default function Section() {
+  const [started, setStarted] = useState(false);
 
   return (
     <section className={styles.Section}>
       <h3>Staff</h3>
-      <div ref={scoreRef}></div>
+      {started ? (
+        <Player />
+      ) : (
+        <button onClick={(e) => (e.preventDefault(), setStarted(true))}>
+          start
+        </button>
+      )}
     </section>
   );
 }
