@@ -21,6 +21,7 @@ const PAGES = {
   staff: lazy(() => import("./Staff")),
   tones: lazy(() => import("./Tones")),
   tuner: lazy(() => import("./Tuner")),
+  video: lazy(() => import("./Video")),
 };
 
 function Redirect({ to }) {
