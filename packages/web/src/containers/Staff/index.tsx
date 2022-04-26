@@ -13,7 +13,8 @@ function Player() {
   const sequence = music.read();
   const [playing, setPlaying] = useState(false);
 
-  const scoreRef = useRef(null);
+  const pianoRef = useRef(null);
+  const staffRef = useRef(null);
   const playerRef = useRef<mm.Player | null>(null);
 
   const config = {};
@@ -21,23 +22,33 @@ function Player() {
   console.log({ sequence });
 
   useEffect(() => {
-    const scoreDiv = scoreRef.current;
-    if (scoreDiv) {
-      const visualizer = new mm.StaffSVGVisualizer(sequence, scoreDiv, config);
+    if (pianoRef.current && staffRef.current) {
+      const pianoVisualizer = new mm.PianoRollCanvasVisualizer(
+        sequence,
+        pianoRef.current,
+        config
+      );
+      const staffVisualizer = new mm.StaffSVGVisualizer(
+        sequence,
+        staffRef.current,
+        config
+      );
       playerRef.current = new mm.Player(false, {
         run: (note: NoteSequence.INote) => {
-          visualizer.redraw(note);
+          pianoVisualizer.redraw(note);
+          staffVisualizer.redraw(note);
         },
         stop: () => {
           setPlaying(false);
         },
       });
     }
-  }, [scoreRef, playerRef, sequence]);
+  }, [pianoRef, staffRef, playerRef, sequence]);
 
   return (
     <div>
-      <div ref={scoreRef}></div>
+      <canvas ref={pianoRef}></canvas>
+      <div ref={staffRef}></div>
       {playing ? (
         <button onClick={(e) => (setPlaying(false), playerRef.current?.stop())}>
           stop
