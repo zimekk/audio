@@ -15,6 +15,7 @@ import styles from "./App.module.scss";
 const PAGES = {
   about: lazy(() => import("./About")),
   chords: lazy(() => import("./Chords")),
+  guitar: lazy(() => import("./Guitar")),
   midi: lazy(() => import("./Midi")),
   piano: lazy(() => import("./Piano")),
   player: lazy(() => import("./Player")),
