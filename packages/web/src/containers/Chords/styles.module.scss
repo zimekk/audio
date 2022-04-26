@@ -1,0 +1,12 @@
+.Section {
+  display: block;
+}
+.Columns {
+  display: flex;
+  flex-direction: row;
+}
+.Chords {
+  a {
+    margin: 0 0.25em;
+  }
+}
