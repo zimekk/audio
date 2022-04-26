@@ -216,6 +216,7 @@ const stateNames = {
 };
 
 function Player() {
+  const [progress, setProgress] = useState(0);
   const playerRef = useRef(null);
 
   useEffect(() => {
@@ -238,6 +239,14 @@ function Player() {
           );
         });
 
+      let interval: NodeJS.Timer;
+
+      const updateProgress = async () => {
+        setProgress(
+          (100 * (await player.getCurrentTime())) / (await player.getDuration())
+        );
+      };
+
       player.on("stateChange", function (event) {
         if (!stateNames[event.data]) {
           throw new Error("Unknown state (" + event.data + ").");
@@ -246,11 +255,30 @@ function Player() {
         console.log(
           "State: " + stateNames[event.data] + " (" + event.data + ")."
         );
+
+        updateProgress();
+
+        if (event.data === 1) {
+          interval = setInterval(updateProgress, 1000);
+        } else if ([0, 2].includes(event.data)) {
+          clearInterval(interval);
+        }
       });
     }
-  }, [playerRef]);
+  }, [playerRef, setProgress]);
 
-  return <div ref={playerRef}></div>;
+  return (
+    <div>
+      <div ref={playerRef}></div>
+      <div className={styles.Progress}>
+        <i
+          style={{
+            width: `${progress}%`,
+          }}
+        />
+      </div>
+    </div>
+  );
 }
 
 function Text() {
@@ -258,8 +286,6 @@ function Text() {
 }
 
 export default function Section() {
-  const [started, setStarted] = useState(false);
-
   return (
     <section className={styles.Section}>
       <h3>Video</h3>

@@ -1,6 +1,19 @@
 .Section {
   display: block;
 }
+.Progress {
+  position: relative;
+  width: calc(640px - 2 * 12px);
+  height: 3px;
+  margin: 0 12px;
+  background: darkslategray;
+  i {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: red;
+  }
+}
 .Text {
   overflow-y: auto;
   max-height: 10em;
