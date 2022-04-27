@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import * as Tone from "tone";
 import { Midi } from "@tonejs/midi";
 import { createAsset } from "use-asset";
@@ -47,85 +47,85 @@ const asset = createAsset(async () => {
 
 // https://github.com/Tonejs/Midi
 export default function Section() {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
   const { name, duration, durationTicks, tracks } = asset.read();
+  const [playing, setPlaying] = useState<boolean>(false);
+  // const synthsRef = useRef<Tone.PolySynth[]>([]);
 
   console.log({ name, duration, durationTicks, tracks });
 
   useEffect(() => {
-    //synth playback
-    const synths = [] as any[];
-    if (buttonRef.current) {
-      buttonRef.current.addEventListener("click", (e) => {
-        const playing = true;
-        if (playing) {
-          const now = Tone.now() + 0.5;
-          tracks.forEach((track) => {
-            //create a synth for each track
-            // const synth = new Tone.PolySynth(10, Tone.Synth, {
-            //   envelope: {
-            //     attack: 0.02,
-            //     decay: 0.1,
-            //     sustain: 0.3,
-            //     release: 1
-            //   }
-            // }).toMaster()
-            const synth = new Tone.PolySynth(Tone.Synth, {
-              // volume: -8,
-              // oscillator: {
-              //   type: "square8",
-              // },
-              // envelope: {
-              //   attack: 0.05,
-              //   decay: 0.3,
-              //   sustain: 0.4,
-              //   release: 0.8,
-              // },
-              // filterEnvelope: {
-              //   attack: 0.001,
-              //   decay: 0.7,
-              //   sustain: 0.1,
-              //   release: 0.8,
-              //   baseFrequency: 300,
-              //   octaves: 4,
-              // },
-              envelope: {
-                attack: 0.02,
-                decay: 0.1,
-                sustain: 0.3,
-                release: 1,
-              },
-            }).toDestination();
+    // synth playback
+    if (playing) {
+      const synths: Tone.PolySynth[] = [];
+      const now = Tone.now() + 0.5;
+      tracks.forEach((track) => {
+        // create a synth for each track
+        const synth = new Tone.PolySynth(Tone.Synth, {
+          // volume: -8,
+          // oscillator: {
+          //   type: "square8",
+          // },
+          // envelope: {
+          //   attack: 0.05,
+          //   decay: 0.3,
+          //   sustain: 0.4,
+          //   release: 0.8,
+          // },
+          // filterEnvelope: {
+          //   attack: 0.001,
+          //   decay: 0.7,
+          //   sustain: 0.1,
+          //   release: 0.8,
+          //   baseFrequency: 300,
+          //   octaves: 4,
+          // },
+          envelope: {
+            attack: 0.02,
+            decay: 0.1,
+            sustain: 0.3,
+            release: 1,
+          },
+        }).toDestination();
 
-            synths.push(synth);
-            //schedule all of the events
-            track.notes.forEach((note) => {
-              synth.triggerAttackRelease(
-                note.name,
-                note.duration,
-                note.time + now,
-                note.velocity
-              );
-            });
-          });
-        } else {
-          //dispose the synth and make a new one
-          while (synths.length) {
-            const synth = synths.shift();
+        synths.push(synth);
+        // schedule all of the events
+        track.notes.forEach((note) => {
+          synth.triggerAttackRelease(
+            note.name,
+            note.duration,
+            note.time + now,
+            note.velocity
+          );
+        });
+      });
+      return () => {
+        // dispose the synth and make a new one
+        while (synths.length) {
+          const synth = synths.pop();
+          if (synth) {
+            // https://stackoverflow.com/questions/66590335/tone-js-problems-with-changing-tone-polysynth/71036551#71036551
+            synth.context._timeouts.cancel(0);
             synth.dispose();
           }
         }
-      });
+      };
     }
-  }, [tracks]);
+  }, [playing, tracks]);
 
   return (
     <div className={styles.Section}>
       <h3>Midi</h3>
       <div>{name}</div>
       <div>
-        <button ref={buttonRef}>Play</button>
+        {playing ? (
+          <button onClick={(e) => (e.preventDefault(), setPlaying(false))}>
+            Stop
+          </button>
+        ) : (
+          <button onClick={(e) => (e.preventDefault(), setPlaying(true))}>
+            Play
+          </button>
+        )}
       </div>
     </div>
   );
