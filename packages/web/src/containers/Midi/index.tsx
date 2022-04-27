@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as Tone from "tone";
 import { Midi } from "@tonejs/midi";
 import { createAsset } from "use-asset";
+import Input from "./Input";
 import styles from "./styles.module.scss";
 
 const asset = createAsset(async () => {
@@ -127,6 +128,7 @@ export default function Section() {
           </button>
         )}
       </div>
+      <Input />
     </div>
   );
 }

@@ -43,6 +43,7 @@
     "tone": "^14.7.77",
     "use-asset": "^1.0.4",
     "use-sound": "^4.0.1",
+    "webmidi": "^3.0.19",
     "youtube-player": "^5.5.2"
   },
   "devDependencies": {
