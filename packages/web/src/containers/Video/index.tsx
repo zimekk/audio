@@ -220,6 +220,7 @@ function Player() {
   const playerRef = useRef(null);
 
   useEffect(() => {
+    let interval: NodeJS.Timer;
     if (playerRef.current) {
       const player = YouTubePlayer(playerRef.current, {
         videoId: VIDEO_ID,
@@ -239,8 +240,6 @@ function Player() {
           );
         });
 
-      let interval: NodeJS.Timer;
-
       const updateProgress = async () => {
         setProgress(
           (100 * (await player.getCurrentTime())) / (await player.getDuration())
@@ -249,12 +248,10 @@ function Player() {
 
       player.on("stateChange", function (event) {
         if (!stateNames[event.data]) {
-          throw new Error("Unknown state (" + event.data + ").");
+          throw new Error(`Unknown state (${event.data}).`);
         }
 
-        console.log(
-          "State: " + stateNames[event.data] + " (" + event.data + ")."
-        );
+        console.log(`State: ${stateNames[event.data]} (${event.data}).`);
 
         updateProgress();
 
@@ -265,6 +262,9 @@ function Player() {
         }
       });
     }
+    return () => {
+      clearInterval(interval);
+    };
   }, [playerRef, setProgress]);
 
   return (
