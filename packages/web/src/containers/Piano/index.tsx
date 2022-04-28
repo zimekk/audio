@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import * as Tone from "tone";
 import { Subject } from "rxjs";
+import Input from "./Input";
 import Keyboard from "./Keyboard";
 import Roll from "./Roll";
 
@@ -553,11 +554,17 @@ export default function Piano() {
   const synth = usePiano(instrument);
 
   const keyDown = useCallback(
-    (note: string) => synth.triggerAttack(note),
+    (note: string) => (
+      synth && synth.triggerAttack(note),
+      setPressed((pressed) => pressed.concat(note))
+    ),
     [synth]
   );
   const keyUp = useCallback(
-    (note: string) => synth.triggerRelease(note),
+    (note: string) => (
+      synth && synth.triggerRelease(note),
+      setPressed((pressed) => pressed.filter((name) => name !== note))
+    ),
     [synth]
   );
 
@@ -565,12 +572,13 @@ export default function Piano() {
     const subscription = notes$.subscribe((notes) =>
       ((now) =>
         notes.forEach((note) => {
-          synth.triggerAttackRelease(
-            note.name,
-            note.duration,
-            now,
-            note.velocity
-          );
+          synth &&
+            synth.triggerAttackRelease(
+              note.name,
+              note.duration,
+              now,
+              note.velocity
+            );
           Tone.Draw.schedule(() => {
             setPressed((pressed) => pressed.concat(note.name));
           }, now);
@@ -600,6 +608,7 @@ export default function Piano() {
           </option>
         ))}
       </select>
+      <Input keyDown={keyDown} keyUp={keyUp} />
       <Roll notes$={notes$} />
       {synth && <Keyboard keyDown={keyDown} keyUp={keyUp} pressed={pressed} />}
       {/* <a href="#">https://musiclab.chromeexperiments.com/Shared-Piano/</a> */}
