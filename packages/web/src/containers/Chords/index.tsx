@@ -1,6 +1,9 @@
 import React, { ChangeEventHandler, useCallback, useState } from "react";
 import Chord from "@tombatossals/react-chords/lib/Chord";
 import ChordsDb from "@tombatossals/chords-db/lib/guitar.json";
+import { standard } from "react-guitar-tunings";
+import useSound from "react-guitar-sound";
+import cx from "classnames";
 import styles from "./styles.module.scss";
 
 // https://tombatossals.github.io/react-chords/guitar
@@ -25,7 +28,36 @@ const MyChord = ({
   };
   const lite = false; // defaults to false if omitted
 
-  return <Chord chord={chord} instrument={instrument} lite={lite} />;
+  const { play, strum } = useSound({
+    fretting: chord.fingers,
+    tuning: standard,
+  });
+
+  return (
+    <div>
+      <div className={styles.Guitar}>
+        <span onMouseEnter={(e) => strum()} className={styles.Strum}>
+          <i>down</i>
+        </span>
+        <span
+          onMouseEnter={(e) => strum(true)}
+          className={cx(styles.Strum, styles.Up)}
+        >
+          <i>up</i>
+        </span>
+        <span className={styles.Strings}>
+          {chord.fingers.map((string, i, strings) => (
+            <i key={i} onMouseEnter={(e) => play(strings.length - i - 1)}>
+              {string}
+            </i>
+          ))}
+        </span>
+      </div>
+      <a href="#" onClick={(e) => (e.preventDefault(), strum())}>
+        <Chord chord={chord} instrument={instrument} lite={lite} />
+      </a>
+    </div>
+  );
 };
 
 console.log({ ChordsDb });
