@@ -23,14 +23,19 @@ export default function Input({
   useEffect(() => {
     // Display available MIDI input devices
     const updateDevices = () =>
-      setDevices(
-        WebMidi.inputs.map(({ id, manufacturer, name, type }) => ({
+      setDevices((devices) => {
+        if (devices.length === 0 && WebMidi.inputs.length > 0) {
+          setInput(WebMidi.inputs[0].id);
+        } else if (devices.length > 0 && WebMidi.inputs.length === 0) {
+          setInput("");
+        }
+        return WebMidi.inputs.map(({ id, manufacturer, name, type }) => ({
           id,
           manufacturer,
           name,
           type,
-        }))
-      );
+        }));
+      });
 
     // Function triggered when WebMidi.js is ready
     const onConnect = ({ target, type }: any) => {
@@ -88,7 +93,7 @@ export default function Input({
           []
         )}
       >
-        <option value="">none</option>
+        {devices.length === 0 && <option value="">none</option>}
         {devices.map(({ id, manufacturer, name, type }) => (
           <option key={id} value={id}>
             {manufacturer} {name} ({type})
