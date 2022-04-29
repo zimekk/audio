@@ -20,3 +20,18 @@
   padding: 1em;
   background: lightyellow;
 }
+.Columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.Chords {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  .Chord {
+    display: flex;
+    width: 80px;
+  }
+}

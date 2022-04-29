@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import YouTubePlayer from "youtube-player";
+import Chords from "./Chords";
 import styles from "./styles.module.scss";
 
 const VIDEO_ID = "q0hyYWKXF0Q";
@@ -289,7 +290,10 @@ export default function Section() {
   return (
     <section className={styles.Section}>
       <h3>Video</h3>
-      <Player />
+      <div className={styles.Columns}>
+        <Player />
+        <Chords />
+      </div>
       <Text />
     </section>
   );
