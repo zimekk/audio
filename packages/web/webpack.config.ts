@@ -42,6 +42,18 @@ const config = {
         use: ["file-loader"],
       },
       {
+        test: /\.svg$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              generator: (content: any) =>
+                require("mini-svg-data-uri")(content.toString()),
+            },
+          },
+        ],
+      },
+      {
         test: /\.tsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,

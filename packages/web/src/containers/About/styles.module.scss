@@ -1,0 +1,164 @@
+.Section {
+  display: block;
+  --br-sm: 3px;
+  --fs-body1: 13px;
+  --fs-body2: 1.15384615rem;
+  --stacks-internals-lh-unit: 13;
+  --su-base: 1;
+  --su-static8: 8px;
+  --su-static16: 16px;
+  --su-static24: 24px;
+  --su-static32: 32px;
+  --s-full: 97.2307692rem;
+  --s-step: calc(var(--s-full) / 12);
+  --su8: calc(var(--su-static8) * var(--su-base));
+  --su16: calc(var(--su-static16) * var(--su-base));
+  --su24: calc(var(--su-static24) * var(--su-base));
+  --su32: calc(var(--su-static32) * var(--su-base));
+  --black: hsl(210, 8%, 5%);
+  --black-200: hsl(210, 8%, 75%);
+  --black-750: hsl(210, 8%, 20%);
+  --white: hsl(0, 0%, 100%);
+  --theme-base-primary-color-h: 198;
+  --theme-base-primary-color-s: 60.48387097%;
+  --theme-base-primary-color-l: 51.37254902%;
+  --theme-base-primary-color-r: 56;
+  --theme-base-primary-color-g: 161;
+  --theme-base-primary-color-b: 206;
+  --theme-primary-color-h: var(
+    --theme-light-primary-color-h,
+    var(--theme-base-primary-color-h)
+  );
+  --theme-primary-color-s: var(
+    --theme-light-primary-color-s,
+    var(--theme-base-primary-color-s)
+  );
+  --theme-primary-color-l: var(
+    --theme-light-primary-color-l,
+    var(--theme-base-primary-color-l)
+  );
+  --theme-primary-color-r: var(
+    --theme-light-primary-color-r,
+    var(--theme-base-primary-color-r)
+  );
+  --theme-primary-color-g: var(
+    --theme-light-primary-color-g,
+    var(--theme-base-primary-color-g)
+  );
+  --theme-primary-color-b: var(
+    --theme-light-primary-color-b,
+    var(--theme-base-primary-color-b)
+  );
+  --theme-primary-color: hsl(
+    var(--theme-primary-color-h),
+    var(--theme-primary-color-s),
+    var(--theme-primary-color-l)
+  );
+  --theme-button-primary-color: var(--white);
+  --theme-button-primary-background-color: var(--theme-primary-color);
+  --lh-sm: calc(
+    (var(--stacks-internals-lh-unit) + 2) / var(--stacks-internals-lh-unit)
+  );
+}
+.Hero {
+  position: relative !important;
+  padding-top: var(--su24) !important;
+  padding-bottom: var(--su24) !important;
+  background-color: var(--black-750) !important;
+  color: var(--black-200) !important;
+}
+.Columns {
+  display: flex !important;
+  max-width: var(--s-full) !important;
+  padding-left: var(--su12) !important;
+  padding-right: var(--su12) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.Body {
+  margin-right: var(--su32) !important;
+  max-width: calc(var(--s-step) * 3) !important;
+  font-size: var(--fs-body2) !important;
+
+  p {
+    clear: both;
+    margin-bottom: 1em;
+    margin-top: 0;
+  }
+}
+.Button {
+  color: var(--theme-button-primary-color);
+  background-color: var(--theme-button-primary-background-color);
+  box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 40%);
+  position: relative;
+  display: inline-block;
+  padding: 0.8em;
+  border: 1px solid transparent;
+  border-radius: var(--br-sm);
+  outline: none;
+  font-family: inherit;
+  font-size: var(--fs-body1);
+  font-weight: normal;
+  line-height: var(--lh-sm);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+.Background {
+  // background-image: url(./assets/anonymousHeroBackground.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: calc(var(--s-step) * 3) !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: column !important;
+}
+.Icon {
+  margin-right: var(--su16) !important;
+}
+.Text {
+  display: flex !important;
+  margin-bottom: var(--su24) !important;
+  align-items: center !important;
+  color: var(--black-200) !important;
+
+  div {
+    max-width: calc(var(--s-step) * 2) !important;
+  }
+}
+.Close {
+  position: absolute !important;
+  right: var(--su8) !important;
+  top: var(--su8) !important;
+  align-self: flex-start !important;
+
+  button {
+    color: var(--black-500);
+    position: relative;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: var(--br-sm);
+    background-color: transparent;
+    outline: none;
+    font-family: inherit;
+    font-size: var(--fs-body1);
+    font-weight: normal;
+    line-height: var(--lh-sm);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    padding: var(--su8) !important;
+
+    svg {
+      vertical-align: bottom;
+      * {
+        fill: currentColor;
+      }
+    }
+  }
+}
