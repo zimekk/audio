@@ -19,6 +19,7 @@ const PAGES = {
   midi: lazy(() => import("./Midi")),
   piano: lazy(() => import("./Piano")),
   player: lazy(() => import("./Player")),
+  radio: lazy(() => import("./Radio")),
   search: lazy(() => import("./Search")),
   staff: lazy(() => import("./Staff")),
   tones: lazy(() => import("./Tones")),
