@@ -107,7 +107,7 @@ function Playlist() {
 export interface HlsPlayerProps
   extends React.VideoHTMLAttributes<HTMLVideoElement> {
   hlsConfig?: object;
-  playerRef: RefObject<HTMLVideoElement>;
+  playerRef?: RefObject<HTMLVideoElement>;
   src: string;
 }
 
@@ -189,17 +189,53 @@ function ReactHlsPlayer({
   return <audio ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
 }
 
+function ReactMp3Player({
+  playerRef = React.createRef<HTMLVideoElement>(),
+  src,
+  autoPlay,
+  ...props
+}: HlsPlayerProps) {
+  return <audio ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
+}
+
 export default function Section() {
   const playerRef = useRef(null);
   return (
     <section className={styles.Section}>
       <h3>Radio</h3>
-      <ReactHlsPlayer
-        playerRef={playerRef}
-        src={RADIO}
-        autoPlay={false}
-        controls={true}
-      />
+      <div>
+        <h4>Radio Zet</h4>
+        <ReactMp3Player
+          src="https://zt.cdn.eurozet.pl/zet-net.mp3"
+          autoPlay={false}
+          controls={true}
+        />
+      </div>
+      <div>
+        <h4>Radio ChilliZet</h4>
+        <ReactMp3Player
+          src="https://ch01.cdn.eurozet.pl/chi-net.mp3"
+          autoPlay={false}
+          controls={true}
+        />
+      </div>
+      <div>
+        <h4>AntyRadio</h4>
+        <ReactMp3Player
+          src="https://an01.cdn.eurozet.pl/ant-waw.mp3"
+          autoPlay={false}
+          controls={true}
+        />
+      </div>
+      <div>
+        <h4>Radio Eska</h4>
+        <ReactHlsPlayer
+          playerRef={playerRef}
+          src={RADIO}
+          autoPlay={false}
+          controls={true}
+        />
+      </div>
       <Playlist />
     </section>
   );
