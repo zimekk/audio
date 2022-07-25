@@ -20,8 +20,8 @@ const asset = createAsset(async () => {
       start_time: z.string(),
       artists: z.array(z.object({ id: z.number(), name: z.string() })),
       end_time: z.string().nullable(),
-      thumb: z.string(),
-      name: z.string(),
+      thumb: z.string().nullable(),
+      name: z.string().nullable(),
     })
     .array()
     .parse(
@@ -76,7 +76,7 @@ function Playlist() {
       {list.map(
         ({ artists, name, thumb, start_time, end_time, ...item }, key) => (
           <li key={key}>
-            <img src={thumb} width="50" height="50" />
+            {thumb && <img src={thumb} width="50" height="50" />}
             <div>
               <div>
                 {[start_time, end_time]
@@ -190,29 +190,39 @@ const rdsAsset = createAsset(async (url: string) => {
   });
   return z
     .object({
-      now: z.object({
-        id: z.string(),
-        title: z.string().default(""),
-        artist: z.string(),
-        startDate: z.string(),
-        duration: z.string(),
-        img: z.string(),
-      }),
+      now: z
+        .object({
+          id: z.string(),
+          title: z.string().default(""),
+          artist: z.string(),
+          startDate: z.string().transform((date) => date.replace(" ", "T")),
+          duration: z.string().transform(Number),
+          img: z.string(),
+        })
+        .transform(({ artist, title, startDate, duration, img }) => ({
+          artists: [{ name: artist }],
+          name: title,
+          start_time: startDate,
+          end_time: duration
+            ? new Date(
+                new Date(startDate).getTime() + duration * 1000
+              ).toISOString()
+            : null,
+          thumb: img,
+        })),
     })
     .transform(({ now }) => [now])
     .parse(
-      await res
-        .json()
-        .catch((e) => ({
-          now: {
-            id: "9497-19",
-            title: "THE WAY I ARE",
-            artist: "TIMBALAND / KERI HILSON",
-            startDate: "2022-07-25 19:46:40",
-            duration: "179",
-            img: "https://s.eurozet.pl/music/9497-19.jpg",
-          },
-        }))
+      await res.json().catch((e) => ({
+        now: {
+          id: "9497-19",
+          title: "THE WAY I ARE",
+          artist: "TIMBALAND / KERI HILSON",
+          startDate: "2022-07-25 19:46:40",
+          duration: "179",
+          img: "https://s.eurozet.pl/music/9497-19.jpg",
+        },
+      }))
     );
 });
 
@@ -222,14 +232,14 @@ function RdsData({ src }: { src: string }) {
   return (
     <ul>
       {list
-        .map(({ title, artist, startDate, img }) => ({
-          artists: [{ name: artist }],
-          name: title,
-          start_time: startDate,
-          end_time: startDate,
-          thumb: img,
-        }))
-        .map(({ artists, name, thumb, start_time, end_time, ...item }, key) => (
+        // .map(({ title, artist, startDate, img }) => ({
+        //   artists: [{ name: artist }],
+        //   name: title,
+        //   start_time: startDate,
+        //   end_time: startDate,
+        //   thumb: img,
+        // }))
+        .map(({ artists, name, thumb, start_time, end_time }, key) => (
           <li key={key}>
             <img src={thumb} width="50" height="50" />
             <div>
@@ -248,6 +258,54 @@ function RdsData({ src }: { src: string }) {
             </div>
           </li>
         ))}
+    </ul>
+  );
+}
+
+const scheduleAsset = createAsset(async (url: string) => {
+  const res = await fetch(url, {
+    mode: "cors",
+  });
+  return z
+    .object({
+      start: z.number(),
+      end: z.number(),
+      people: z
+        .object({
+          name: z.string(),
+        })
+        .array(),
+      program: z.object({
+        image: z
+          .object({
+            original: z.string(),
+          })
+          .transform(({ original }) => original),
+        name: z.string(),
+      }),
+    })
+    .array()
+    .parse(await res.json().catch((e) => []));
+});
+
+function Schedule({ src }: { src: string }) {
+  const list = scheduleAsset.read(src);
+
+  return (
+    <ul>
+      {list.map(({ people, program: { image, name } }, key) => (
+        <li key={key}>
+          <img src={image} width="50" height="50" />
+          <div>
+            <div>
+              <strong>{name}</strong>
+            </div>
+            {people.map(({ name }, key) => (
+              <div key={key}>{name}</div>
+            ))}
+          </div>
+        </li>
+      ))}
     </ul>
   );
 }
@@ -283,6 +341,7 @@ export default function Section() {
           controls={true}
         />
         <RdsData src="/api/reader/var/zetchilli.json" />
+        <Schedule src="https://player.chillizet.pl/api/chillizet-radio/schedule/(station)/chillizet" />
       </div>
       <div>
         <h4>AntyRadio</h4>
