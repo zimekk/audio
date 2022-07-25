@@ -75,14 +75,9 @@ function Playlist() {
     <ul>
       {list.map(
         ({ artists, name, thumb, start_time, end_time, ...item }, key) => (
-          <li key={key} style={{ clear: "both" }}>
-            <img
-              src={thumb}
-              width="50"
-              height="50"
-              style={{ float: "left", margin: 5 }}
-            />
-            <div style={{ float: "left" }}>
+          <li key={key}>
+            <img src={thumb} width="50" height="50" />
+            <div>
               <div>
                 {[start_time, end_time]
                   .filter(Boolean)
@@ -189,6 +184,74 @@ function ReactHlsPlayer({
   return <audio ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
 }
 
+const rdsAsset = createAsset(async (url: string) => {
+  const res = await fetch(url, {
+    mode: "cors",
+  });
+  return z
+    .object({
+      now: z.object({
+        id: z.string(),
+        title: z.string().default(""),
+        artist: z.string(),
+        startDate: z.string(),
+        duration: z.string(),
+        img: z.string(),
+      }),
+    })
+    .transform(({ now }) => [now])
+    .parse(
+      await res
+        .json()
+        .catch((e) => ({
+          now: {
+            id: "9497-19",
+            title: "THE WAY I ARE",
+            artist: "TIMBALAND / KERI HILSON",
+            startDate: "2022-07-25 19:46:40",
+            duration: "179",
+            img: "https://s.eurozet.pl/music/9497-19.jpg",
+          },
+        }))
+    );
+});
+
+function RdsData({ src }: { src: string }) {
+  const list = rdsAsset.read(src);
+
+  return (
+    <ul>
+      {list
+        .map(({ title, artist, startDate, img }) => ({
+          artists: [{ name: artist }],
+          name: title,
+          start_time: startDate,
+          end_time: startDate,
+          thumb: img,
+        }))
+        .map(({ artists, name, thumb, start_time, end_time, ...item }, key) => (
+          <li key={key}>
+            <img src={thumb} width="50" height="50" />
+            <div>
+              <div>
+                {[start_time, end_time]
+                  .filter(Boolean)
+                  .map((time) => format(new Date(time), "yyyy-MM-dd, HH:mm:ss"))
+                  .join(" - ")}
+              </div>
+              <div>
+                <strong>{name}</strong>
+              </div>
+              {artists.map(({ name }, key) => (
+                <div key={key}>{name}</div>
+              ))}
+            </div>
+          </li>
+        ))}
+    </ul>
+  );
+}
+
 function ReactMp3Player({
   playerRef = React.createRef<HTMLVideoElement>(),
   src,
@@ -210,6 +273,7 @@ export default function Section() {
           autoPlay={false}
           controls={true}
         />
+        <RdsData src="/api/reader/var/radiozet.json" />
       </div>
       <div>
         <h4>Radio ChilliZet</h4>
@@ -218,6 +282,7 @@ export default function Section() {
           autoPlay={false}
           controls={true}
         />
+        <RdsData src="/api/reader/var/zetchilli.json" />
       </div>
       <div>
         <h4>AntyRadio</h4>
@@ -226,6 +291,7 @@ export default function Section() {
           autoPlay={false}
           controls={true}
         />
+        <RdsData src="/api/reader/var/antyradio.json" />
       </div>
       <div>
         <h4>Radio Eska</h4>

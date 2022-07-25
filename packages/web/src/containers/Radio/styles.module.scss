@@ -1,3 +1,18 @@
 .Section {
   display: block;
+
+  h4 {
+    clear: both;
+  }
+
+  li {
+    clear: both;
+
+    img {
+      float: left;
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+  }
 }

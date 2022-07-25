@@ -39,6 +39,16 @@ export default express()
       .then((res) => res.json())
       .then((json) => res.json(json))
   )
+  .get("/api/reader/var/(:station)", (req, res) =>
+    fetch(
+      `https://rds.eurozet.pl/reader/var/${req.params.station}?callback=rdsData`
+    )
+      .then((res) => res.text())
+      .then((text) =>
+        JSON.parse(unescape((text.match(/^\w+\((.*)\)$/) || [])[1]))
+      )
+      .then((json) => res.json(json))
+  )
   .use(web)
   .listen(PORT, (...args) =>
     console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`)
