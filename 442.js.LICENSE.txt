@@ -26,6 +26,8 @@
 
 /*! ../is-supported */
 
+/*! ../loader/date-range */
+
 /*! ../loader/fragment */
 
 /*! ../loader/fragment-loader */
@@ -39,6 +41,8 @@
 /*! ../task-loop */
 
 /*! ../types/cmcd */
+
+/*! ../types/demuxer */
 
 /*! ../types/level */
 
@@ -136,6 +140,8 @@
 
 /*! ./controller/timeline-controller */
 
+/*! ./date-range */
+
 /*! ./dummy-demuxed-track */
 
 /*! ./errors */
@@ -153,8 +159,6 @@
 /*! ./fragment-tracker */
 
 /*! ./gap-controller */
-
-/*! ./id3 */
 
 /*! ./is-supported */
 
@@ -175,6 +179,8 @@
 /*! ./m3u8-parser */
 
 /*! ./mp4-generator */
+
+/*! ./mp4-remuxer */
 
 /*! ./mp4-tools */
 
@@ -220,6 +226,8 @@
 
 /*! exports provided: ChunkMetadata */
 
+/*! exports provided: DateRangeAttribute, DateRange */
+
 /*! exports provided: ElementaryStreamTypes, BaseSegment, Fragment, Part */
 
 /*! exports provided: ErrorTypes, ErrorDetails */
@@ -240,7 +248,11 @@
 
 /*! exports provided: LoadStats */
 
+/*! exports provided: MetadataSchema */
+
 /*! exports provided: PlaylistContextType, PlaylistLevelType */
+
+/*! exports provided: RemuxerTrackIdConfig, bin2str, readUint16, readUint32, readSint32, writeUint32, findBox, parseSegmentIndex, parseInitSegment, getStartDTS, getDuration, computeRawDurationFromSamples, offsetStartDTS, segmentValidRange, appendUint8Array, parseSamples, parseSEIMessageFromNALu, parseEmsg */
 
 /*! exports provided: Row, CaptionScreen, default */
 
@@ -256,15 +268,13 @@
 
 /*! exports provided: appendFrame, parseHeader, isHeaderPattern, isHeader, canParse, probe */
 
-/*! exports provided: bin2str, readUint16, readUint32, writeUint32, findBox, parseSegmentIndex, parseInitSegment, getStartDTS, getDuration, computeRawDurationFromSamples, offsetStartDTS, segmentValidRange, appendUint8Array */
-
 /*! exports provided: default */
 
 /*! exports provided: default, LoadError */
 
 /*! exports provided: default, isPromise, TransmuxConfig, TransmuxState */
 
-/*! exports provided: default, normalizePts */
+/*! exports provided: default, normalizePts, flushTextTrackMetadataCueSamples, flushTextTrackUserdataCueSamples */
 
 /*! exports provided: discardEPB, default */
 
@@ -376,6 +386,10 @@
   !*** ./src/utils/vttcue.ts ***!
   \*****************************/
 
+/*!******************************!*\
+  !*** ./src/types/demuxer.ts ***!
+  \******************************/
+
 /*!********************************!*\
   !*** ./src/crypt/decrypter.ts ***!
   \********************************/
@@ -454,6 +468,10 @@
 
 /*!**********************************!*\
   !*** ./src/demux/chunk-cache.ts ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/loader/date-range.ts ***!
   \**********************************/
 
 /*!**********************************!*\
