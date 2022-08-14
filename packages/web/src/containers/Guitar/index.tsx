@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 // import Guitar from 'react-guitar'
 import { standard } from "react-guitar-tunings";
 import useSound from "react-guitar-sound";
+import Video from "./Video";
 import styles from "./styles.module.scss";
 
 function Guitar({
@@ -15,6 +16,7 @@ function Guitar({
 }) {
   return (
     <div>
+      <Video id="zL4GlrgZxwA" />
       <button onClick={(e) => (e.preventDefault(), onStrum())}>down</button>
       <button onClick={(e) => (e.preventDefault(), onStrum(true))}>up</button>
       <ul>
