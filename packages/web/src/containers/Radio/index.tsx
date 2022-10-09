@@ -4,6 +4,7 @@ import { createAsset } from "use-asset";
 import Hls from "hls.js";
 import { format } from "date-fns";
 import { z } from "zod";
+import Stations from "./Stations";
 import styles from "./styles.module.scss";
 
 const RADIO =
@@ -362,6 +363,7 @@ export default function Section() {
         />
       </div>
       <Playlist />
+      <Stations />
     </section>
   );
 }
