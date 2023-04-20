@@ -84,8 +84,8 @@
    * | 93     |`choruslevel`                  |
    * | 94     |`celestelevel`                 |
    * | 95     |`phaserlevel`                  |
-   * | 96     |`databuttonincrement`          |
-   * | 97     |`databuttondecrement`          |
+   * | 96     |`dataincrement`                |
+   * | 97     |`datadecrement`                |
    * | 98     |`nonregisteredparametercoarse` |
    * | 99     |`nonregisteredparameterfine`   |
    * | 100    |`registeredparametercoarse`    |
@@ -179,8 +179,8 @@
 
 /**
  * The `Enumerations` class contains enumerations and arrays of elements used throughout the
- * library. All properties are static and should be referenced using the class name. For example:
- * `Enumerations.MIDI_CHANNEL_MESSAGES`.
+ * library. All its properties are static and should be referenced using the class name. For
+ * example: `Enumerations.CHANNEL_MESSAGES`.
  *
  * @license Apache-2.0
  * @since 3.0.0
@@ -216,10 +216,8 @@
  * @fires InputChannel#noteon
  * @fires InputChannel#keyaftertouch
  * @fires InputChannel#programchange
- * @fires InputChannel#event:controlchange-controllerxxx
  * @fires InputChannel#channelaftertouch
  * @fires InputChannel#pitchbend
- * @fires InputChannel#controlchange
  *
  * @fires InputChannel#allnotesoff
  * @fires InputChannel#allsoundoff
@@ -231,13 +229,85 @@
  * @fires InputChannel#event:nrpn
  * @fires InputChannel#event:nrpn-dataentrycoarse
  * @fires InputChannel#event:nrpn-dataentryfine
- * @fires InputChannel#event:nrpn-databuttonincrement
- * @fires InputChannel#event:nrpn-databuttondecrement
+ * @fires InputChannel#event:nrpn-dataincrement
+ * @fires InputChannel#event:nrpn-datadecrement
  * @fires InputChannel#event:rpn
  * @fires InputChannel#event:rpn-dataentrycoarse
  * @fires InputChannel#event:rpn-dataentryfine
- * @fires InputChannel#event:rpn-databuttonincrement
- * @fires InputChannel#event:rpn-databuttondecrement
+ * @fires InputChannel#event:rpn-dataincrement
+ * @fires InputChannel#event:rpn-datadecrement
+ *
+ * @fires InputChannel#controlchange
+ * @fires InputChannel#event:controlchange-controllerxxx
+ * @fires InputChannel#event:controlchange-bankselectcoarse
+ * @fires InputChannel#event:controlchange-modulationwheelcoarse
+ * @fires InputChannel#event:controlchange-breathcontrollercoarse
+ * @fires InputChannel#event:controlchange-footcontrollercoarse
+ * @fires InputChannel#event:controlchange-portamentotimecoarse
+ * @fires InputChannel#event:controlchange-dataentrycoarse
+ * @fires InputChannel#event:controlchange-volumecoarse
+ * @fires InputChannel#event:controlchange-balancecoarse
+ * @fires InputChannel#event:controlchange-pancoarse
+ * @fires InputChannel#event:controlchange-expressioncoarse
+ * @fires InputChannel#event:controlchange-effectcontrol1coarse
+ * @fires InputChannel#event:controlchange-effectcontrol2coarse
+ * @fires InputChannel#event:controlchange-generalpurposecontroller1
+ * @fires InputChannel#event:controlchange-generalpurposecontroller2
+ * @fires InputChannel#event:controlchange-generalpurposecontroller3
+ * @fires InputChannel#event:controlchange-generalpurposecontroller4
+ * @fires InputChannel#event:controlchange-bankselectfine
+ * @fires InputChannel#event:controlchange-modulationwheelfine
+ * @fires InputChannel#event:controlchange-breathcontrollerfine
+ * @fires InputChannel#event:controlchange-footcontrollerfine
+ * @fires InputChannel#event:controlchange-portamentotimefine
+ * @fires InputChannel#event:controlchange-dataentryfine
+ * @fires InputChannel#event:controlchange-channelvolumefine
+ * @fires InputChannel#event:controlchange-balancefine
+ * @fires InputChannel#event:controlchange-panfine
+ * @fires InputChannel#event:controlchange-expressionfine
+ * @fires InputChannel#event:controlchange-effectcontrol1fine
+ * @fires InputChannel#event:controlchange-effectcontrol2fine
+ * @fires InputChannel#event:controlchange-damperpedal
+ * @fires InputChannel#event:controlchange-portamento
+ * @fires InputChannel#event:controlchange-sostenuto
+ * @fires InputChannel#event:controlchange-softpedal
+ * @fires InputChannel#event:controlchange-legatopedal
+ * @fires InputChannel#event:controlchange-hold2
+ * @fires InputChannel#event:controlchange-soundvariation
+ * @fires InputChannel#event:controlchange-resonance
+ * @fires InputChannel#event:controlchange-releasetime
+ * @fires InputChannel#event:controlchange-attacktime
+ * @fires InputChannel#event:controlchange-brightness
+ * @fires InputChannel#event:controlchange-decaytime
+ * @fires InputChannel#event:controlchange-vibratorate
+ * @fires InputChannel#event:controlchange-vibratodepth
+ * @fires InputChannel#event:controlchange-vibratodelay
+ * @fires InputChannel#event:controlchange-generalpurposecontroller5
+ * @fires InputChannel#event:controlchange-generalpurposecontroller6
+ * @fires InputChannel#event:controlchange-generalpurposecontroller7
+ * @fires InputChannel#event:controlchange-generalpurposecontroller8
+ * @fires InputChannel#event:controlchange-portamentocontrol
+ * @fires InputChannel#event:controlchange-highresolutionvelocityprefix
+ * @fires InputChannel#event:controlchange-effect1depth
+ * @fires InputChannel#event:controlchange-effect2depth
+ * @fires InputChannel#event:controlchange-effect3depth
+ * @fires InputChannel#event:controlchange-effect4depth
+ * @fires InputChannel#event:controlchange-effect5depth
+ * @fires InputChannel#event:controlchange-dataincrement
+ * @fires InputChannel#event:controlchange-datadecrement
+ * @fires InputChannel#event:controlchange-nonregisteredparameterfine
+ * @fires InputChannel#event:controlchange-nonregisteredparametercoarse
+ * @fires InputChannel#event:controlchange-registeredparameterfine
+ * @fires InputChannel#event:controlchange-registeredparametercoarse
+ * @fires InputChannel#event:controlchange-allsoundoff
+ * @fires InputChannel#event:controlchange-resetallcontrollers
+ * @fires InputChannel#event:controlchange-localcontrol
+ * @fires InputChannel#event:controlchange-allnotesoff
+ * @fires InputChannel#event:controlchange-omnimodeoff
+ * @fires InputChannel#event:controlchange-omnimodeon
+ * @fires InputChannel#event:controlchange-monomodeon
+ * @fires InputChannel#event:controlchange-polymodeon
+ * @fires InputChannel#event:
  *
  * @extends EventEmitter
  * @license Apache-2.0
