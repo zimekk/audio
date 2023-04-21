@@ -34,6 +34,7 @@ const PORT = 8080;
 export default express()
   .use(require("morgan")("combined"))
   .use(cors({ origin: "*" }))
+  .use("/api/stream/", require("./stream").stream())
   .get("/api/mobile/station/2380/now_playing/", (req, res) =>
     fetch("https://www.eska.pl/api/mobile/station/2380/now_playing/")
       .then((res) => res.json())

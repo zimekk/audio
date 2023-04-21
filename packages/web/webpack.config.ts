@@ -94,6 +94,16 @@ const config = {
     new webpack.ProvidePlugin({
       Buffer: ["buffer", "Buffer"],
     }),
+    // https://webpack.js.org/plugins/copy-webpack-plugin/
+    new (require("copy-webpack-plugin"))({
+      patterns: [
+        {
+          context: path.resolve(__dirname, "src/assets"),
+          from: dev ? "none" : "api/**/*.json",
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       favicon: require.resolve("./src/assets/favicon.ico"),
     }),
