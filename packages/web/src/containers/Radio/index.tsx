@@ -18,7 +18,7 @@ const asset = createAsset(async () => {
   return z
     .object({
       media_id: z.number(),
-      image: z.string(),
+      image: z.string().nullable(),
       start_time: z.string(),
       artists: z.array(z.object({ id: z.number(), name: z.string() })),
       end_time: z.string().nullable(),
@@ -211,7 +211,7 @@ function Schedule({ src }: { src: string }) {
     <ul>
       {list.map(({ people, program: { image, name } }, key) => (
         <li key={key}>
-          <img src={image} width="50" height="50" />
+          {image && <img src={image} width="50" height="50" />}
           <div>
             <div>
               <strong>{name}</strong>
