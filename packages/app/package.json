@@ -27,7 +27,7 @@
     "@types/express": "^4.17.17",
     "@types/isomorphic-fetch": "^0.0.39",
     "@types/node": "^18.16.2",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
     "webpack": "^5.81.0",
