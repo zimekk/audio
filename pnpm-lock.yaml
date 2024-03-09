@@ -107,7 +107,7 @@ importers:
         version: 1.23.1(@tensorflow/tfjs-core@4.17.0)
       '@redux-devtools/extension':
         specifier: ^3.0.0
-        version: 3.3.0(redux@4.2.1)
+        version: 3.3.0(redux@5.0.1)
       '@tensorflow-models/speech-commands':
         specifier: ^0.5.4
         version: 0.5.4(@tensorflow/tfjs-core@4.17.0)(@tensorflow/tfjs-data@4.17.0)(@tensorflow/tfjs-layers@4.17.0)
@@ -172,14 +172,14 @@ importers:
         specifier: ^6.10.0
         version: 6.22.3(react-dom@18.2.0)(react@18.2.0)
       redux:
-        specifier: ^4.2.1
-        version: 4.2.1
+        specifier: ^5.0.0
+        version: 5.0.1
       redux-actions:
         specifier: ^3.0.0
         version: 3.0.0
       redux-thunk:
         specifier: ^2.4.2
-        version: 2.4.2(redux@4.2.1)
+        version: 2.4.2(redux@5.0.1)
       rxjs:
         specifier: ^7.8.1
         version: 7.8.1
@@ -2104,14 +2104,14 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
 
-  /@redux-devtools/extension@3.3.0(redux@4.2.1):
+  /@redux-devtools/extension@3.3.0(redux@5.0.1):
     resolution: {integrity: sha512-X34S/rC8S/M1BIrkYD1mJ5f8vlH0BDqxXrs96cvxSBo4FhMdbhU+GUGsmNYov1xjSyLMHgo8NYrUG8bNX7525g==}
     peerDependencies:
       redux: ^3.1.0 || ^4.0.0 || ^5.0.0
     dependencies:
       '@babel/runtime': 7.24.0
       immutable: 4.3.5
-      redux: 4.2.1
+      redux: 5.0.1
     dev: false
 
   /@remix-run/router@1.15.3:
@@ -7029,18 +7029,22 @@ packages:
       reduce-reducers: 1.0.4
     dev: false
 
-  /redux-thunk@2.4.2(redux@4.2.1):
+  /redux-thunk@2.4.2(redux@5.0.1):
     resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
     peerDependencies:
       redux: ^4
     dependencies:
-      redux: 4.2.1
+      redux: 5.0.1
     dev: false
 
   /redux@4.2.1:
     resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
     dependencies:
       '@babel/runtime': 7.24.0
+
+  /redux@5.0.1:
+    resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
+    dev: false
 
   /reflect.getprototypeof@1.0.5:
     resolution: {integrity: sha512-62wgfC8dJWrmxv44CA36pLDnP6KKl3Vhxb7PL+8+qrrFMMoJij4vgiMP8zV4O8+CBMXY1mHxI5fITGHXFHVmQQ==}
