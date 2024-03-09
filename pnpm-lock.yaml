@@ -105,6 +105,9 @@ importers:
       '@magenta/music':
         specifier: ^1.23.1
         version: 1.23.1(@tensorflow/tfjs-core@3.21.0)
+      '@redux-devtools/extension':
+        specifier: ^3.0.0
+        version: 3.3.0(redux@4.2.1)
       '@tensorflow-models/speech-commands':
         specifier: ^0.5.4
         version: 0.5.4(@tensorflow/tfjs-core@3.21.0)(@tensorflow/tfjs-data@3.21.0)(@tensorflow/tfjs-layers@3.21.0)
@@ -174,9 +177,6 @@ importers:
       redux-actions:
         specifier: ^3.0.0
         version: 3.0.0
-      redux-devtools-extension:
-        specifier: ^2.13.9
-        version: 2.13.9(redux@4.2.1)
       redux-thunk:
         specifier: ^2.4.2
         version: 2.4.2(redux@4.2.1)
@@ -2104,6 +2104,16 @@ packages:
 
   /@protobufjs/utf8@1.1.0:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
+    dev: false
+
+  /@redux-devtools/extension@3.3.0(redux@4.2.1):
+    resolution: {integrity: sha512-X34S/rC8S/M1BIrkYD1mJ5f8vlH0BDqxXrs96cvxSBo4FhMdbhU+GUGsmNYov1xjSyLMHgo8NYrUG8bNX7525g==}
+    peerDependencies:
+      redux: ^3.1.0 || ^4.0.0 || ^5.0.0
+    dependencies:
+      '@babel/runtime': 7.24.0
+      immutable: 4.3.5
+      redux: 4.2.1
     dev: false
 
   /@remix-run/router@1.15.3:
@@ -5310,7 +5320,6 @@ packages:
 
   /immutable@4.3.5:
     resolution: {integrity: sha512-8eabxkth9gZatlwl5TBuJnCsoTADlL6ftEr7A4qgdaTsPyreilDSnUk57SO+jfKcNtxPa22U5KK6DSeAYhpBJw==}
-    dev: true
 
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -6982,15 +6991,6 @@ packages:
     dependencies:
       just-curry-it: 5.3.0
       reduce-reducers: 1.0.4
-    dev: false
-
-  /redux-devtools-extension@2.13.9(redux@4.2.1):
-    resolution: {integrity: sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A==}
-    deprecated: Package moved to @redux-devtools/extension.
-    peerDependencies:
-      redux: ^3.1.0 || ^4.0.0
-    dependencies:
-      redux: 4.2.1
     dev: false
 
   /redux-thunk@2.4.2(redux@4.2.1):
