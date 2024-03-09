@@ -263,8 +263,8 @@ importers:
         specifier: ^2.6.2
         version: 2.6.5
       '@types/spectrogram':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.4
+        version: 0.0.4
       '@types/webpack':
         specifier: ^5.28.1
         version: 5.28.5(webpack-cli@5.1.4)
@@ -2671,8 +2671,8 @@ packages:
     resolution: {integrity: sha512-5JcVt1u5HDmlXkwOD2nslZVllBBc7HDuOICfiZah2Z0is8M8g+ddAEawbmd3VjedfDHBzxCaXLs07QEmb7y54g==}
     dev: true
 
-  /@types/spectrogram@0.0.1:
-    resolution: {integrity: sha512-AN07ACNNg/LTGlgHuzdDZatHdP9TFP+wsuVSzImV3RTYLSG95Luj+HeRCGuD8kj2heITbxpAJugJnyZBWXM80w==}
+  /@types/spectrogram@0.0.4:
+    resolution: {integrity: sha512-BuL7odXaV7Gr2QgaxL43nScvvPlJiumGwzFQSwuvKJ+4+T9o+vpdc/O0JY86HaCzHSSOa/28e+m20mbJwF13zw==}
     dev: true
 
   /@types/tapable@1.0.12:
