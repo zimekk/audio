@@ -1,0 +1,12 @@
+.Section {
+  display: block;
+}
+.Record {
+  background-color: lightgray;
+  &.Recording {
+    background-color: red;
+  }
+}
+.Stop {
+  background-color: lightgray;
+}
