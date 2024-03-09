@@ -112,8 +112,8 @@ importers:
         specifier: ^0.5.4
         version: 0.5.4(@tensorflow/tfjs-core@3.21.0)(@tensorflow/tfjs-data@3.21.0)(@tensorflow/tfjs-layers@3.21.0)
       '@tensorflow/tfjs-backend-cpu':
-        specifier: ^3.21.0
-        version: 3.21.0(@tensorflow/tfjs-core@3.21.0)
+        specifier: ^4.0.0
+        version: 4.17.0(@tensorflow/tfjs-core@3.21.0)
       '@tensorflow/tfjs-core':
         specifier: ^3.21.0
         version: 3.21.0
@@ -2158,11 +2158,11 @@ packages:
       seedrandom: 2.4.3
     dev: false
 
-  /@tensorflow/tfjs-backend-cpu@3.21.0(@tensorflow/tfjs-core@3.21.0):
-    resolution: {integrity: sha512-88S21UAdzyK0CsLUrH17GPTD+26E85OP9CqmLZslaWjWUmBkeTQ5Zqyp6iK+gELnLxPx6q7JsNEeFuPv4254lQ==}
+  /@tensorflow/tfjs-backend-cpu@4.17.0(@tensorflow/tfjs-core@3.21.0):
+    resolution: {integrity: sha512-2VSCHnX9qhYTjw9HiVwTBSnRVlntKXeBlK7aSVsmZfHGwWE2faErTtO7bWmqNqw0U7gyznJbVAjlow/p+0RNGw==}
     engines: {yarn: '>= 1.3.2'}
     peerDependencies:
-      '@tensorflow/tfjs-core': 3.21.0
+      '@tensorflow/tfjs-core': 4.17.0
     dependencies:
       '@tensorflow/tfjs-core': 3.21.0
       '@types/seedrandom': 2.4.34
