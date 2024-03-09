@@ -296,8 +296,8 @@ importers:
         specifier: ^4.13.1
         version: 4.13.1(@types/react@18.2.64)(react-dom@18.2.0)(react@18.2.0)
       regenerator-runtime:
-        specifier: ^0.13.11
-        version: 0.13.11
+        specifier: ^0.14.0
+        version: 0.14.1
       sass:
         specifier: ^1.62.1
         version: 1.71.1
@@ -7154,6 +7154,7 @@ packages:
 
   /regenerator-runtime@0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
+    dev: false
 
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
