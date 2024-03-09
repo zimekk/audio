@@ -14,7 +14,7 @@
     "@tensorflow/tfjs-backend-cpu": "^4.0.0",
     "@tensorflow/tfjs-core": "^4.0.0",
     "@tensorflow/tfjs-data": "^4.0.0",
-    "@tensorflow/tfjs-layers": "^3.21.0",
+    "@tensorflow/tfjs-layers": "^4.0.0",
     "@tombatossals/chords-db": "^0.5.1",
     "@tombatossals/react-chords": "^0.2.10",
     "@tonejs/midi": "^2.0.28",
