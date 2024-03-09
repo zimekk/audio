@@ -47,7 +47,7 @@
     "start": "pnpm --filter=@dev/app run start",
     "update:dedupe": "pnpm dedupe",
     "update:latest": "pnpm -r up -i",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.0",
@@ -62,7 +62,6 @@
     "prettier": "^3.0.0",
     "pretty-quick": "^4.0.0",
     "type-coverage": "^2.25.0",
-    "typescript": "^5.0.4",
-    "yarn-deduplicate": "^6.0.1"
+    "typescript": "^5.0.4"
   }
 }
