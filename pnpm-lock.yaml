@@ -110,7 +110,7 @@ importers:
         version: 3.3.0(redux@4.2.1)
       '@tensorflow-models/speech-commands':
         specifier: ^0.5.4
-        version: 0.5.4(@tensorflow/tfjs-core@4.17.0)(@tensorflow/tfjs-data@3.21.0)(@tensorflow/tfjs-layers@3.21.0)
+        version: 0.5.4(@tensorflow/tfjs-core@4.17.0)(@tensorflow/tfjs-data@4.17.0)(@tensorflow/tfjs-layers@3.21.0)
       '@tensorflow/tfjs-backend-cpu':
         specifier: ^4.0.0
         version: 4.17.0(@tensorflow/tfjs-core@4.17.0)
@@ -118,8 +118,8 @@ importers:
         specifier: ^4.0.0
         version: 4.17.0
       '@tensorflow/tfjs-data':
-        specifier: ^3.21.0
-        version: 3.21.0(@tensorflow/tfjs-core@4.17.0)
+        specifier: ^4.0.0
+        version: 4.17.0(@tensorflow/tfjs-core@4.17.0)
       '@tensorflow/tfjs-layers':
         specifier: ^3.21.0
         version: 3.21.0(@tensorflow/tfjs-core@4.17.0)
@@ -2124,7 +2124,7 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.17.0)(@tensorflow/tfjs-data@3.21.0)(@tensorflow/tfjs-layers@3.21.0):
+  /@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.17.0)(@tensorflow/tfjs-data@4.17.0)(@tensorflow/tfjs-layers@3.21.0):
     resolution: {integrity: sha512-r0c/MvC15/09xWujx1pKe6mA0nta+4jQWDXGkqfSVkXLo8ARrwcZ4mTGLlfvT43ySfidiveUo0m+P51+UK821Q==}
     peerDependencies:
       '@tensorflow/tfjs-core': ^3.0.0
@@ -2132,7 +2132,7 @@ packages:
       '@tensorflow/tfjs-layers': ^3.0.0
     dependencies:
       '@tensorflow/tfjs-core': 4.17.0
-      '@tensorflow/tfjs-data': 3.21.0(@tensorflow/tfjs-core@4.17.0)
+      '@tensorflow/tfjs-data': 4.17.0(@tensorflow/tfjs-core@4.17.0)
       '@tensorflow/tfjs-layers': 3.21.0(@tensorflow/tfjs-core@4.17.0)
     dev: false
 
@@ -2248,10 +2248,10 @@ packages:
       - encoding
     dev: false
 
-  /@tensorflow/tfjs-data@3.21.0(@tensorflow/tfjs-core@4.17.0):
-    resolution: {integrity: sha512-eFLfw2wIcFNxnP2Iv/SnVlihehzKMumk1b5Prcx1ixk/SbkCo5u0Lt7OVOWaEOKVqvB2sT+dJcTjAh6lrCC/QA==}
+  /@tensorflow/tfjs-data@4.17.0(@tensorflow/tfjs-core@4.17.0):
+    resolution: {integrity: sha512-aPKrDFip+gXicWOFALeNT7KKQjRXFkHd/hNe/zs4mCFcIN00hy1PkZ6xkYsgrsdLDQMBSGeS4B4ZM0k5Cs88QA==}
     peerDependencies:
-      '@tensorflow/tfjs-core': 3.21.0
+      '@tensorflow/tfjs-core': 4.17.0
       seedrandom: ^3.0.5
     dependencies:
       '@tensorflow/tfjs-core': 4.17.0

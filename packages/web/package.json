@@ -13,7 +13,7 @@
     "@tensorflow-models/speech-commands": "^0.5.4",
     "@tensorflow/tfjs-backend-cpu": "^4.0.0",
     "@tensorflow/tfjs-core": "^4.0.0",
-    "@tensorflow/tfjs-data": "^3.21.0",
+    "@tensorflow/tfjs-data": "^4.0.0",
     "@tensorflow/tfjs-layers": "^3.21.0",
     "@tombatossals/chords-db": "^0.5.1",
     "@tombatossals/react-chords": "^0.2.10",
