@@ -143,7 +143,7 @@ importers:
         version: 2.5.1
       date-fns:
         specifier: ^3.0.0
-        version: 3.3.1
+        version: 3.4.0
       events:
         specifier: ^3.3.0
         version: 3.3.0
@@ -167,7 +167,7 @@ importers:
         version: 1.1.2
       react-redux:
         specifier: ^9.0.0
-        version: 9.1.0(@types/react@18.2.64)(react@18.2.0)(redux@4.2.1)
+        version: 9.1.0(@types/react@18.2.64)(react@18.2.0)(redux@5.0.1)
       react-router-dom:
         specifier: ^6.10.0
         version: 6.22.3(react-dom@18.2.0)(react@18.2.0)
@@ -4045,8 +4045,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /date-fns@3.3.1:
-    resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
+  /date-fns@3.4.0:
+    resolution: {integrity: sha512-Akz4R8J9MXBsOgF1QeWeCsbv6pntT5KCPjU0Q9prBxVmWJYPLhwAIsNg3b0QAdr0ttiozYLD3L/af7Ra0jqYXw==}
     dev: false
 
   /debug@2.6.9:
@@ -6909,7 +6909,7 @@ packages:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
     dev: true
 
-  /react-redux@9.1.0(@types/react@18.2.64)(react@18.2.0)(redux@4.2.1):
+  /react-redux@9.1.0(@types/react@18.2.64)(react@18.2.0)(redux@5.0.1):
     resolution: {integrity: sha512-6qoDzIO+gbrza8h3hjMA9aq4nwVFCKFtY2iLxCtVT38Swyy2C/dJCGBXHeHLtx6qlg/8qzc2MrhOeduf5K32wQ==}
     peerDependencies:
       '@types/react': ^18.2.25
@@ -6927,7 +6927,7 @@ packages:
       '@types/react': 18.2.64
       '@types/use-sync-external-store': 0.0.3
       react: 18.2.0
-      redux: 4.2.1
+      redux: 5.0.1
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
@@ -7043,6 +7043,7 @@ packages:
     resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
     dependencies:
       '@babel/runtime': 7.24.0
+    dev: true
 
   /redux@5.0.1:
     resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
