@@ -1,6 +1,5 @@
 import { hot } from "react-hot-loader/root";
 import React, { Suspense, lazy, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import {
   HashRouter as Router,
   Route,
@@ -8,7 +7,6 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
-import { increment } from "../actions";
 import Spinner from "../components/Spinner";
 import styles from "./App.module.scss";
 
@@ -52,13 +50,9 @@ function Navigation() {
 }
 
 function App() {
-  const counter = useSelector(({ counter }: { counter: number }) => counter);
-  const dispatch = useDispatch();
-
   return (
     <div className={styles.App}>
       <div>
-        <button onClick={(e) => dispatch(increment())}>{counter}</button>
         <Router>
           <Navigation />
           <Suspense fallback={<Spinner />}>
