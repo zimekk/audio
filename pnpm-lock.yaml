@@ -140,7 +140,7 @@ importers:
         version: 2.5.1
       date-fns:
         specifier: ^3.0.0
-        version: 3.5.0
+        version: 3.6.0
       events:
         specifier: ^3.3.0
         version: 3.3.0
@@ -4019,8 +4019,8 @@ packages:
       is-data-view: 1.0.1
     dev: true
 
-  /date-fns@3.5.0:
-    resolution: {integrity: sha512-a+DwyXn7NOfdJireCzAA0B9p7jIXEu/Q9JKCyMYvH6+0vPUNbQceA0neXrdfJ/xzl3mhOh5vibQQ3936Tssm6A==}
+  /date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
     dev: false
 
   /debug@2.6.9:
@@ -5836,8 +5836,8 @@ packages:
       object.values: 1.1.7
     dev: true
 
-  /jzz@1.8.0:
-    resolution: {integrity: sha512-mkEdizFQB3gIk9NzwIsbsKdXtu+t2uL9dCldU0AKct8YK9t5XT68V5IgZ0opfk16FkFXB0QA0Q+IEJEn7M0MQg==}
+  /jzz@1.8.1:
+    resolution: {integrity: sha512-L5jWc6xOB6FybF7vYJD/3pL29sCq/ZGW5sfg7dLEB07qcVH1zxUG9YxAC4jHfztzZu0oAaKe03QOV1rAFskhCw==}
     requiresBuild: true
     dependencies:
       '@types/webmidi': 2.0.10
@@ -8377,7 +8377,7 @@ packages:
     dependencies:
       djipevents: 2.0.7
     optionalDependencies:
-      jzz: 1.8.0
+      jzz: 1.8.1
     dev: false
 
   /webpack-cli@5.1.4(webpack-dev-server@5.0.3)(webpack@5.90.3):
