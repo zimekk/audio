@@ -140,7 +140,7 @@ importers:
         version: 2.5.1
       date-fns:
         specifier: ^3.0.0
-        version: 3.4.0
+        version: 3.6.0
       events:
         specifier: ^3.3.0
         version: 3.3.0
@@ -4033,8 +4033,8 @@ packages:
       is-data-view: 1.0.1
     dev: true
 
-  /date-fns@3.4.0:
-    resolution: {integrity: sha512-Akz4R8J9MXBsOgF1QeWeCsbv6pntT5KCPjU0Q9prBxVmWJYPLhwAIsNg3b0QAdr0ttiozYLD3L/af7Ra0jqYXw==}
+  /date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
     dev: false
 
   /debug@2.6.9:
