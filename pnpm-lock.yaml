@@ -179,7 +179,7 @@ importers:
         version: 1.2.4
       standardized-audio-context:
         specifier: ^25.3.45
-        version: 25.3.67
+        version: 25.3.68
       stream-audio-fingerprint:
         specifier: ^1.0.4
         version: 1.0.4
@@ -3285,8 +3285,8 @@ packages:
     resolution: {integrity: sha512-mEoYRjZhqkBSen/X9i2PNosqvafEsur8bI5MNoPr0wsJu9Nzlul3Yv1elYeMPsXxTxYhXLY8AZlScBvaK4mydg==}
     dev: false
 
-  /automation-events@7.0.2:
-    resolution: {integrity: sha512-TfzwQUXRKoXCP08W0FGDID18y7gJvvy1KKdH3jPPUbTV8mVHec5KXG85Q9sly0COMu5cY6qYmNzq6blJa2lo2w==}
+  /automation-events@7.0.3:
+    resolution: {integrity: sha512-5JhQDPpXvJLGgrDmr3xU9PX0ZxeJLZ1xJVkGmmRXkXNS/J9TSazLn/gu1s02qLI68RR40JpW6Uok9eaKtu4wBQ==}
     engines: {node: '>=18.2.0'}
     dependencies:
       '@babel/runtime': 7.24.1
@@ -7607,11 +7607,11 @@ packages:
     resolution: {integrity: sha512-/Pm3goI0hdzudc32hnJzP4BxkZbiy0YtB5IEu2F4/8Qi6nv60REEzvUqOdZySL/DahWydjXO4CNnxiDnqL0BSw==}
     dev: false
 
-  /standardized-audio-context@25.3.67:
-    resolution: {integrity: sha512-/4Um872ILMJeMpykffUj1gHHhG3ooEiuAzjoyvJGqtTXwq1xMA9n5kxo9fp+y5lBW50atu/NKcWDgU8dO6jOhw==}
+  /standardized-audio-context@25.3.68:
+    resolution: {integrity: sha512-XxVOFwlnU3Rq7mfTpxRhuwgDf00HmG4GzpSRQcMwgoXLa+k/9n8HT9dpsLZt0A1YH+hO/kLxaBMOIv5fKV/Gcg==}
     dependencies:
       '@babel/runtime': 7.24.1
-      automation-events: 7.0.2
+      automation-events: 7.0.3
       tslib: 2.6.2
     dev: false
 
@@ -7987,7 +7987,7 @@ packages:
   /tone@14.7.77:
     resolution: {integrity: sha512-tCfK73IkLHyzoKUvGq47gyDyxiKLFvKiVCOobynGgBB9Dl0NkxTM2p+eRJXyCYrjJwy9Y0XCMqD3uOYsYt2Fdg==}
     dependencies:
-      standardized-audio-context: 25.3.67
+      standardized-audio-context: 25.3.68
       tslib: 2.6.2
     dev: false
 
