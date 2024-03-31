@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.0.0
-        version: 19.2.1(@types/node@20.12.1)(typescript@5.4.3)
+        version: 19.2.1(@types/node@20.12.2)(typescript@5.4.3)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.1.0
@@ -43,7 +43,7 @@ importers:
         version: 4.0.0(prettier@3.2.5)
       type-coverage:
         specifier: ^2.25.0
-        version: 2.27.1(typescript@5.4.3)
+        version: 2.27.2(typescript@5.4.3)
       typescript:
         specifier: ^5.0.4
         version: 5.4.3
@@ -1588,14 +1588,14 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@commitlint/cli@19.2.1(@types/node@20.12.1)(typescript@5.4.3):
+  /@commitlint/cli@19.2.1(@types/node@20.12.2)(typescript@5.4.3):
     resolution: {integrity: sha512-cbkYUJsLqRomccNxvoJTyv5yn0bSy05BBizVyIcLACkRbVUqYorC351Diw/XFSWC/GtpwiwT2eOvQgFZa374bg==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 19.0.3
       '@commitlint/lint': 19.1.0
-      '@commitlint/load': 19.2.0(@types/node@20.12.1)(typescript@5.4.3)
+      '@commitlint/load': 19.2.0(@types/node@20.12.2)(typescript@5.4.3)
       '@commitlint/read': 19.2.1
       '@commitlint/types': 19.0.3
       execa: 8.0.1
@@ -1664,7 +1664,7 @@ packages:
       '@commitlint/types': 19.0.3
     dev: true
 
-  /@commitlint/load@19.2.0(@types/node@20.12.1)(typescript@5.4.3):
+  /@commitlint/load@19.2.0(@types/node@20.12.2)(typescript@5.4.3):
     resolution: {integrity: sha512-XvxxLJTKqZojCxaBQ7u92qQLFMMZc4+p9qrIq/9kJDy8DOrEa7P1yx7Tjdc2u2JxIalqT4KOGraVgCE7eCYJyQ==}
     engines: {node: '>=v18'}
     dependencies:
@@ -1674,7 +1674,7 @@ packages:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.4.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.1)(cosmiconfig@9.0.0)(typescript@5.4.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.2)(cosmiconfig@9.0.0)(typescript@5.4.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -2511,6 +2511,12 @@ packages:
     resolution: {integrity: sha512-5lcxgB72hlSF7ZS9ZzX1RCLc9+BovxjL17T00xSmj3c0ygZFjPdNnN0RchfGpot/yniVMkWnyO6aR9Dr1q9qrg==}
     dependencies:
       undici-types: 5.26.5
+
+  /@types/node@20.12.2:
+    resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
 
   /@types/offscreencanvas@2019.3.0:
     resolution: {integrity: sha512-esIJx9bQg+QYF0ra8GnvfianIY8qWB0GBx54PK5Eps6m+xTj86KLavHv6qDhzKcu5UUOgNfJ2pWaIIV7TRUd9Q==}
@@ -3848,7 +3854,7 @@ packages:
       vary: 1.1.2
     dev: false
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.1)(cosmiconfig@9.0.0)(typescript@5.4.3):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.2)(cosmiconfig@9.0.0)(typescript@5.4.3):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -3856,7 +3862,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 20.12.1
+      '@types/node': 20.12.2
       cosmiconfig: 9.0.0(typescript@5.4.3)
       jiti: 1.21.0
       typescript: 5.4.3
@@ -6079,6 +6085,13 @@ packages:
     dependencies:
       brace-expansion: 2.0.1
 
+  /minimatch@9.0.4:
+    resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==}
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: true
+
   /minimist@0.0.8:
     resolution: {integrity: sha512-miQKw5Hv4NS1Psg2517mV4e4dYNaO3++hjAvLOAzKqZ61rH8NS1SK+vbfBWZ5PY/Me/bEWhUwqMghEW5Fb9T7Q==}
     dev: false
@@ -8066,25 +8079,25 @@ packages:
       prelude-ls: 1.2.1
     dev: true
 
-  /type-coverage-core@2.27.1(typescript@5.4.3):
-    resolution: {integrity: sha512-W+PMYbhUsq+UWkrb7UkmyO7zF3zt4qZuQukyDM6eaiCIkMJclcVmR3O02clDk4FKpKPbzHictOmoIu3fYp+53g==}
+  /type-coverage-core@2.27.2(typescript@5.4.3):
+    resolution: {integrity: sha512-Iehy4Ap4n0DR21ag4YIIyU5kiRwvohRel37vfMbA0MP7/XMmm1UCfCb2Cz/WNLej/f/TlLwqg5RBgoR6kqoZ0g==}
     peerDependencies:
       typescript: 2 || 3 || 4 || 5
     dependencies:
       fast-glob: 3.3.2
-      minimatch: 9.0.3
+      minimatch: 9.0.4
       normalize-path: 3.0.0
       tslib: 2.6.2
       tsutils: 3.21.0(typescript@5.4.3)
       typescript: 5.4.3
     dev: true
 
-  /type-coverage@2.27.1(typescript@5.4.3):
-    resolution: {integrity: sha512-KAL2BRRvEACnyh830WoazZ5YJTmFBHEk/mCrJlVxNqjbAPrusJN0c4u3IzRrFMq/yRKsVEvwMp/awQDF4RgLSQ==}
+  /type-coverage@2.27.2(typescript@5.4.3):
+    resolution: {integrity: sha512-PxtgwMd5eXetrxemwd4Jiufj33erMc9UZLaN4jsCO4a1Xb6bLHJBeS+4XM6lSdY1Qe50BpNda4Lk1pZqVFJ20A==}
     hasBin: true
     dependencies:
       minimist: 1.2.8
-      type-coverage-core: 2.27.1(typescript@5.4.3)
+      type-coverage-core: 2.27.2(typescript@5.4.3)
     transitivePeerDependencies:
       - typescript
     dev: true
