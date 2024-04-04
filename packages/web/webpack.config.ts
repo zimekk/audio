@@ -14,7 +14,7 @@ const config = {
   },
   devtool: false, //dev && "inline-source-map",
   entry: ["regenerator-runtime/runtime", "react-hot-loader/patch"].concat(
-    require.resolve("./src")
+    require.resolve("./src"),
   ),
   module: {
     rules: [
@@ -24,7 +24,16 @@ const config = {
           // Creates `style` nodes from JS strings
           "style-loader",
           // Translates CSS into CommonJS
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              esModule: false,
+              // https://github.com/webpack-contrib/css-loader?tab=readme-ov-file#modules
+              modules: {
+                exportLocalsConvention: "asIs",
+              },
+            },
+          },
           // Compiles Sass to CSS
           {
             loader: "sass-loader",
