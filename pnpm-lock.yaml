@@ -194,7 +194,7 @@ importers:
         version: 4.0.1(react@18.2.0)
       webmidi:
         specifier: ^3.1.5
-        version: 3.1.8
+        version: 3.1.9
       youtube-player:
         specifier: ^5.6.0
         version: 5.6.0
@@ -8318,8 +8318,8 @@ packages:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
     dev: false
 
-  /webmidi@3.1.8:
-    resolution: {integrity: sha512-PCRic1iTpKxeheb888G0mDe6MBdz/u+s/xfdV6+1ZhZnS6dKtV9gMBth5cpmMip2Livv5lL+ep4/S9DCzHfumg==}
+  /webmidi@3.1.9:
+    resolution: {integrity: sha512-KwhkwnGGxE49yGruEVFeCRA8Zsx5i/4NEa/Gtcx34SKIh8NU6OsWo3xVtDu0MY7/wdDScq/Ymh+/v+XDbnBA1A==}
     engines: {node: '>=8.5'}
     dependencies:
       djipevents: 2.0.7
