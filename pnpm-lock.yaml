@@ -200,7 +200,7 @@ importers:
         version: 5.6.0
       zod:
         specifier: ^3.21.4
-        version: 3.22.5
+        version: 3.23.0
     devDependencies:
       '@babel/core':
         specifier: ^7.21.4
@@ -8723,6 +8723,6 @@ packages:
       - supports-color
     dev: false
 
-  /zod@3.22.5:
-    resolution: {integrity: sha512-HqnGsCdVZ2xc0qWPLdO25WnseXThh0kEYKIdV5F/hTHO75hNZFp8thxSeHhiPrHZKrFTo1SOgkAj9po5bexZlw==}
+  /zod@3.23.0:
+    resolution: {integrity: sha512-OFLT+LTocvabn6q76BTwVB0hExEBS0IduTr3cqZyMqEDbOnYmcU+y0tUAYbND4uwclpBGi4I4UUBGzylWpjLGA==}
     dev: false
