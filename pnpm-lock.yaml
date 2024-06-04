@@ -107,7 +107,7 @@ importers:
         version: 1.23.1(@tensorflow/tfjs-core@4.20.0)
       '@tensorflow-models/speech-commands':
         specifier: ^0.5.4
-        version: 0.5.4(@tensorflow/tfjs-core@4.20.0)(@tensorflow/tfjs-data@4.19.0)(@tensorflow/tfjs-layers@4.19.0)
+        version: 0.5.4(@tensorflow/tfjs-core@4.20.0)(@tensorflow/tfjs-data@4.20.0)(@tensorflow/tfjs-layers@4.19.0)
       '@tensorflow/tfjs-backend-cpu':
         specifier: ^4.0.0
         version: 4.20.0(@tensorflow/tfjs-core@4.20.0)
@@ -116,7 +116,7 @@ importers:
         version: 4.20.0
       '@tensorflow/tfjs-data':
         specifier: ^4.0.0
-        version: 4.19.0(@tensorflow/tfjs-core@4.20.0)
+        version: 4.20.0(@tensorflow/tfjs-core@4.20.0)
       '@tensorflow/tfjs-layers':
         specifier: ^4.0.0
         version: 4.19.0(@tensorflow/tfjs-core@4.20.0)
@@ -2110,7 +2110,7 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.20.0)(@tensorflow/tfjs-data@4.19.0)(@tensorflow/tfjs-layers@4.19.0):
+  /@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.20.0)(@tensorflow/tfjs-data@4.20.0)(@tensorflow/tfjs-layers@4.19.0):
     resolution: {integrity: sha512-r0c/MvC15/09xWujx1pKe6mA0nta+4jQWDXGkqfSVkXLo8ARrwcZ4mTGLlfvT43ySfidiveUo0m+P51+UK821Q==}
     peerDependencies:
       '@tensorflow/tfjs-core': ^3.0.0
@@ -2118,7 +2118,7 @@ packages:
       '@tensorflow/tfjs-layers': ^3.0.0
     dependencies:
       '@tensorflow/tfjs-core': 4.20.0
-      '@tensorflow/tfjs-data': 4.19.0(@tensorflow/tfjs-core@4.20.0)
+      '@tensorflow/tfjs-data': 4.20.0(@tensorflow/tfjs-core@4.20.0)
       '@tensorflow/tfjs-layers': 4.19.0(@tensorflow/tfjs-core@4.20.0)
     dev: false
 
@@ -2234,10 +2234,10 @@ packages:
       - encoding
     dev: false
 
-  /@tensorflow/tfjs-data@4.19.0(@tensorflow/tfjs-core@4.20.0):
-    resolution: {integrity: sha512-n0ZgJp5UhhBatohUt9pXSCCApusK+1Flyk6yDrQYuxOTjhRppd6jYrF7LCDG3hMFi3QLGl0jab1zYrn9BwtC/w==}
+  /@tensorflow/tfjs-data@4.20.0(@tensorflow/tfjs-core@4.20.0):
+    resolution: {integrity: sha512-k6S8joXhoXkatcoT6mYCxBzRCsnrLfnl6xjLe46SnXO0oEEy4Vuzbmp5Ydl1uU2hHr73zL91EdAC1k8Hng/+oA==}
     peerDependencies:
-      '@tensorflow/tfjs-core': 4.19.0
+      '@tensorflow/tfjs-core': 4.20.0
       seedrandom: ^3.0.5
     dependencies:
       '@tensorflow/tfjs-core': 4.20.0
@@ -2423,7 +2423,7 @@ packages:
   /@types/conventional-commits-parser@5.0.0:
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
     dependencies:
-      '@types/node': 20.12.10
+      '@types/node': 20.14.1
     dev: true
 
   /@types/cors@2.8.17:
@@ -2533,12 +2533,6 @@ packages:
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
     dependencies:
       '@types/node': 20.12.9
-    dev: true
-
-  /@types/node@20.12.10:
-    resolution: {integrity: sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==}
-    dependencies:
-      undici-types: 5.26.5
     dev: true
 
   /@types/node@20.12.9:
