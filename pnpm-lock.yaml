@@ -146,7 +146,7 @@ importers:
         version: 3.3.0
       hls.js:
         specifier: ^1.4.0
-        version: 1.5.11
+        version: 1.5.12
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -5249,8 +5249,8 @@ packages:
     hasBin: true
     dev: true
 
-  /hls.js@1.5.11:
-    resolution: {integrity: sha512-q3We1izi2+qkOO+TvZdHv+dx6aFzdtk3xc1/Qesrvto4thLTT/x/1FK85c5h1qZE4MmMBNgKg+MIW8nxQfxwBw==}
+  /hls.js@1.5.12:
+    resolution: {integrity: sha512-QxBMsawjqIPNfgAzaFFVJu0t8OwOyFXK3cuj9MX5L7byZZL+n9PeJXtIMu2FS0026Dt/hBAz9u2sDLZ4bQdv6w==}
     dev: false
 
   /hoist-non-react-statics@3.3.2:
