@@ -179,7 +179,7 @@ importers:
         version: 1.2.4
       standardized-audio-context:
         specifier: ^25.3.45
-        version: 25.3.73
+        version: 25.3.74
       stream-browserify:
         specifier: ^3.0.0
         version: 3.0.0
@@ -7667,8 +7667,8 @@ packages:
     resolution: {integrity: sha512-/Pm3goI0hdzudc32hnJzP4BxkZbiy0YtB5IEu2F4/8Qi6nv60REEzvUqOdZySL/DahWydjXO4CNnxiDnqL0BSw==}
     dev: false
 
-  /standardized-audio-context@25.3.73:
-    resolution: {integrity: sha512-PiFIweBipW18uz0rNrXs8A7MzdCcVcEHiqf0B5RzwBIgp0eSb3Cj11HcWidrgR0XYeEogokcMsIbrVjy63mhoA==}
+  /standardized-audio-context@25.3.74:
+    resolution: {integrity: sha512-xA0R0/k5tIyBAn9dmw0CibvUf5F112BJeIUo1e0iS5PvhyyZATzSrF8jBRiXPlX6GlULLLs2X6P5Z8DbDQFGVQ==}
     dependencies:
       '@babel/runtime': 7.24.7
       automation-events: 7.0.6
@@ -8040,7 +8040,7 @@ packages:
   /tone@14.9.17:
     resolution: {integrity: sha512-+Qb7M4NMua+tb5Z52+MEVmjye0fjJuIFBePx423pqr9E6/lHDqZAG+fUAvo+Ujm48q0s9bVLRAyT1ETJJglNtg==}
     dependencies:
-      standardized-audio-context: 25.3.73
+      standardized-audio-context: 25.3.74
       tslib: 2.6.2
     dev: false
 
