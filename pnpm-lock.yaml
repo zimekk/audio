@@ -179,7 +179,7 @@ importers:
         version: 1.2.4
       standardized-audio-context:
         specifier: ^25.3.45
-        version: 25.3.74
+        version: 25.3.75
       stream-browserify:
         specifier: ^3.0.0
         version: 3.0.0
@@ -1667,13 +1667,6 @@ packages:
   /@babel/regjsgen@0.8.0:
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
     dev: true
-
-  /@babel/runtime@7.24.7:
-    resolution: {integrity: sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      regenerator-runtime: 0.14.1
-    dev: false
 
   /@babel/runtime@7.24.8:
     resolution: {integrity: sha512-5F7SDGs1T72ZczbRwbGO9lQi0NLjQxzl6i4lJxLxfW9U5UluCSyEJeniWvnhl3/euNiqQVbo8zruhsDfid0esA==}
@@ -3418,11 +3411,11 @@ packages:
     resolution: {integrity: sha512-mEoYRjZhqkBSen/X9i2PNosqvafEsur8bI5MNoPr0wsJu9Nzlul3Yv1elYeMPsXxTxYhXLY8AZlScBvaK4mydg==}
     dev: false
 
-  /automation-events@7.0.6:
-    resolution: {integrity: sha512-3tFP+Xrk0u0JWdGEvJGtW9oUdWOnX1v6RwFapgIwanBvn21yCzgBMe+FlAPW+3kIQsxIDV9mFw//BzrGXOJQ5A==}
+  /automation-events@7.0.7:
+    resolution: {integrity: sha512-eg7aK2P0jrq4QqnZRWXOQJDYs6lxZXK/erfZ/WPTVPP/YQlgt+J0KvIzTo86zYszkru2J/QCW1FFJYgJVd7TgA==}
     engines: {node: '>=18.2.0'}
     dependencies:
-      '@babel/runtime': 7.24.7
+      '@babel/runtime': 7.24.8
       tslib: 2.6.3
     dev: false
 
@@ -4266,7 +4259,7 @@ packages:
   /djipevents@2.0.7:
     resolution: {integrity: sha512-KNFYaU85imxOCKOUsIR70Iz9E19r96/X7LSH+u0tSoZdpWcBdzoqtTsU+wuLhc6GMpSFob+KInkZAbfKi01Bjg==}
     dependencies:
-      '@babel/runtime': 7.24.7
+      '@babel/runtime': 7.24.8
     dev: false
 
   /dns-packet@5.6.1:
@@ -7691,11 +7684,11 @@ packages:
     resolution: {integrity: sha512-/Pm3goI0hdzudc32hnJzP4BxkZbiy0YtB5IEu2F4/8Qi6nv60REEzvUqOdZySL/DahWydjXO4CNnxiDnqL0BSw==}
     dev: false
 
-  /standardized-audio-context@25.3.74:
-    resolution: {integrity: sha512-xA0R0/k5tIyBAn9dmw0CibvUf5F112BJeIUo1e0iS5PvhyyZATzSrF8jBRiXPlX6GlULLLs2X6P5Z8DbDQFGVQ==}
+  /standardized-audio-context@25.3.75:
+    resolution: {integrity: sha512-N7/Si1d0kuo1umRnWOsQESqxJlkMxBZfdfNRo5HeE7pA0lmo6PNrMkOSiM0NutFxpwA+KcPexo5JkTWWAAUaNQ==}
     dependencies:
-      '@babel/runtime': 7.24.7
-      automation-events: 7.0.6
+      '@babel/runtime': 7.24.8
+      automation-events: 7.0.7
       tslib: 2.6.3
     dev: false
 
@@ -8064,7 +8057,7 @@ packages:
   /tone@14.9.17:
     resolution: {integrity: sha512-+Qb7M4NMua+tb5Z52+MEVmjye0fjJuIFBePx423pqr9E6/lHDqZAG+fUAvo+Ujm48q0s9bVLRAyT1ETJJglNtg==}
     dependencies:
-      standardized-audio-context: 25.3.74
+      standardized-audio-context: 25.3.75
       tslib: 2.6.2
     dev: false
 
