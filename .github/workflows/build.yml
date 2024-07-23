@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - dependabot/**
+      - renovate/**
 jobs:
   deploy:
     runs-on: ubuntu-latest
