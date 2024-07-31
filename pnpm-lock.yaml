@@ -134,7 +134,7 @@ importers:
         version: 6.0.3
       chroma-js:
         specifier: ^2.4.2
-        version: 2.4.2
+        version: 2.6.0
       classnames:
         specifier: ^2.3.2
         version: 2.5.1
@@ -3818,8 +3818,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /chroma-js@2.4.2:
-    resolution: {integrity: sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A==}
+  /chroma-js@2.6.0:
+    resolution: {integrity: sha512-BLHvCB9s8Z1EV4ethr6xnkl/P2YRFOGqfgvuMG/MyCbZPrTA+NeiByY6XvgF0zP4/2deU2CXnWyMa3zu1LqQ3A==}
     dev: false
 
   /chrome-trace-event@1.0.4:
