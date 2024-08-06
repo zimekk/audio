@@ -194,7 +194,7 @@ importers:
         version: 4.0.3(react@18.2.0)
       webmidi:
         specifier: ^3.1.5
-        version: 3.1.9
+        version: 3.1.11
       youtube-player:
         specifier: ^5.6.0
         version: 5.6.0
@@ -4383,7 +4383,7 @@ packages:
   /djipevents@2.0.7:
     resolution: {integrity: sha512-KNFYaU85imxOCKOUsIR70Iz9E19r96/X7LSH+u0tSoZdpWcBdzoqtTsU+wuLhc6GMpSFob+KInkZAbfKi01Bjg==}
     dependencies:
-      '@babel/runtime': 7.24.8
+      '@babel/runtime': 7.25.0
     dev: false
 
   /dns-packet@5.6.1:
@@ -8579,8 +8579,8 @@ packages:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
     dev: false
 
-  /webmidi@3.1.9:
-    resolution: {integrity: sha512-KwhkwnGGxE49yGruEVFeCRA8Zsx5i/4NEa/Gtcx34SKIh8NU6OsWo3xVtDu0MY7/wdDScq/Ymh+/v+XDbnBA1A==}
+  /webmidi@3.1.11:
+    resolution: {integrity: sha512-qtXy0cJ7FbE2SBRyN/vcDFSJvCdcKiWreAdxCAtJSu1btWyzOwDfJyFuheylrwn5Uj4nIINVKCJOeqYSeG75Tg==}
     engines: {node: '>=8.5'}
     dependencies:
       djipevents: 2.0.7
