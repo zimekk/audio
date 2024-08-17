@@ -19,7 +19,7 @@
     "@tombatossals/react-chords": "^0.2.10",
     "@tonejs/midi": "^2.0.28",
     "buffer": "^6.0.3",
-    "chroma-js": "^2.4.2",
+    "chroma-js": "^3.0.0",
     "classnames": "^2.3.2",
     "date-fns": "^3.0.0",
     "events": "^3.3.0",
