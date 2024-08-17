@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.0.0
-        version: 19.4.0(@types/node@22.3.0)(typescript@5.5.4)
+        version: 19.4.0(@types/node@20.12.9)(typescript@5.5.4)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.2.2
@@ -133,8 +133,8 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
       chroma-js:
-        specifier: ^2.4.2
-        version: 2.6.0
+        specifier: ^3.0.0
+        version: 3.0.0
       classnames:
         specifier: ^2.3.2
         version: 2.5.1
@@ -1791,14 +1791,14 @@ packages:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  /@commitlint/cli@19.4.0(@types/node@22.3.0)(typescript@5.5.4):
+  /@commitlint/cli@19.4.0(@types/node@20.12.9)(typescript@5.5.4):
     resolution: {integrity: sha512-sJX4J9UioVwZHq7JWM9tjT5bgWYaIN3rC4FP7YwfEwBYiIO+wMyRttRvQLNkow0vCdM0D67r9NEWU0Ui03I4Eg==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 19.3.0
       '@commitlint/lint': 19.2.2
-      '@commitlint/load': 19.4.0(@types/node@22.3.0)(typescript@5.5.4)
+      '@commitlint/load': 19.4.0(@types/node@20.12.9)(typescript@5.5.4)
       '@commitlint/read': 19.4.0
       '@commitlint/types': 19.0.3
       execa: 8.0.1
@@ -1867,7 +1867,7 @@ packages:
       '@commitlint/types': 19.0.3
     dev: true
 
-  /@commitlint/load@19.4.0(@types/node@22.3.0)(typescript@5.5.4):
+  /@commitlint/load@19.4.0(@types/node@20.12.9)(typescript@5.5.4):
     resolution: {integrity: sha512-I4lCWaEZYQJ1y+Y+gdvbGAx9pYPavqZAZ3/7/8BpWh+QjscAn8AjsUpLV2PycBsEx7gupq5gM4BViV9xwTIJuw==}
     engines: {node: '>=v18'}
     dependencies:
@@ -1877,7 +1877,7 @@ packages:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.5.4)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.3.0)(cosmiconfig@9.0.0)(typescript@5.5.4)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.9)(cosmiconfig@9.0.0)(typescript@5.5.4)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -2755,12 +2755,6 @@ packages:
     resolution: {integrity: sha512-AOmuRF0R2/5j1knA3c6G3HOk523Ga+l+ZXltX8SF1+5oqcXijjfTd8fY3XRZqSihEu9XhtQnKYLmkFaoxgsJHw==}
     dependencies:
       undici-types: 6.13.0
-    dev: true
-
-  /@types/node@22.3.0:
-    resolution: {integrity: sha512-nrWpWVaDZuaVc5X84xJ0vNrLvomM205oQyLsRt7OHNZbSHslcWsvgFR7O7hire2ZonjLrWBbedmotmIlJDVd6g==}
-    dependencies:
-      undici-types: 6.18.2
     dev: true
 
   /@types/offscreencanvas@2019.3.0:
@@ -3810,8 +3804,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /chroma-js@2.6.0:
-    resolution: {integrity: sha512-BLHvCB9s8Z1EV4ethr6xnkl/P2YRFOGqfgvuMG/MyCbZPrTA+NeiByY6XvgF0zP4/2deU2CXnWyMa3zu1LqQ3A==}
+  /chroma-js@3.0.0:
+    resolution: {integrity: sha512-ZFn4qxtZTvRJ7XatOLgaHGJYN10LoS6T0EMsu7IVayFG5+b6Yw8wCGQL5qLgo4B+wrRZ9niCrozOQ4a584bvaA==}
     dev: false
 
   /chrome-trace-event@1.0.4:
@@ -4079,7 +4073,7 @@ packages:
       vary: 1.1.2
     dev: false
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@22.3.0)(cosmiconfig@9.0.0)(typescript@5.5.4):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.9)(cosmiconfig@9.0.0)(typescript@5.5.4):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -4087,7 +4081,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 22.3.0
+      '@types/node': 20.12.9
       cosmiconfig: 9.0.0(typescript@5.5.4)
       jiti: 1.21.6
       typescript: 5.5.4
@@ -8443,10 +8437,6 @@ packages:
 
   /undici-types@6.13.0:
     resolution: {integrity: sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==}
-    dev: true
-
-  /undici-types@6.18.2:
-    resolution: {integrity: sha512-5ruQbENj95yDYJNS3TvcaxPMshV7aizdv/hWYjGIKoANWKjhWNBsr2YEuYZKodQulB1b8l7ILOuDQep3afowQQ==}
     dev: true
 
   /unicode-canonical-property-names-ecmascript@2.0.0:
