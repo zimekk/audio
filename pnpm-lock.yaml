@@ -104,22 +104,22 @@ importers:
     dependencies:
       '@magenta/music':
         specifier: ^1.23.1
-        version: 1.23.1(@tensorflow/tfjs-core@4.20.0)
+        version: 1.23.1(@tensorflow/tfjs-core@4.21.0)
       '@tensorflow-models/speech-commands':
         specifier: ^0.5.4
-        version: 0.5.4(@tensorflow/tfjs-core@4.20.0)(@tensorflow/tfjs-data@4.21.0)(@tensorflow/tfjs-layers@4.21.0)
+        version: 0.5.4(@tensorflow/tfjs-core@4.21.0)(@tensorflow/tfjs-data@4.21.0)(@tensorflow/tfjs-layers@4.21.0)
       '@tensorflow/tfjs-backend-cpu':
         specifier: ^4.0.0
-        version: 4.21.0(@tensorflow/tfjs-core@4.20.0)
+        version: 4.21.0(@tensorflow/tfjs-core@4.21.0)
       '@tensorflow/tfjs-core':
         specifier: ^4.0.0
-        version: 4.20.0
+        version: 4.21.0
       '@tensorflow/tfjs-data':
         specifier: ^4.0.0
-        version: 4.21.0(@tensorflow/tfjs-core@4.20.0)
+        version: 4.21.0(@tensorflow/tfjs-core@4.21.0)
       '@tensorflow/tfjs-layers':
         specifier: ^4.0.0
-        version: 4.21.0(@tensorflow/tfjs-core@4.20.0)
+        version: 4.21.0(@tensorflow/tfjs-core@4.21.0)
       '@tombatossals/chords-db':
         specifier: ^0.5.1
         version: 0.5.1
@@ -2219,11 +2219,11 @@ packages:
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
     dev: true
 
-  /@magenta/music@1.23.1(@tensorflow/tfjs-core@4.20.0):
+  /@magenta/music@1.23.1(@tensorflow/tfjs-core@4.21.0):
     resolution: {integrity: sha512-MKIf5nU5fJg/j0y+zCeuQuhA5D4TD0hWv+crOpNQLq7TRJ5GQnlz4WuShYzSw/gXj2ncWuYGr6ftP9DvqSsQkA==}
     dependencies:
       '@tensorflow/tfjs': 2.8.6
-      '@tensorflow/tfjs-backend-webgl': 2.8.6(@tensorflow/tfjs-core@4.20.0)
+      '@tensorflow/tfjs-backend-webgl': 2.8.6(@tensorflow/tfjs-core@4.21.0)
       '@tonejs/midi': 2.0.28
       fft.js: 4.0.4
       ndarray-resample: 1.0.1
@@ -2323,16 +2323,16 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.20.0)(@tensorflow/tfjs-data@4.21.0)(@tensorflow/tfjs-layers@4.21.0):
+  /@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.21.0)(@tensorflow/tfjs-data@4.21.0)(@tensorflow/tfjs-layers@4.21.0):
     resolution: {integrity: sha512-r0c/MvC15/09xWujx1pKe6mA0nta+4jQWDXGkqfSVkXLo8ARrwcZ4mTGLlfvT43ySfidiveUo0m+P51+UK821Q==}
     peerDependencies:
       '@tensorflow/tfjs-core': ^3.0.0
       '@tensorflow/tfjs-data': ^3.0.0
       '@tensorflow/tfjs-layers': ^3.0.0
     dependencies:
-      '@tensorflow/tfjs-core': 4.20.0
-      '@tensorflow/tfjs-data': 4.21.0(@tensorflow/tfjs-core@4.20.0)
-      '@tensorflow/tfjs-layers': 4.21.0(@tensorflow/tfjs-core@4.20.0)
+      '@tensorflow/tfjs-core': 4.21.0
+      '@tensorflow/tfjs-data': 4.21.0(@tensorflow/tfjs-core@4.21.0)
+      '@tensorflow/tfjs-layers': 4.21.0(@tensorflow/tfjs-core@4.21.0)
     dev: false
 
   /@tensorflow/tfjs-backend-cpu@2.8.6(@tensorflow/tfjs-core@2.8.6):
@@ -2346,24 +2346,24 @@ packages:
       seedrandom: 2.4.3
     dev: false
 
-  /@tensorflow/tfjs-backend-cpu@2.8.6(@tensorflow/tfjs-core@4.20.0):
+  /@tensorflow/tfjs-backend-cpu@2.8.6(@tensorflow/tfjs-core@4.21.0):
     resolution: {integrity: sha512-x9WTTE9p3Pon2D0d6HH1UCIJsU1w3v9sF3vxJcp+YStrjDefWoW5pwxHCckEKTRra7GWg3CwMKK3Si2dat4H1A==}
     engines: {yarn: '>= 1.3.2'}
     peerDependencies:
       '@tensorflow/tfjs-core': 2.8.6
     dependencies:
-      '@tensorflow/tfjs-core': 4.20.0
+      '@tensorflow/tfjs-core': 4.21.0
       '@types/seedrandom': 2.4.27
       seedrandom: 2.4.3
     dev: false
 
-  /@tensorflow/tfjs-backend-cpu@4.21.0(@tensorflow/tfjs-core@4.20.0):
+  /@tensorflow/tfjs-backend-cpu@4.21.0(@tensorflow/tfjs-core@4.21.0):
     resolution: {integrity: sha512-yS9Oisg4L48N7ML6677ilv1eP5Jt59S74skSU1cCsM4yBAtH4DAn9b89/JtqBISh6JadanfX26b4HCWQvMvqFg==}
     engines: {yarn: '>= 1.3.2'}
     peerDependencies:
       '@tensorflow/tfjs-core': 4.21.0
     dependencies:
-      '@tensorflow/tfjs-core': 4.20.0
+      '@tensorflow/tfjs-core': 4.21.0
       '@types/seedrandom': 2.4.34
       seedrandom: 3.0.5
     dev: false
@@ -2383,14 +2383,14 @@ packages:
       seedrandom: 2.4.3
     dev: false
 
-  /@tensorflow/tfjs-backend-webgl@2.8.6(@tensorflow/tfjs-core@4.20.0):
+  /@tensorflow/tfjs-backend-webgl@2.8.6(@tensorflow/tfjs-core@4.21.0):
     resolution: {integrity: sha512-kPgm3Dim0Li5MleybYKSZVUCu91ipDjZtTA5RrJx/Dli115qwWdiRGOHYwsIEY61hZoE0m3amjWLUBxtwMW1Nw==}
     engines: {yarn: '>= 1.3.2'}
     peerDependencies:
       '@tensorflow/tfjs-core': 2.8.6
     dependencies:
-      '@tensorflow/tfjs-backend-cpu': 2.8.6(@tensorflow/tfjs-core@4.20.0)
-      '@tensorflow/tfjs-core': 4.20.0
+      '@tensorflow/tfjs-backend-cpu': 2.8.6(@tensorflow/tfjs-core@4.21.0)
+      '@tensorflow/tfjs-core': 4.21.0
       '@types/offscreencanvas': 2019.3.0
       '@types/seedrandom': 2.4.27
       '@types/webgl-ext': 0.0.30
@@ -2419,8 +2419,8 @@ packages:
       - encoding
     dev: false
 
-  /@tensorflow/tfjs-core@4.20.0:
-    resolution: {integrity: sha512-m/cc9qDc63al9UhdbXRUYTLGfJJlhuN5tylAX/2pJMLj32c8a6ThGDJYoKzpf32n5g3MQGYLchjClDxeGdXMPQ==}
+  /@tensorflow/tfjs-core@4.21.0:
+    resolution: {integrity: sha512-ZbECwXps5wb9XXcGq4ZXvZDVjr5okc3I0+i/vU6bpQ+nVApyIrMiyEudP8f6vracVTvNmnlN62vUXoEsQb2F8g==}
     engines: {yarn: '>= 1.3.2'}
     dependencies:
       '@types/long': 4.0.2
@@ -2447,13 +2447,13 @@ packages:
       - encoding
     dev: false
 
-  /@tensorflow/tfjs-data@4.21.0(@tensorflow/tfjs-core@4.20.0):
+  /@tensorflow/tfjs-data@4.21.0(@tensorflow/tfjs-core@4.21.0):
     resolution: {integrity: sha512-LpJ/vyQMwYHkcVCqIRg7IVVw13VBY7rNAiuhmKP9S5NP/2ye4KA8BJ4XwDIDgjCVQM7glK9L8bMav++xCDf7xA==}
     peerDependencies:
       '@tensorflow/tfjs-core': 4.21.0
       seedrandom: ^3.0.5
     dependencies:
-      '@tensorflow/tfjs-core': 4.20.0
+      '@tensorflow/tfjs-core': 4.21.0
       '@types/node-fetch': 2.6.11
       node-fetch: 2.6.13
       string_decoder: 1.3.0
@@ -2469,12 +2469,12 @@ packages:
       '@tensorflow/tfjs-core': 2.8.6
     dev: false
 
-  /@tensorflow/tfjs-layers@4.21.0(@tensorflow/tfjs-core@4.20.0):
+  /@tensorflow/tfjs-layers@4.21.0(@tensorflow/tfjs-core@4.21.0):
     resolution: {integrity: sha512-a8KaMYlY3+llvE9079nvASKpaaf8xpCMdOjbgn+eGhdOGOcY7QuFUkd/2odvnXDG8fK/jffE1LoNOlfYoBHC4w==}
     peerDependencies:
       '@tensorflow/tfjs-core': 4.21.0
     dependencies:
-      '@tensorflow/tfjs-core': 4.20.0
+      '@tensorflow/tfjs-core': 4.21.0
     dev: false
 
   /@tensorflow/tfjs@2.8.6:
