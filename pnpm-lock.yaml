@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.0.0
-        version: 19.5.0(@types/node@22.7.5)(typescript@5.6.3)
+        version: 19.5.0(@types/node@20.12.9)(typescript@5.6.3)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.5.0
@@ -184,8 +184,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       tone:
-        specifier: ^14.7.77
-        version: 14.9.17
+        specifier: ^15.0.0
+        version: 15.0.4
       use-asset:
         specifier: ^1.0.4
         version: 1.0.4(react@18.2.0)
@@ -1791,14 +1791,14 @@ packages:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  /@commitlint/cli@19.5.0(@types/node@22.7.5)(typescript@5.6.3):
+  /@commitlint/cli@19.5.0(@types/node@20.12.9)(typescript@5.6.3):
     resolution: {integrity: sha512-gaGqSliGwB86MDmAAKAtV9SV1SHdmN8pnGq4EJU4+hLisQ7IFfx4jvU4s+pk6tl0+9bv6yT+CaZkufOinkSJIQ==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 19.5.0
       '@commitlint/lint': 19.5.0
-      '@commitlint/load': 19.5.0(@types/node@22.7.5)(typescript@5.6.3)
+      '@commitlint/load': 19.5.0(@types/node@20.12.9)(typescript@5.6.3)
       '@commitlint/read': 19.5.0
       '@commitlint/types': 19.5.0
       tinyexec: 0.3.0
@@ -1867,7 +1867,7 @@ packages:
       '@commitlint/types': 19.5.0
     dev: true
 
-  /@commitlint/load@19.5.0(@types/node@22.7.5)(typescript@5.6.3):
+  /@commitlint/load@19.5.0(@types/node@20.12.9)(typescript@5.6.3):
     resolution: {integrity: sha512-INOUhkL/qaKqwcTUvCE8iIUf5XHsEPCLY9looJ/ipzi7jtGhgmtH7OOFiNvwYgH7mA8osUWOUDV8t4E2HAi4xA==}
     engines: {node: '>=v18'}
     dependencies:
@@ -1877,7 +1877,7 @@ packages:
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.6.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.7.5)(cosmiconfig@9.0.0)(typescript@5.6.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.9)(cosmiconfig@9.0.0)(typescript@5.6.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -2774,12 +2774,6 @@ packages:
 
   /@types/node@22.5.4:
     resolution: {integrity: sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==}
-    dependencies:
-      undici-types: 6.19.8
-    dev: true
-
-  /@types/node@22.7.5:
-    resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
     dependencies:
       undici-types: 6.19.8
     dev: true
@@ -4129,7 +4123,7 @@ packages:
       vary: 1.1.2
     dev: false
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@22.7.5)(cosmiconfig@9.0.0)(typescript@5.6.3):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.9)(cosmiconfig@9.0.0)(typescript@5.6.3):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -4137,7 +4131,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 22.7.5
+      '@types/node': 20.12.9
       cosmiconfig: 9.0.0(typescript@5.6.3)
       jiti: 1.21.6
       typescript: 5.6.3
@@ -8204,7 +8198,14 @@ packages:
     resolution: {integrity: sha512-+Qb7M4NMua+tb5Z52+MEVmjye0fjJuIFBePx423pqr9E6/lHDqZAG+fUAvo+Ujm48q0s9bVLRAyT1ETJJglNtg==}
     dependencies:
       standardized-audio-context: 25.3.77
-      tslib: 2.6.2
+      tslib: 2.7.0
+    dev: false
+
+  /tone@15.0.4:
+    resolution: {integrity: sha512-Fr2xATgdkNhzwMZhrU0DXpkXQyambq73hjHRrBiC0Wkc6aPYRdmkySE9kRFAW878zgMiD+Lqvn/uNHt/7hbdnQ==}
+    dependencies:
+      standardized-audio-context: 25.3.77
+      tslib: 2.7.0
     dev: false
 
   /touch@3.1.1:
