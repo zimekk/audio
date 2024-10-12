@@ -60,7 +60,7 @@ function App() {
               {Object.entries(PAGES).map(([path, Page]) => (
                 <Route key={path} path={`/${path}/`} element={<Page />} />
               ))}
-              <Route path="/" element={<Redirect to="/piano/" />} />
+              <Route path="/" element={<Redirect to="/radio/" />} />
             </Routes>
           </Suspense>
         </Router>
