@@ -208,8 +208,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       tone:
-        specifier: ^14.7.77
-        version: 14.9.17
+        specifier: ^15.0.0
+        version: 15.0.4
       use-asset:
         specifier: ^1.0.4
         version: 1.0.4(react@18.3.1)
@@ -4450,6 +4450,9 @@ packages:
 
   tone@14.9.17:
     resolution: {integrity: sha512-+Qb7M4NMua+tb5Z52+MEVmjye0fjJuIFBePx423pqr9E6/lHDqZAG+fUAvo+Ujm48q0s9bVLRAyT1ETJJglNtg==}
+
+  tone@15.0.4:
+    resolution: {integrity: sha512-Fr2xATgdkNhzwMZhrU0DXpkXQyambq73hjHRrBiC0Wkc6aPYRdmkySE9kRFAW878zgMiD+Lqvn/uNHt/7hbdnQ==}
 
   touch@3.1.1:
     resolution: {integrity: sha512-r0eojU4bI8MnHr8c5bNo7lJDdI2qXlWWJk6a9EAFG7vbhTjElYhBVS3/miuE0uOuoLdb8Mc/rVfsmm6eo5o9GA==}
@@ -9543,6 +9546,11 @@ snapshots:
       tonal-scale: 2.2.2
 
   tone@14.9.17:
+    dependencies:
+      standardized-audio-context: 25.3.77
+      tslib: 2.7.0
+
+  tone@15.0.4:
     dependencies:
       standardized-audio-context: 25.3.77
       tslib: 2.7.0
