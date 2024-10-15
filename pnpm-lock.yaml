@@ -43,7 +43,7 @@ importers:
         version: 4.0.0(prettier@3.3.3)
       type-coverage:
         specifier: ^2.25.0
-        version: 2.29.1(typescript@5.6.3)
+        version: 2.29.5(typescript@5.6.3)
       typescript:
         specifier: ^5.0.4
         version: 5.6.3
@@ -3415,6 +3415,10 @@ packages:
   minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
 
+  minimatch@10.0.1:
+    resolution: {integrity: sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==}
+    engines: {node: 20 || >=22}
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -4500,13 +4504,13 @@ packages:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
 
-  type-coverage-core@2.29.1:
-    resolution: {integrity: sha512-lonikLRWnejbW9qsjoUsqXxQ3c4D0LPHaY2fsN5YD78sHAL27AaIoWYOjtitSqmv5UCS+3tv4qYjnj56vUH5eQ==}
+  type-coverage-core@2.29.5:
+    resolution: {integrity: sha512-UHvYiZGZ3N5K1gBfc0SRsqDBXtVBB56bFtSkqfV48id1qyLNfhbiz2/AnfJ1LugryI850Kzkub9UfeWRz0bfxA==}
     peerDependencies:
       typescript: 2 || 3 || 4 || 5
 
-  type-coverage@2.29.1:
-    resolution: {integrity: sha512-hsS1UYDrSltiSqMHJQn5wRFJiAeSA1PItMgeszxBkBjZEbtCzzmAU9dQswR1k8z0/ewj2/SbYEldYRurxgmxhA==}
+  type-coverage@2.29.5:
+    resolution: {integrity: sha512-/eHDRvofWHP0nseHBTn/2FXbMyzo9B6Y6Wa3RUAS7+Y+UsMQxN+dh8wWhhbjCdBcQOJkkH4v3UmPbc0mTuZKWQ==}
     hasBin: true
 
   type-fest@2.19.0:
@@ -8370,6 +8374,10 @@ snapshots:
 
   minimalistic-assert@1.0.1: {}
 
+  minimatch@10.0.1:
+    dependencies:
+      brace-expansion: 2.0.1
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
@@ -9590,20 +9598,20 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
 
-  type-coverage-core@2.29.1(typescript@5.6.3):
+  type-coverage-core@2.29.5(typescript@5.6.3):
     dependencies:
       fast-glob: 3.3.2
-      minimatch: 9.0.5
+      minimatch: 10.0.1
       normalize-path: 3.0.0
       tslib: 2.7.0
       tsutils: 3.21.0(typescript@5.6.3)
       typescript: 5.6.3
 
-  type-coverage@2.29.1(typescript@5.6.3):
+  type-coverage@2.29.5(typescript@5.6.3):
     dependencies:
       chalk: 4.1.2
       minimist: 1.2.8
-      type-coverage-core: 2.29.1(typescript@5.6.3)
+      type-coverage-core: 2.29.5(typescript@5.6.3)
     transitivePeerDependencies:
       - typescript
 
