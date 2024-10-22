@@ -131,7 +131,7 @@ importers:
         version: 1.23.1(@tensorflow/tfjs-core@4.22.0)
       '@tensorflow-models/speech-commands':
         specifier: ^0.5.4
-        version: 0.5.4(@tensorflow/tfjs-core@4.22.0)(@tensorflow/tfjs-data@4.22.0(@tensorflow/tfjs-core@4.22.0))(@tensorflow/tfjs-layers@4.21.0(@tensorflow/tfjs-core@4.22.0))
+        version: 0.5.4(@tensorflow/tfjs-core@4.22.0)(@tensorflow/tfjs-data@4.22.0(@tensorflow/tfjs-core@4.22.0))(@tensorflow/tfjs-layers@4.22.0(@tensorflow/tfjs-core@4.22.0))
       '@tensorflow/tfjs-backend-cpu':
         specifier: ^4.0.0
         version: 4.22.0(@tensorflow/tfjs-core@4.22.0)
@@ -143,7 +143,7 @@ importers:
         version: 4.22.0(@tensorflow/tfjs-core@4.22.0)
       '@tensorflow/tfjs-layers':
         specifier: ^4.0.0
-        version: 4.21.0(@tensorflow/tfjs-core@4.22.0)
+        version: 4.22.0(@tensorflow/tfjs-core@4.22.0)
       '@tombatossals/chords-db':
         specifier: ^0.5.1
         version: 0.5.1
@@ -1307,10 +1307,10 @@ packages:
     peerDependencies:
       '@tensorflow/tfjs-core': 2.8.6
 
-  '@tensorflow/tfjs-layers@4.21.0':
-    resolution: {integrity: sha512-a8KaMYlY3+llvE9079nvASKpaaf8xpCMdOjbgn+eGhdOGOcY7QuFUkd/2odvnXDG8fK/jffE1LoNOlfYoBHC4w==}
+  '@tensorflow/tfjs-layers@4.22.0':
+    resolution: {integrity: sha512-lybPj4ZNj9iIAPUj7a8ZW1hg8KQGfqWLlCZDi9eM/oNKCCAgchiyzx8OrYoWmRrB+AM6VNEeIT+2gZKg5ReihA==}
     peerDependencies:
-      '@tensorflow/tfjs-core': 4.21.0
+      '@tensorflow/tfjs-core': 4.22.0
 
   '@tensorflow/tfjs@2.8.6':
     resolution: {integrity: sha512-/Hk3YCAreNicuQJsAIG32UGHaQj8UwX8y8ZrKVb/CrXOhrRyZmxGSZt9KMVe8MDoydenuGhZCqJUIaWdIKIA5g==}
@@ -6012,11 +6012,11 @@ snapshots:
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
-  '@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.22.0)(@tensorflow/tfjs-data@4.22.0(@tensorflow/tfjs-core@4.22.0))(@tensorflow/tfjs-layers@4.21.0(@tensorflow/tfjs-core@4.22.0))':
+  '@tensorflow-models/speech-commands@0.5.4(@tensorflow/tfjs-core@4.22.0)(@tensorflow/tfjs-data@4.22.0(@tensorflow/tfjs-core@4.22.0))(@tensorflow/tfjs-layers@4.22.0(@tensorflow/tfjs-core@4.22.0))':
     dependencies:
       '@tensorflow/tfjs-core': 4.22.0
       '@tensorflow/tfjs-data': 4.22.0(@tensorflow/tfjs-core@4.22.0)
-      '@tensorflow/tfjs-layers': 4.21.0(@tensorflow/tfjs-core@4.22.0)
+      '@tensorflow/tfjs-layers': 4.22.0(@tensorflow/tfjs-core@4.22.0)
 
   '@tensorflow/tfjs-backend-cpu@2.8.6(@tensorflow/tfjs-core@2.8.6)':
     dependencies:
@@ -6103,7 +6103,7 @@ snapshots:
     dependencies:
       '@tensorflow/tfjs-core': 2.8.6
 
-  '@tensorflow/tfjs-layers@4.21.0(@tensorflow/tfjs-core@4.22.0)':
+  '@tensorflow/tfjs-layers@4.22.0(@tensorflow/tfjs-core@4.22.0)':
     dependencies:
       '@tensorflow/tfjs-core': 4.22.0
 
