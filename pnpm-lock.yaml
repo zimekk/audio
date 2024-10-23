@@ -95,7 +95,7 @@ importers:
         version: 3.1.7
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.13.1(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -179,7 +179,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-guitar:
         specifier: ^1.1.2
-        version: 1.1.2(@types/react@18.3.11)(react@18.3.1)
+        version: 1.1.2(@types/react@18.3.12)(react@18.3.1)
       react-guitar-sound:
         specifier: ^1.1.2
         version: 1.1.2(react@18.3.1)
@@ -252,7 +252,7 @@ importers:
         version: 20.16.14
       '@types/react':
         specifier: ^18.3.11
-        version: 18.3.11
+        version: 18.3.12
       '@types/react-dom':
         specifier: ^18.3.1
         version: 18.3.1
@@ -294,7 +294,7 @@ importers:
         version: 1.4.4
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.13.1(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -1442,8 +1442,8 @@ packages:
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
 
-  '@types/prop-types@15.7.12':
-    resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+  '@types/prop-types@15.7.13':
+    resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -1460,8 +1460,8 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@18.3.11':
-    resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
+  '@types/react@18.3.12':
+    resolution: {integrity: sha512-D2wOSq/d6Agt28q7rSI3jhU7G6aiuzljDGZ2hTZHIkrTLUI+AF3WMeKkEZ9nN2fkBAlcktT6vcZjDFiIhMYEQw==}
 
   '@types/redux-actions@2.6.5':
     resolution: {integrity: sha512-RgXOigay5cNweP+xH1ru+Vaaj1xXYLpWIfSVO8cSA8Ii2xvR+HRfWYdLe1UVOA8X0kIklalGOa0DTDyld0obkg==}
@@ -5726,7 +5726,7 @@ snapshots:
 
   '@emotion/memoize@0.8.1': {}
 
-  '@emotion/react@11.11.4(@types/react@18.3.11)(react@18.3.1)':
+  '@emotion/react@11.11.4(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@emotion/babel-plugin': 11.11.0
@@ -5738,7 +5738,7 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       react: 18.3.1
     optionalDependencies:
-      '@types/react': 18.3.11
+      '@types/react': 18.3.12
     transitivePeerDependencies:
       - supports-color
 
@@ -6268,7 +6268,7 @@ snapshots:
 
   '@types/parse-json@4.0.2': {}
 
-  '@types/prop-types@15.7.12': {}
+  '@types/prop-types@15.7.13': {}
 
   '@types/qs@6.9.15': {}
 
@@ -6276,22 +6276,22 @@ snapshots:
 
   '@types/react-dom@18.3.1':
     dependencies:
-      '@types/react': 18.3.11
+      '@types/react': 18.3.12
 
   '@types/react-router-dom@5.3.3':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.3.11
+      '@types/react': 18.3.12
       '@types/react-router': 5.1.20
 
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.3.11
+      '@types/react': 18.3.12
 
-  '@types/react@18.3.11':
+  '@types/react@18.3.12':
     dependencies:
-      '@types/prop-types': 15.7.12
+      '@types/prop-types': 15.7.13
       csstype: 3.1.3
 
   '@types/redux-actions@2.6.5': {}
@@ -8805,9 +8805,9 @@ snapshots:
       '@tonaljs/midi': 4.9.3
       '@tonaljs/note': 4.10.3
 
-  react-guitar@1.1.2(@types/react@18.3.11)(react@18.3.1):
+  react-guitar@1.1.2(@types/react@18.3.12)(react@18.3.1):
     dependencies:
-      '@emotion/react': 11.11.4(@types/react@18.3.11)(react@18.3.1)
+      '@emotion/react': 11.11.4(@types/react@18.3.12)(react@18.3.1)
       '@tonaljs/interval': 4.8.2
       '@tonaljs/note': 4.10.3
       classnames: 2.5.1
@@ -8820,7 +8820,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  react-hot-loader@4.13.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-hot-loader@4.13.1(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       fast-levenshtein: 2.0.6
       global: 4.4.0
@@ -8833,7 +8833,7 @@ snapshots:
       shallowequal: 1.1.0
       source-map: 0.7.4
     optionalDependencies:
-      '@types/react': 18.3.11
+      '@types/react': 18.3.12
 
   react-is@16.13.1: {}
 
