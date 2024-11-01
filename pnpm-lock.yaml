@@ -101,7 +101,7 @@ importers:
         version: 0.14.1
       sass-loader:
         specifier: ^16.0.0
-        version: 16.0.2(sass@1.80.0)(webpack@5.96.0)
+        version: 16.0.3(sass@1.80.0)(webpack@5.96.0)
       style-loader:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.96.0)
@@ -303,7 +303,7 @@ importers:
         version: 1.80.0
       sass-loader:
         specifier: ^16.0.0
-        version: 16.0.2(sass@1.80.0)(webpack@5.96.0)
+        version: 16.0.3(sass@1.80.0)(webpack@5.96.0)
       serve:
         specifier: ^14.2.0
         version: 14.2.4
@@ -4013,8 +4013,8 @@ packages:
   sample-player@0.5.5:
     resolution: {integrity: sha512-VQ9pXPJ1m/eTH8QK6OQ8Dn/HSVToNyY9w9vnv+y/yjkJeRm87tJ/gBEm66jItfSLhKe6VG1DfX8+oT+Mg7QUpg==}
 
-  sass-loader@16.0.2:
-    resolution: {integrity: sha512-Ll6iXZ1EYwYT19SqW4mSBb76vSSi8JgzElmzIerhEGgzB5hRjDQIWsPmuk1UrAXkR16KJHqVY0eH+5/uw9Tmfw==}
+  sass-loader@16.0.3:
+    resolution: {integrity: sha512-gosNorT1RCkuCMyihv6FBRR7BMV06oKRAs+l4UMp1mlcVg9rWN6KMmUj3igjQwmYys4mDP3etEYJgiHRbgHCHA==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -8973,7 +8973,7 @@ snapshots:
       midimessage: 1.0.5
       note-parser: 1.1.0
 
-  sass-loader@16.0.2(sass@1.80.0)(webpack@5.96.0):
+  sass-loader@16.0.3(sass@1.80.0)(webpack@5.96.0):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
