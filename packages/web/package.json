@@ -29,7 +29,7 @@
     "react-guitar": "^1.1.2",
     "react-guitar-sound": "^1.1.2",
     "react-guitar-tunings": "^1.1.2",
-    "react-router-dom": "^6.10.0",
+    "react-router-dom": "^7.0.0",
     "rxjs": "^7.8.1",
     "spectrogram": "^0.0.7",
     "spotify-web-api-js": "^1.5.2",
