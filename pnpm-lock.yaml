@@ -95,7 +95,7 @@ importers:
         version: 3.1.7
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@18.3.14)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.13.1(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -172,23 +172,23 @@ importers:
         specifier: ^1.4.0
         version: 1.5.17
       react:
-        specifier: ^18.3.1
-        version: 18.3.1
+        specifier: ^19.0.0
+        version: 19.0.0
       react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
       react-guitar:
         specifier: ^1.1.2
-        version: 1.1.2(@types/react@18.3.14)(react@18.3.1)
+        version: 1.1.2(@types/react@19.0.1)(react@19.0.0)
       react-guitar-sound:
         specifier: ^1.1.2
-        version: 1.1.2(react@18.3.1)
+        version: 1.1.2(react@19.0.0)
       react-guitar-tunings:
         specifier: ^1.1.2
         version: 1.1.2
       react-router-dom:
         specifier: ^7.0.0
-        version: 7.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 7.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       rxjs:
         specifier: ^7.8.1
         version: 7.8.1
@@ -212,10 +212,10 @@ importers:
         version: 14.9.17
       use-asset:
         specifier: ^1.0.4
-        version: 1.0.4(react@18.3.1)
+        version: 1.0.4(react@19.0.0)
       use-sound:
         specifier: ^4.0.1
-        version: 4.0.3(react@18.3.1)
+        version: 4.0.3(react@19.0.0)
       webmidi:
         specifier: ^3.1.5
         version: 3.1.12
@@ -240,7 +240,7 @@ importers:
         version: 7.26.0(@babel/core@7.26.0)
       '@hot-loader/react-dom':
         specifier: ^17.0.2
-        version: 17.0.2(react@18.3.1)
+        version: 17.0.2(react@19.0.0)
       '@types/chroma-js':
         specifier: ^2.4.0
         version: 2.4.4
@@ -251,11 +251,11 @@ importers:
         specifier: ^22.0.0
         version: 22.8.5
       '@types/react':
-        specifier: ^18.3.11
-        version: 18.3.14
+        specifier: ^19.0.0
+        version: 19.0.1
       '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.2
+        specifier: ^19.0.0
+        version: 19.0.1
       '@types/react-router-dom':
         specifier: ^5.3.3
         version: 5.3.3
@@ -294,7 +294,7 @@ importers:
         version: 1.4.4
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@18.3.14)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.13.1(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -1461,17 +1461,14 @@ packages:
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
 
-  '@types/prop-types@15.7.14':
-    resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
-
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
 
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
 
-  '@types/react-dom@18.3.2':
-    resolution: {integrity: sha512-Fqp+rcvem9wEnGr3RY8dYNvSQ8PoLqjZ9HLgaPUOjJJD120uDyOxOjc/39M4Kddp9JQCxpGQbnhVQF0C0ncYVg==}
+  '@types/react-dom@19.0.1':
+    resolution: {integrity: sha512-hljHij7MpWPKF6u5vojuyfV0YA4YURsQG7KT6SzV0Zs2BXAtgdTxG6A229Ub/xiWV4w/7JL8fi6aAyjshH4meA==}
 
   '@types/react-router-dom@5.3.3':
     resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
@@ -1479,8 +1476,8 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@18.3.14':
-    resolution: {integrity: sha512-NzahNKvjNhVjuPBQ+2G7WlxstQ+47kXZNHlUvFakDViuIEfGY926GqhMueQFZ7woG+sPiQKlF36XfrIUVSUfFg==}
+  '@types/react@19.0.1':
+    resolution: {integrity: sha512-YW6614BDhqbpR5KtUYzTA+zlA7nayzJRA9ljz9CQoxthR0sDisYZLuvSMsil36t4EH/uAt8T52Xb4sVw17G+SQ==}
 
   '@types/redux-actions@2.6.5':
     resolution: {integrity: sha512-RgXOigay5cNweP+xH1ru+Vaaj1xXYLpWIfSVO8cSA8Ii2xvR+HRfWYdLe1UVOA8X0kIklalGOa0DTDyld0obkg==}
@@ -3824,10 +3821,10 @@ packages:
     peerDependencies:
       react: ^16.14.0
 
-  react-dom@18.3.1:
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+  react-dom@19.0.0:
+    resolution: {integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==}
     peerDependencies:
-      react: ^18.3.1
+      react: ^19.0.0
 
   react-guitar-sound@1.1.2:
     resolution: {integrity: sha512-Iz6L2USg2RtODslYb2POHCamXrqmLGDTXUznRTUXXsZnsRyVlPaVhby4y3+CN2OSStIZxAMLv1LaGeM2E40h/A==}
@@ -3880,8 +3877,8 @@ packages:
     resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
     engines: {node: '>=0.10.0'}
 
-  react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+  react@19.0.0:
+    resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
     engines: {node: '>=0.10.0'}
 
   readable-stream@1.0.34:
@@ -4067,8 +4064,8 @@ packages:
   scheduler@0.20.2:
     resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
 
-  scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+  scheduler@0.25.0:
+    resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
 
   schema-utils@3.3.0:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==}
@@ -5733,19 +5730,19 @@ snapshots:
 
   '@emotion/memoize@0.8.1': {}
 
-  '@emotion/react@11.11.4(@types/react@18.3.14)(react@18.3.1)':
+  '@emotion/react@11.11.4(@types/react@19.0.1)(react@19.0.0)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@emotion/babel-plugin': 11.11.0
       '@emotion/cache': 11.11.0
       '@emotion/serialize': 1.1.3
-      '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@18.3.1)
+      '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@19.0.0)
       '@emotion/utils': 1.2.1
       '@emotion/weak-memoize': 0.3.1
       hoist-non-react-statics: 3.3.2
-      react: 18.3.1
+      react: 19.0.0
     optionalDependencies:
-      '@types/react': 18.3.14
+      '@types/react': 19.0.1
     transitivePeerDependencies:
       - supports-color
 
@@ -5761,9 +5758,9 @@ snapshots:
 
   '@emotion/unitless@0.8.1': {}
 
-  '@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@18.3.1)':
+  '@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@19.0.0)':
     dependencies:
-      react: 18.3.1
+      react: 19.0.0
 
   '@emotion/utils@1.2.1': {}
 
@@ -5808,11 +5805,11 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
-  '@hot-loader/react-dom@17.0.2(react@18.3.1)':
+  '@hot-loader/react-dom@17.0.2(react@19.0.0)':
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react: 18.3.1
+      react: 19.0.0
       scheduler: 0.20.2
 
   '@humanfs/core@0.19.1': {}
@@ -6287,30 +6284,27 @@ snapshots:
 
   '@types/parse-json@4.0.2': {}
 
-  '@types/prop-types@15.7.14': {}
-
   '@types/qs@6.9.15': {}
 
   '@types/range-parser@1.2.7': {}
 
-  '@types/react-dom@18.3.2':
+  '@types/react-dom@19.0.1':
     dependencies:
-      '@types/react': 18.3.14
+      '@types/react': 19.0.1
 
   '@types/react-router-dom@5.3.3':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.3.14
+      '@types/react': 19.0.1
       '@types/react-router': 5.1.20
 
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.3.14
+      '@types/react': 19.0.1
 
-  '@types/react@18.3.14':
+  '@types/react@19.0.1':
     dependencies:
-      '@types/prop-types': 15.7.14
       csstype: 3.1.3
 
   '@types/redux-actions@2.6.5': {}
@@ -8782,15 +8776,14 @@ snapshots:
       react: 16.14.0
       scheduler: 0.19.1
 
-  react-dom@18.3.1(react@18.3.1):
+  react-dom@19.0.0(react@19.0.0):
     dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
+      react: 19.0.0
+      scheduler: 0.25.0
 
-  react-guitar-sound@1.1.2(react@18.3.1):
+  react-guitar-sound@1.1.2(react@19.0.0):
     dependencies:
-      react: 18.3.1
+      react: 19.0.0
       soundfont-player: 0.12.0
       tone: 14.9.17
 
@@ -8799,9 +8792,9 @@ snapshots:
       '@tonaljs/midi': 4.9.3
       '@tonaljs/note': 4.10.3
 
-  react-guitar@1.1.2(@types/react@18.3.14)(react@18.3.1):
+  react-guitar@1.1.2(@types/react@19.0.1)(react@19.0.0):
     dependencies:
-      '@emotion/react': 11.11.4(@types/react@18.3.14)(react@18.3.1)
+      '@emotion/react': 11.11.4(@types/react@19.0.1)(react@19.0.0)
       '@tonaljs/interval': 4.8.2
       '@tonaljs/note': 4.10.3
       classnames: 2.5.1
@@ -8809,45 +8802,45 @@ snapshots:
       keyboard-key: 1.1.0
       lodash.range: 3.2.0
       lodash.uniqueid: 4.0.1
-      react: 18.3.1
+      react: 19.0.0
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
 
-  react-hot-loader@4.13.1(@types/react@18.3.14)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-hot-loader@4.13.1(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       fast-levenshtein: 2.0.6
       global: 4.4.0
       hoist-non-react-statics: 3.3.2
       loader-utils: 2.0.4
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
       react-lifecycles-compat: 3.0.4
       shallowequal: 1.1.0
       source-map: 0.7.4
     optionalDependencies:
-      '@types/react': 18.3.14
+      '@types/react': 19.0.1
 
   react-is@16.13.1: {}
 
   react-lifecycles-compat@3.0.4: {}
 
-  react-router-dom@7.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router-dom@7.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-router: 7.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      react-router: 7.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
-  react-router@7.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router@7.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@types/cookie': 0.6.0
       cookie: 1.0.2
-      react: 18.3.1
+      react: 19.0.0
       set-cookie-parser: 2.7.1
       turbo-stream: 2.4.0
     optionalDependencies:
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 19.0.0(react@19.0.0)
 
   react@16.14.0:
     dependencies:
@@ -8855,9 +8848,7 @@ snapshots:
       object-assign: 4.1.1
       prop-types: 15.8.1
 
-  react@18.3.1:
-    dependencies:
-      loose-envify: 1.4.0
+  react@19.0.0: {}
 
   readable-stream@1.0.34:
     dependencies:
@@ -9059,9 +9050,7 @@ snapshots:
       loose-envify: 1.4.0
       object-assign: 4.1.1
 
-  scheduler@0.23.2:
-    dependencies:
-      loose-envify: 1.4.0
+  scheduler@0.25.0: {}
 
   schema-utils@3.3.0:
     dependencies:
@@ -9705,15 +9694,15 @@ snapshots:
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.97.1)
 
-  use-asset@1.0.4(react@18.3.1):
+  use-asset@1.0.4(react@19.0.0):
     dependencies:
       fast-deep-equal: 3.1.3
-      react: 18.3.1
+      react: 19.0.0
 
-  use-sound@4.0.3(react@18.3.1):
+  use-sound@4.0.3(react@19.0.0):
     dependencies:
       howler: 2.2.4
-      react: 18.3.1
+      react: 19.0.0
 
   util-deprecate@1.0.2: {}
 
