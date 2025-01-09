@@ -242,8 +242,8 @@ importers:
         specifier: ^17.0.2
         version: 17.0.2(react@19.0.0)
       '@types/chroma-js':
-        specifier: ^2.4.0
-        version: 2.4.5
+        specifier: ^3.0.0
+        version: 3.1.0
       '@types/html-webpack-plugin':
         specifier: ^3.2.6
         version: 3.2.9
@@ -1374,8 +1374,8 @@ packages:
   '@types/bonjour@3.5.13':
     resolution: {integrity: sha512-z9fJ5Im06zvUL548KvYNecEVlA7cVDkGUi6kZusb04mpyEFKCIZJvloCcmpmLaIahDpOQGHaHmG6imtPMmPXGQ==}
 
-  '@types/chroma-js@2.4.5':
-    resolution: {integrity: sha512-6ISjhzJViaPCy2q2e6PgK+8HcHQDQ0V2LDiKmYAh+jJlLqDa6HbwDh0wOevHY0kHHUx0iZwjSRbVD47WOUx5EQ==}
+  '@types/chroma-js@3.1.0':
+    resolution: {integrity: sha512-Uwl3SOtUkbQ6Ye6ZYu4q4xdLGBzmY839sEHYtOT7i691neeyd+7fXWT5VIkcUSfNwIFrIjQutNYQn9h4q5HFvg==}
 
   '@types/clean-css@4.2.11':
     resolution: {integrity: sha512-Y8n81lQVTAfP2TOdtJJEsCoYl1AnOkqDqMvXb9/7pfgZZ7r8YrEyurrAvAoAjHOGXKRybay+5CsExqIH6liccw==}
@@ -6251,7 +6251,7 @@ snapshots:
     dependencies:
       '@types/node': 22.8.5
 
-  '@types/chroma-js@2.4.5': {}
+  '@types/chroma-js@3.1.0': {}
 
   '@types/clean-css@4.2.11':
     dependencies:
