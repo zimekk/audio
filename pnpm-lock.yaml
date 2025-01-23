@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.0.0
-        version: 19.6.1(@types/node@22.10.9)(typescript@5.7.3)
+        version: 19.6.1(@types/node@22.10.10)(typescript@5.7.3)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.6.0
@@ -80,7 +80,7 @@ importers:
         version: 0.0.39
       '@types/node':
         specifier: ^22.0.0
-        version: 22.10.9
+        version: 22.10.10
       babel-loader:
         specifier: ^9.1.2
         version: 9.2.1(@babel/core@7.26.0)(webpack@5.97.1)
@@ -107,7 +107,7 @@ importers:
         version: 4.0.0(webpack@5.97.1)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@types/node@22.10.9)(typescript@5.7.3)
+        version: 10.9.2(@types/node@22.10.10)(typescript@5.7.3)
       typescript:
         specifier: ^5.0.4
         version: 5.7.3
@@ -249,7 +249,7 @@ importers:
         version: 3.2.9
       '@types/node':
         specifier: ^22.0.0
-        version: 22.10.9
+        version: 22.10.10
       '@types/react':
         specifier: ^19.0.0
         version: 19.0.8
@@ -312,7 +312,7 @@ importers:
         version: 4.0.0(webpack@5.97.1)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@types/node@22.10.9)(typescript@5.7.3)
+        version: 10.9.2(@types/node@22.10.10)(typescript@5.7.3)
       typescript:
         specifier: ^5.0.4
         version: 5.7.3
@@ -1455,8 +1455,8 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
-  '@types/node@22.10.9':
-    resolution: {integrity: sha512-Ir6hwgsKyNESl/gLOcEz3krR4CBGgliDqBQ2ma4wIhEx0w+xnoeTq3tdrNw15kU3SxogDjOgv9sqdtLW8mIHaw==}
+  '@types/node@22.10.10':
+    resolution: {integrity: sha512-X47y/mPNzxviAGY5TcYPtYL8JsY3kAq2n8fMmKoRCxq/c4v4pyGNCzM2R6+M5/umG4ZfHuT+sgqDYqWc9rJ6ww==}
 
   '@types/offscreencanvas@2019.3.0':
     resolution: {integrity: sha512-esIJx9bQg+QYF0ra8GnvfianIY8qWB0GBx54PK5Eps6m+xTj86KLavHv6qDhzKcu5UUOgNfJ2pWaIIV7TRUd9Q==}
@@ -5669,11 +5669,11 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@commitlint/cli@19.6.1(@types/node@22.10.9)(typescript@5.7.3)':
+  '@commitlint/cli@19.6.1(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
       '@commitlint/format': 19.5.0
       '@commitlint/lint': 19.6.0
-      '@commitlint/load': 19.6.1(@types/node@22.10.9)(typescript@5.7.3)
+      '@commitlint/load': 19.6.1(@types/node@22.10.10)(typescript@5.7.3)
       '@commitlint/read': 19.5.0
       '@commitlint/types': 19.5.0
       tinyexec: 0.3.1
@@ -5720,7 +5720,7 @@ snapshots:
       '@commitlint/rules': 19.6.0
       '@commitlint/types': 19.5.0
 
-  '@commitlint/load@19.6.1(@types/node@22.10.9)(typescript@5.7.3)':
+  '@commitlint/load@19.6.1(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
       '@commitlint/config-validator': 19.5.0
       '@commitlint/execute-rule': 19.5.0
@@ -5728,7 +5728,7 @@ snapshots:
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.7.3)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.10.9)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3)
+      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.10.10)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -6264,37 +6264,37 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/bonjour@3.5.13':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/chroma-js@3.1.0': {}
 
   '@types/clean-css@4.2.11':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       source-map: 0.6.1
 
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 5.0.2
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/cookie@0.6.0': {}
 
   '@types/cors@2.8.17':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/eslint-scope@3.7.7':
     dependencies:
@@ -6310,14 +6310,14 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.5':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
 
   '@types/express-serve-static-core@5.0.2':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       '@types/qs': 6.9.17
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -6349,7 +6349,7 @@ snapshots:
 
   '@types/http-proxy@1.17.15':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/isomorphic-fetch@0.0.39': {}
 
@@ -6361,14 +6361,14 @@ snapshots:
 
   '@types/node-fetch@2.6.11':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       form-data: 4.0.1
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
-  '@types/node@22.10.9':
+  '@types/node@22.10.10':
     dependencies:
       undici-types: 6.20.0
 
@@ -6416,7 +6416,7 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -6425,12 +6425,12 @@ snapshots:
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       '@types/send': 0.17.4
 
   '@types/sockjs@0.3.36':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/source-list-map@0.1.6': {}
 
@@ -6451,13 +6451,13 @@ snapshots:
 
   '@types/webpack-sources@3.2.3':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       '@types/source-list-map': 0.1.6
       source-map: 0.7.4
 
   '@types/webpack@4.41.38':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       '@types/tapable': 1.0.12
       '@types/uglify-js': 3.17.5
       '@types/webpack-sources': 3.2.3
@@ -6466,7 +6466,7 @@ snapshots:
 
   '@types/webpack@5.28.5(webpack-cli@6.0.1)':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       tapable: 2.2.1
       webpack: 5.97.1(webpack-cli@6.0.1)
     transitivePeerDependencies:
@@ -6477,7 +6477,7 @@ snapshots:
 
   '@types/ws@8.5.13':
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
 
   '@types/youtube-player@5.5.11': {}
 
@@ -7192,9 +7192,9 @@ snapshots:
       object-assign: 4.1.1
       vary: 1.1.2
 
-  cosmiconfig-typescript-loader@6.1.0(@types/node@22.10.9)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3):
+  cosmiconfig-typescript-loader@6.1.0(@types/node@22.10.10)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3):
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       cosmiconfig: 9.0.0(typescript@5.7.3)
       jiti: 2.4.1
       typescript: 5.7.3
@@ -8340,7 +8340,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -8913,7 +8913,7 @@ snapshots:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       long: 4.0.0
 
   proxy-addr@2.0.7:
@@ -9771,14 +9771,14 @@ snapshots:
     dependencies:
       typescript: 5.7.3
 
-  ts-node@10.9.2(@types/node@22.10.9)(typescript@5.7.3):
+  ts-node@10.9.2(@types/node@22.10.10)(typescript@5.7.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.10.9
+      '@types/node': 22.10.10
       acorn: 8.12.1
       acorn-walk: 8.3.2
       arg: 4.1.3
