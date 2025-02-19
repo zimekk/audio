@@ -38,7 +38,7 @@
     "stream-browserify": "^3.0.0",
     "tone": "^14.7.77",
     "use-asset": "^1.0.4",
-    "use-sound": "^4.0.1",
+    "use-sound": "^5.0.0",
     "webmidi": "^3.1.5",
     "youtube-player": "^5.6.0",
     "zod": "^3.23.8"
