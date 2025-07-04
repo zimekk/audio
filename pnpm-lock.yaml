@@ -80,7 +80,7 @@ importers:
         version: 0.0.39
       '@types/node':
         specifier: ^22.0.0
-        version: 22.15.29
+        version: 22.16.0
       babel-loader:
         specifier: ^10.0.0
         version: 10.0.0(@babel/core@7.28.0)(webpack@5.99.9)
@@ -107,7 +107,7 @@ importers:
         version: 4.0.0(webpack@5.99.9)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@types/node@22.15.29)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.16.0)(typescript@5.8.3)
       typescript:
         specifier: ^5.0.4
         version: 5.8.3
@@ -249,7 +249,7 @@ importers:
         version: 3.2.9
       '@types/node':
         specifier: ^22.0.0
-        version: 22.15.29
+        version: 22.16.0
       '@types/react':
         specifier: ^19.0.0
         version: 19.1.8
@@ -312,7 +312,7 @@ importers:
         version: 4.0.0(webpack@5.99.9)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@types/node@22.15.29)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.16.0)(typescript@5.8.3)
       typescript:
         specifier: ^5.0.4
         version: 5.8.3
@@ -1448,8 +1448,8 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
-  '@types/node@22.15.29':
-    resolution: {integrity: sha512-LNdjOkUDlU1RZb8e1kOIUpN1qQUlzGkEtbVNo53vbrwDg5om6oduhm4SiUaPW5ASTXhAiP0jInWG8Qx9fVlOeQ==}
+  '@types/node@22.16.0':
+    resolution: {integrity: sha512-B2egV9wALML1JCpv3VQoQ+yesQKAmNMBIAY7OteVrikcOcAkWm+dGL6qpeCktPjAv6N1JLnhbNiqS35UpFyBsQ==}
 
   '@types/node@24.0.10':
     resolution: {integrity: sha512-ENHwaH+JIRTDIEEbDK6QSQntAYGtbvdDXnMXnZaZ6k13Du1dPMmprkEHIL7ok2Wl2aZevetwTAb5S+7yIF+enA==}
@@ -6247,27 +6247,27 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/bonjour@3.5.13':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/chroma-js@3.1.1': {}
 
   '@types/clean-css@4.2.11':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       source-map: 0.6.1
 
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 4.19.6
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
@@ -6275,7 +6275,7 @@ snapshots:
 
   '@types/cors@2.8.19':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/eslint-scope@3.7.7':
     dependencies:
@@ -6293,7 +6293,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.6':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       '@types/qs': 6.14.0
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.5
@@ -6325,7 +6325,7 @@ snapshots:
 
   '@types/http-proxy@1.17.16':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/isomorphic-fetch@0.0.39': {}
 
@@ -6337,14 +6337,14 @@ snapshots:
 
   '@types/node-fetch@2.6.12':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       form-data: 4.0.2
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
-  '@types/node@22.15.29':
+  '@types/node@22.16.0':
     dependencies:
       undici-types: 6.21.0
 
@@ -6394,7 +6394,7 @@ snapshots:
   '@types/send@0.17.5':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -6403,12 +6403,12 @@ snapshots:
   '@types/serve-static@1.15.8':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       '@types/send': 0.17.5
 
   '@types/sockjs@0.3.36':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/source-list-map@0.1.6': {}
 
@@ -6429,13 +6429,13 @@ snapshots:
 
   '@types/webpack-sources@3.2.3':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       '@types/source-list-map': 0.1.6
       source-map: 0.7.4
 
   '@types/webpack@4.41.40':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       '@types/tapable': 1.0.12
       '@types/uglify-js': 3.17.5
       '@types/webpack-sources': 3.2.3
@@ -6444,7 +6444,7 @@ snapshots:
 
   '@types/webpack@5.28.5(webpack-cli@6.0.1)':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       tapable: 2.2.1
       webpack: 5.99.9(webpack-cli@6.0.1)
     transitivePeerDependencies:
@@ -6455,7 +6455,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
 
   '@types/youtube-player@5.5.11': {}
 
@@ -8306,7 +8306,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -8874,7 +8874,7 @@ snapshots:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       long: 4.0.0
 
   proxy-addr@2.0.7:
@@ -9725,14 +9725,14 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-node@10.9.2(@types/node@22.15.29)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@22.16.0)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.15.29
+      '@types/node': 22.16.0
       acorn: 8.14.0
       acorn-walk: 8.3.4
       arg: 4.1.3
