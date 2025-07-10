@@ -41,7 +41,7 @@
     "use-sound": "^5.0.0",
     "webmidi": "^3.1.5",
     "youtube-player": "^5.6.0",
-    "zod": "^3.23.8"
+    "zod": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.8",
