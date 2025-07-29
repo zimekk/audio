@@ -95,7 +95,7 @@ importers:
         version: 3.1.10
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 4.13.1(@types/react@19.1.8)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -173,22 +173,22 @@ importers:
         version: 1.6.7
       react:
         specifier: ^19.0.0
-        version: 19.1.0
+        version: 19.1.1
       react-dom:
         specifier: ^19.0.0
-        version: 19.1.0(react@19.1.0)
+        version: 19.1.1(react@19.1.1)
       react-guitar:
         specifier: ^1.1.2
-        version: 1.1.2(@types/react@19.1.8)(react@19.1.0)
+        version: 1.1.2(@types/react@19.1.8)(react@19.1.1)
       react-guitar-sound:
         specifier: ^1.1.2
-        version: 1.1.2(react@19.1.0)
+        version: 1.1.2(react@19.1.1)
       react-guitar-tunings:
         specifier: ^1.1.2
         version: 1.1.2
       react-router-dom:
         specifier: ^7.0.0
-        version: 7.7.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       rxjs:
         specifier: ^7.8.1
         version: 7.8.2
@@ -212,10 +212,10 @@ importers:
         version: 14.9.17
       use-asset:
         specifier: ^1.0.4
-        version: 1.0.4(react@19.1.0)
+        version: 1.0.4(react@19.1.1)
       use-sound:
         specifier: ^5.0.0
-        version: 5.0.0(react@19.1.0)
+        version: 5.0.0(react@19.1.1)
       webmidi:
         specifier: ^3.1.5
         version: 3.1.12
@@ -240,7 +240,7 @@ importers:
         version: 7.27.1(@babel/core@7.28.0)
       '@hot-loader/react-dom':
         specifier: ^17.0.2
-        version: 17.0.2(react@19.1.0)
+        version: 17.0.2(react@19.1.1)
       '@types/chroma-js':
         specifier: ^3.0.0
         version: 3.1.1
@@ -294,7 +294,7 @@ importers:
         version: 1.4.4
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 4.13.1(@types/react@19.1.8)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -3942,10 +3942,10 @@ packages:
     peerDependencies:
       react: ^16.14.0
 
-  react-dom@19.1.0:
-    resolution: {integrity: sha512-Xs1hdnE+DyKgeHJeJznQmYMIBG3TKIHJJT95Q58nHLSrElKlGQqDTR2HQ9fx5CN/Gk6Vh/kupBTDLU11/nDk/g==}
+  react-dom@19.1.1:
+    resolution: {integrity: sha512-Dlq/5LAZgF0Gaz6yiqZCf6VCcZs1ghAJyrsu84Q/GT0gV+mCxbfmKNoGRKBYMJ8IEdGPqu49YWXD02GCknEDkw==}
     peerDependencies:
-      react: ^19.1.0
+      react: ^19.1.1
 
   react-guitar-sound@1.1.2:
     resolution: {integrity: sha512-Iz6L2USg2RtODslYb2POHCamXrqmLGDTXUznRTUXXsZnsRyVlPaVhby4y3+CN2OSStIZxAMLv1LaGeM2E40h/A==}
@@ -3998,8 +3998,8 @@ packages:
     resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
     engines: {node: '>=0.10.0'}
 
-  react@19.1.0:
-    resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
+  react@19.1.1:
+    resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
     engines: {node: '>=0.10.0'}
 
   readable-stream@1.0.34:
@@ -5894,17 +5894,17 @@ snapshots:
 
   '@emotion/memoize@0.9.0': {}
 
-  '@emotion/react@11.14.0(@types/react@19.1.8)(react@19.1.0)':
+  '@emotion/react@11.14.0(@types/react@19.1.8)(react@19.1.1)':
     dependencies:
       '@babel/runtime': 7.26.9
       '@emotion/babel-plugin': 11.13.5
       '@emotion/cache': 11.14.0
       '@emotion/serialize': 1.3.3
-      '@emotion/use-insertion-effect-with-fallbacks': 1.2.0(react@19.1.0)
+      '@emotion/use-insertion-effect-with-fallbacks': 1.2.0(react@19.1.1)
       '@emotion/utils': 1.4.2
       '@emotion/weak-memoize': 0.4.0
       hoist-non-react-statics: 3.3.2
-      react: 19.1.0
+      react: 19.1.1
     optionalDependencies:
       '@types/react': 19.1.8
     transitivePeerDependencies:
@@ -5922,9 +5922,9 @@ snapshots:
 
   '@emotion/unitless@0.10.0': {}
 
-  '@emotion/use-insertion-effect-with-fallbacks@1.2.0(react@19.1.0)':
+  '@emotion/use-insertion-effect-with-fallbacks@1.2.0(react@19.1.1)':
     dependencies:
-      react: 19.1.0
+      react: 19.1.1
 
   '@emotion/utils@1.4.2': {}
 
@@ -5974,11 +5974,11 @@ snapshots:
       '@eslint/core': 0.15.1
       levn: 0.4.1
 
-  '@hot-loader/react-dom@17.0.2(react@19.1.0)':
+  '@hot-loader/react-dom@17.0.2(react@19.1.1)':
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react: 19.1.0
+      react: 19.1.1
       scheduler: 0.20.2
 
   '@humanfs/core@0.19.1': {}
@@ -9143,14 +9143,14 @@ snapshots:
       react: 16.14.0
       scheduler: 0.19.1
 
-  react-dom@19.1.0(react@19.1.0):
+  react-dom@19.1.1(react@19.1.1):
     dependencies:
-      react: 19.1.0
+      react: 19.1.1
       scheduler: 0.26.0
 
-  react-guitar-sound@1.1.2(react@19.1.0):
+  react-guitar-sound@1.1.2(react@19.1.1):
     dependencies:
-      react: 19.1.0
+      react: 19.1.1
       soundfont-player: 0.12.0
       tone: 14.9.17
 
@@ -9159,9 +9159,9 @@ snapshots:
       '@tonaljs/midi': 4.10.1
       '@tonaljs/note': 4.12.0
 
-  react-guitar@1.1.2(@types/react@19.1.8)(react@19.1.0):
+  react-guitar@1.1.2(@types/react@19.1.8)(react@19.1.1):
     dependencies:
-      '@emotion/react': 11.14.0(@types/react@19.1.8)(react@19.1.0)
+      '@emotion/react': 11.14.0(@types/react@19.1.8)(react@19.1.1)
       '@tonaljs/interval': 4.8.2
       '@tonaljs/note': 4.12.0
       classnames: 2.5.1
@@ -9169,20 +9169,20 @@ snapshots:
       keyboard-key: 1.1.0
       lodash.range: 3.2.0
       lodash.uniqueid: 4.0.1
-      react: 19.1.0
+      react: 19.1.1
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
 
-  react-hot-loader@4.13.1(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-hot-loader@4.13.1(@types/react@19.1.8)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       fast-levenshtein: 2.0.6
       global: 4.4.0
       hoist-non-react-statics: 3.3.2
       loader-utils: 2.0.4
       prop-types: 15.8.1
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
       react-lifecycles-compat: 3.0.4
       shallowequal: 1.1.0
       source-map: 0.7.4
@@ -9193,19 +9193,19 @@ snapshots:
 
   react-lifecycles-compat@3.0.4: {}
 
-  react-router-dom@7.7.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-router-dom@7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
-      react-router: 7.7.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+      react-router: 7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  react-router@7.7.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-router@7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       cookie: 1.0.2
-      react: 19.1.0
+      react: 19.1.1
       set-cookie-parser: 2.7.1
     optionalDependencies:
-      react-dom: 19.1.0(react@19.1.0)
+      react-dom: 19.1.1(react@19.1.1)
 
   react@16.14.0:
     dependencies:
@@ -9213,7 +9213,7 @@ snapshots:
       object-assign: 4.1.1
       prop-types: 15.8.1
 
-  react@19.1.0: {}
+  react@19.1.1: {}
 
   readable-stream@1.0.34:
     dependencies:
@@ -10155,15 +10155,15 @@ snapshots:
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.101.0)
 
-  use-asset@1.0.4(react@19.1.0):
+  use-asset@1.0.4(react@19.1.1):
     dependencies:
       fast-deep-equal: 3.1.3
-      react: 19.1.0
+      react: 19.1.1
 
-  use-sound@5.0.0(react@19.1.0):
+  use-sound@5.0.0(react@19.1.1):
     dependencies:
       howler: 2.2.4
-      react: 19.1.0
+      react: 19.1.1
 
   util-deprecate@1.0.2: {}
 
