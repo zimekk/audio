@@ -13,15 +13,16 @@ import { z } from "zod";
 const config = createAsset(async () =>
   z
     .record(
+      z.string(),
       z
         .object({
           logo: z.string(),
           name: z.string(),
           url: z.string(),
         })
-        .array()
+        .array(),
     )
-    .parseAsync((await import("./config")).stations)
+    .parseAsync((await import("./config")).stations),
 );
 
 function Filters({
@@ -45,7 +46,7 @@ function Filters({
                 ...filters,
                 country: target.value,
               })),
-            []
+            [],
           )}
         >
           {options.country.map((value) => (
@@ -66,7 +67,7 @@ function Filters({
                 ...filters,
                 search: target.value,
               })),
-            []
+            [],
           )}
         />
       </label>
@@ -81,7 +82,7 @@ export default function Stations() {
     () => ({
       country: Object.keys(stations),
     }),
-    [stations]
+    [stations],
   );
 
   const [filters, setFilters] = useState(() => ({
@@ -101,13 +102,13 @@ export default function Stations() {
             ...queries,
             ...filters,
             search: search.toLowerCase().trim(),
-          })
+          }),
         ),
         distinctUntilChanged(),
-        debounceTime(400)
+        debounceTime(400),
       )
       .subscribe((filters) =>
-        setQueries((queries) => ({ ...queries, ...JSON.parse(filters) }))
+        setQueries((queries) => ({ ...queries, ...JSON.parse(filters) })),
       );
     return () => subscription.unsubscribe();
   }, [search$]);
@@ -128,14 +129,14 @@ export default function Stations() {
             stations[filters.country].filter(
               (item) =>
                 queries.search === "" ||
-                item.name.toLowerCase().match(queries.search)
+                item.name.toLowerCase().match(queries.search),
             ),
-          [filters, queries, stations]
+          [filters, queries, stations],
         ).map(({ logo, name, url }) => (
           <li key={url}>
             <img
               src={`https://raw.githubusercontent.com/Koenvh1/ets2-local-radio/master/web/${encodeURIComponent(
-                logo
+                logo,
               )}`}
             />
             <a href={url} rel="noopener noreferrer" target="_blank">
