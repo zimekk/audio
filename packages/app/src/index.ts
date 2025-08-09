@@ -16,7 +16,7 @@ const web =
           .use(
             require("webpack-dev-middleware")(compiler, {
               publicPath: config.output?.publicPath,
-            })
+            }),
           )
           .use(require(`webpack-hot-middleware`)(compiler, {}));
       })(require("@dev/web/webpack.config").default)
@@ -24,9 +24,9 @@ const web =
         express.static(
           path.resolve(
             path.dirname(require.resolve("@dev/web/package")),
-            "public"
-          )
-        )
+            "public",
+          ),
+        ),
       );
 
 const PORT = 8080;
@@ -38,19 +38,19 @@ export default express()
   .get("/api/mobile/station/2380/now_playing/", (req, res) =>
     fetch("https://www.eska.pl/api/mobile/station/2380/now_playing/")
       .then((res) => res.json())
-      .then((json) => res.json(json))
+      .then((json) => res.json(json)),
   )
-  .get("/api/reader/var/(:station)", (req, res) =>
+  .get("/api/reader/var/:station", (req, res) =>
     fetch(
-      `https://rds.eurozet.pl/reader/var/${req.params.station}?callback=rdsData`
+      `https://rds.eurozet.pl/reader/var/${req.params.station}?callback=rdsData`,
     )
       .then((res) => res.text())
       .then((text) =>
-        JSON.parse(unescape((text.match(/^\w+\((.*)\)$/) || [])[1]))
+        JSON.parse(unescape((text.match(/^\w+\((.*)\)$/) || [])[1])),
       )
-      .then((json) => res.json(json))
+      .then((json) => res.json(json)),
   )
   .use(web)
   .listen(PORT, (...args) =>
-    console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`)
+    console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`),
   );
