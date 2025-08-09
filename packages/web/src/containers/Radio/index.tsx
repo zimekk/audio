@@ -66,7 +66,7 @@ const asset = createAsset(async () => {
             "https://cdn.music.smcloud.net/t/covers/As-It-Was_so-UAEB-jsky-Prx4_cover.jpg",
           end_time: "2022-07-06T20:31:49+00:00",
         },
-      ])
+      ]),
     );
 });
 
@@ -94,7 +94,7 @@ function Playlist() {
               ))}
             </div>
           </li>
-        )
+        ),
       )}
     </ul>
   );
@@ -121,7 +121,7 @@ const rdsAsset = createAsset(async (url: string) => {
           start_time: startDate,
           end_time: duration
             ? new Date(
-                new Date(startDate).getTime() + duration * 1000
+                new Date(startDate).getTime() + duration * 1000,
               ).toISOString()
             : null,
           thumb: img,
@@ -138,7 +138,7 @@ const rdsAsset = createAsset(async (url: string) => {
           duration: "179",
           img: "https://s.eurozet.pl/music/9497-19.jpg",
         },
-      }))
+      })),
     );
 });
 
@@ -227,7 +227,7 @@ function Schedule({ src }: { src: string }) {
 }
 
 export default function Section() {
-  const playerRef = useRef(null);
+  const playerRef = useRef<HTMLVideoElement>(null);
   return (
     <section className={styles.Section}>
       <h3>Radio</h3>

@@ -13,9 +13,8 @@ const config = {
     port: 8080,
   },
   devtool: false, //dev && "inline-source-map",
-  entry: ["regenerator-runtime/runtime", "react-hot-loader/patch"].concat(
-    require.resolve("./src"),
-  ),
+  // entry: ["regenerator-runtime/runtime", "react-hot-loader/patch"].concat(
+  entry: ["regenerator-runtime/runtime"].concat(require.resolve("./src")),
   module: {
     rules: [
       {
@@ -69,7 +68,7 @@ const config = {
             "@babel/preset-react",
             "@babel/preset-typescript",
           ],
-          plugins: ["react-hot-loader/babel"],
+          // plugins: ["react-hot-loader/babel"],
         },
       },
     ],
@@ -77,7 +76,7 @@ const config = {
   resolve: {
     alias: {
       events: "events",
-      "react-dom": "@hot-loader/react-dom",
+      // "react-dom": "@hot-loader/react-dom",
     },
     extensions: [".tsx", ".ts", ".js"],
     fallback: {

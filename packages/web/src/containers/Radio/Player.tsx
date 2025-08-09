@@ -5,7 +5,7 @@ import Hls from "hls.js";
 export interface HlsPlayerProps
   extends React.VideoHTMLAttributes<HTMLVideoElement> {
   hlsConfig?: object;
-  playerRef?: RefObject<HTMLVideoElement>;
+  playerRef?: RefObject<HTMLVideoElement | null>;
   src: string;
 }
 
@@ -42,8 +42,8 @@ export function ReactHlsPlayer({
               ?.play()
               .catch(() =>
                 console.log(
-                  "Unable to autoplay prior to user interaction with the dom."
-                )
+                  "Unable to autoplay prior to user interaction with the dom.",
+                ),
               );
           }
         });
@@ -93,5 +93,7 @@ export function ReactMp3Player({
   autoPlay,
   ...props
 }: HlsPlayerProps) {
-  return <audio ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
+  return (
+    src && <audio ref={playerRef} src={src} autoPlay={autoPlay} {...props} />
+  );
 }
