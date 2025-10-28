@@ -26,7 +26,7 @@
     "@types/cors": "^2.8.13",
     "@types/express": "^5.0.0",
     "@types/isomorphic-fetch": "^0.0.39",
-    "@types/node": "^22.0.0",
+    "@types/node": "^24.0.0",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.0.0",
     "file-loader": "^6.2.0",
