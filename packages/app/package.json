@@ -39,7 +39,7 @@
     "typescript": "^5.0.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.81.0",
-    "webpack-dev-middleware": "^7.0.0",
+    "webpack-dev-middleware": "^8.0.0",
     "webpack-hot-middleware": "^2.25.3"
   }
 }
