@@ -28,7 +28,7 @@ importers:
         version: 10.1.8(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0))
       eslint-plugin-prettier:
         specifier: ^5.0.0
-        version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0)))(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0))(prettier@3.9.3)
+        version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0)))(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0))(prettier@3.9.4)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.37.5(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0))
@@ -37,10 +37,10 @@ importers:
         version: 9.1.7
       prettier:
         specifier: ^3.0.0
-        version: 3.9.3
+        version: 3.9.4
       pretty-quick:
         specifier: ^4.0.0
-        version: 4.2.2(prettier@3.9.3)
+        version: 4.2.2(prettier@3.9.4)
       type-coverage:
         specifier: ^2.25.0
         version: 2.29.7(typescript@6.0.3)
@@ -3115,8 +3115,8 @@ packages:
     resolution: {integrity: sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==}
     engines: {node: '>= 4'}
 
-  immutable@5.1.8:
-    resolution: {integrity: sha512-TM5YqrGeTsVIPPpILzeqZ8D2Zc2TvNgSDi88zPF2a4cyqQdWV/wVWBDRDbNzzrLeRWScrFcOX9lW2iX6GOtUDw==}
+  immutable@5.1.9:
+    resolution: {integrity: sha512-m8nVez3rwrgmWxtLMt1ZYXB2Lv7OKYn/disyxAlSDYAlKSlFoPPfIAmAM/M5xqL4m4C/wAPw7S2/CNaUii1Hxg==}
 
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
@@ -3952,8 +3952,8 @@ packages:
     resolution: {integrity: sha512-SxToR7P8Y2lWmv/kTzVLC1t/GDI2WGjMwNhLLE9qtH8Q13C+aEmuRlzDst4Up4s0Wc8sF2M+J57iB3cMLqftfg==}
     engines: {node: '>=6.0.0'}
 
-  prettier@3.9.3:
-    resolution: {integrity: sha512-HWmu+K+zvHNpaMfSnYeqdqrDbR16cuIXaPx8WoHaviQkDJh1/0BNtOZmHVQI5jc3wXv0H1yXc9wjvFdXh+n3hQ==}
+  prettier@3.9.4:
+    resolution: {integrity: sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7865,10 +7865,10 @@ snapshots:
     dependencies:
       eslint: 10.6.0(jiti@2.6.1)(supports-color@5.5.0)
 
-  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0)))(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0))(prettier@3.9.3):
+  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0)))(eslint@10.6.0(jiti@2.6.1)(supports-color@5.5.0))(prettier@3.9.4):
     dependencies:
       eslint: 10.6.0(jiti@2.6.1)(supports-color@5.5.0)
-      prettier: 3.9.3
+      prettier: 3.9.4
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     optionalDependencies:
@@ -8421,7 +8421,7 @@ snapshots:
 
   ignore@7.0.5: {}
 
-  immutable@5.1.8: {}
+  immutable@5.1.9: {}
 
   import-fresh@3.3.1:
     dependencies:
@@ -9170,21 +9170,21 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier@3.9.3: {}
+  prettier@3.9.4: {}
 
   pretty-error@4.0.0:
     dependencies:
       lodash: 4.18.1
       renderkid: 3.0.0
 
-  pretty-quick@4.2.2(prettier@3.9.3):
+  pretty-quick@4.2.2(prettier@3.9.4):
     dependencies:
       '@pkgr/core': 0.2.9
       ignore: 7.0.5
       mri: 1.2.0
       picocolors: 1.1.1
       picomatch: 4.0.4
-      prettier: 3.9.3
+      prettier: 3.9.4
       tinyexec: 0.3.2
       tslib: 2.8.1
 
@@ -9552,7 +9552,7 @@ snapshots:
   sass@1.101.0:
     dependencies:
       chokidar: 5.0.0
-      immutable: 5.1.8
+      immutable: 5.1.9
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.6
