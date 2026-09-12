@@ -253,7 +253,7 @@ importers:
         version: 3.1.14
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        version: 4.13.1(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -328,7 +328,7 @@ importers:
         version: 3.3.0
       hls.js:
         specifier: ^1.4.0
-        version: 1.7.2
+        version: 1.7.3
       react:
         specifier: ^19.0.0
         version: 19.3.0
@@ -3141,8 +3141,8 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
-  hls.js@1.7.2:
-    resolution: {integrity: sha512-CW/pPvSOFIRsosbwxrYaE9ERmpTo5fbTqL7wCvuCFlqW1Bmb1K5fXsY7yiH95rmlr4rVuA7UXHbM/cIXQ6AXwg==}
+  hls.js@1.7.3:
+    resolution: {integrity: sha512-MsPlx6yVW4Qv4C7mEVou4/gk/5cN2dVxOTnrNjPSmyH2f0Ln+/UkG10Ax1PE6OvrmTVPKgQYozTtBaPOuCzq7A==}
 
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
@@ -5119,7 +5119,7 @@ snapshots:
 
   '@babel/code-frame@8.0.0':
     dependencies:
-      '@babel/helper-validator-identifier': 8.0.2
+      '@babel/helper-validator-identifier': 8.0.4
       js-tokens: 10.0.0
 
   '@babel/compat-data@8.0.0': {}
@@ -5812,8 +5812,8 @@ snapshots:
   '@babel/template@8.0.0':
     dependencies:
       '@babel/code-frame': 8.0.0
-      '@babel/parser': 8.0.0
-      '@babel/types': 8.0.0
+      '@babel/parser': 8.0.5
+      '@babel/types': 8.0.5
 
   '@babel/traverse@7.29.7(supports-color@8.1.1)':
     dependencies:
@@ -6118,7 +6118,7 @@ snapshots:
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/sourcemap-codec': 1.6.0
       '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/gen-mapping@0.4.0-beta.0':
@@ -6140,7 +6140,7 @@ snapshots:
   '@jridgewell/trace-mapping@0.3.31':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/sourcemap-codec': 1.6.0
 
   '@jridgewell/trace-mapping@0.3.9':
     dependencies:
@@ -8343,7 +8343,7 @@ snapshots:
 
   he@1.2.0: {}
 
-  hls.js@1.7.2: {}
+  hls.js@1.7.3: {}
 
   hoist-non-react-statics@3.3.2:
     dependencies:
@@ -9324,6 +9324,19 @@ snapshots:
       source-map: 0.7.6
     optionalDependencies:
       '@types/react': 19.3.0
+
+  react-hot-loader@4.13.1(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+    dependencies:
+      fast-levenshtein: 2.0.6
+      global: 4.4.0
+      hoist-non-react-statics: 3.3.2
+      loader-utils: 2.0.4
+      prop-types: 15.8.1
+      react: 16.14.0
+      react-dom: 16.14.0(react@16.14.0)
+      react-lifecycles-compat: 3.0.4
+      shallowequal: 1.1.0
+      source-map: 0.7.6
 
   react-is@16.13.1: {}
 
