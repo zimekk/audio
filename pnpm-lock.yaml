@@ -382,7 +382,7 @@ importers:
         version: 5.6.0(supports-color@8.1.1)
       zod:
         specifier: ^4.0.0
-        version: 4.6.2
+        version: 4.6.4
     devDependencies:
       '@babel/core':
         specifier: ^8.0.0
@@ -5106,8 +5106,8 @@ packages:
   youtube-player@5.6.0:
     resolution: {integrity: sha512-x95fBbxV7eZ1ZsFtMLMcSGX0Jb/GPPj69RsooyEDVa9bzvvNZ4d5VjnBVBYoY85008VefkLvtaV+b+l38R/LMQ==}
 
-  zod@4.6.2:
-    resolution: {integrity: sha512-lh5RCAGFa1Cm2hjtNwLQhSs/AsqdWnTQaBER9fEwN/88pSh7KOtJavtBx/0VlkN/uFd61SwYmljLMDAsHlvzBQ==}
+  zod@4.6.4:
+    resolution: {integrity: sha512-AXSD6hvGdvRjajG/l1cC+d6IrhH+sjmPKtYeQdJIK8MFJl3LyClzS+o/YsVC+zQZPupAaeH5skwwm8YqYH7BqA==}
 
 snapshots:
 
@@ -10581,4 +10581,4 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  zod@4.6.2: {}
+  zod@4.6.4: {}
