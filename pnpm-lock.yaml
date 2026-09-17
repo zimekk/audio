@@ -376,7 +376,7 @@ importers:
         version: 5.0.0(react@19.3.0)
       webmidi:
         specifier: ^3.1.5
-        version: 3.1.16
+        version: 3.3.1
       youtube-player:
         specifier: ^5.6.0
         version: 5.6.0(supports-color@8.1.1)
@@ -4917,8 +4917,8 @@ packages:
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
 
-  webmidi@3.1.16:
-    resolution: {integrity: sha512-I6NnCfBUXNbV8q6EU+DPtr1u1EgjzDrFKHQQS2OgaHzcuQRFhRHgogfKpKSpxD0IgXhZHz8+k/OpGfZoWbvWAQ==}
+  webmidi@3.3.1:
+    resolution: {integrity: sha512-nbJPD3mtV4FbuaOsvgmyInBAnkU3yA0HDzidKtFRK4gweGfodoGEFo6Egddgxzlrk+pk887mwgkxGafrsujfLA==}
     engines: {node: '>=8.5'}
 
   webpack-cli@7.2.3:
@@ -10286,7 +10286,7 @@ snapshots:
 
   webidl-conversions@3.0.1: {}
 
-  webmidi@3.1.16:
+  webmidi@3.3.1:
     dependencies:
       djipevents: 2.0.7
     optionalDependencies:
