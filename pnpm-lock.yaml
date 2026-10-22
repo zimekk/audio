@@ -401,7 +401,7 @@ importers:
         version: 17.0.2(react@19.3.1)
       '@types/chroma-js':
         specifier: ^3.0.0
-        version: 3.1.2
+        version: 3.1.3
       '@types/html-webpack-plugin':
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.112.0)
@@ -1758,8 +1758,8 @@ packages:
   '@types/bonjour@3.5.13':
     resolution: {integrity: sha512-z9fJ5Im06zvUL548KvYNecEVlA7cVDkGUi6kZusb04mpyEFKCIZJvloCcmpmLaIahDpOQGHaHmG6imtPMmPXGQ==}
 
-  '@types/chroma-js@3.1.2':
-    resolution: {integrity: sha512-YBTQqArPN8A0niHXCwrO1z5x++a+6l0mLBykncUpr23oIPW7L4h39s6gokdK/bDrPmSh8+TjMmrhBPnyiaWPmQ==}
+  '@types/chroma-js@3.1.3':
+    resolution: {integrity: sha512-r4kI3HTbLdayBkY1f2Xv7/1TJaHTS//8f6Etv036NQMIj2jVPngUV11NczKiLFKyy01o6hGYVDypP7tJVoFPew==}
 
   '@types/connect-history-api-fallback@1.5.4':
     resolution: {integrity: sha512-n6Cr2xS1h4uAulPRdlw6Jl6s1oG8KrVilPN2yUITEs+K48EzMJJ3W1xy8K5eWuFvjp3R74AOIGSmp2UfBJ8HFw==}
@@ -6657,7 +6657,7 @@ snapshots:
     dependencies:
       '@types/node': 24.19.2
 
-  '@types/chroma-js@3.1.2': {}
+  '@types/chroma-js@3.1.3': {}
 
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
