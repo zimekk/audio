@@ -274,7 +274,7 @@ importers:
         version: 4.1.1(file-loader@6.2.0(webpack@5.112.2))(webpack@5.112.2)
       webpack:
         specifier: ^5.81.0
-        version: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+        version: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
       webpack-dev-middleware:
         specifier: ^8.0.0
         version: 8.6.0(webpack@5.112.2)
@@ -425,7 +425,7 @@ importers:
         version: 0.0.4
       '@types/webpack':
         specifier: ^5.28.1
-        version: 5.28.5(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+        version: 5.28.5(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
       '@types/youtube-player':
         specifier: ^5.5.7
         version: 5.5.11
@@ -479,13 +479,13 @@ importers:
         version: 4.1.1(file-loader@6.2.0(webpack@5.112.2))(webpack@5.112.2)
       webpack:
         specifier: ^5.81.0
-        version: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+        version: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
       webpack-cli:
         specifier: ^7.0.0
-        version: 7.2.3(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
+        version: 7.3.1(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
       webpack-dev-server:
         specifier: ^6.0.0
-        version: 6.1.0(supports-color@8.1.1)(webpack-cli@7.2.3)(webpack@5.112.2)
+        version: 6.1.0(supports-color@8.1.1)(webpack-cli@7.3.1)(webpack@5.112.2)
 
 packages:
 
@@ -2991,10 +2991,6 @@ packages:
   find-root@1.1.0:
     resolution: {integrity: sha512-NKfW6bec6GfKc0SGx1e07QZY9PE99u0Bft/0rzSD5k3sO/vwkVUpDUKVm5Gpp5Ue3YfShPFTX2070tDs5kB9Ng==}
 
-  find-up@4.1.0:
-    resolution: {integrity: sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==}
-    engines: {node: '>=8'}
-
   find-up@5.0.0:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
@@ -3255,11 +3251,6 @@ packages:
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
-
-  import-local@3.2.0:
-    resolution: {integrity: sha512-2SPlun1JUPWoM6t3F0dw0FkCF/jWY8kttcY4f599GLTSjh2OCuuhdTkJQsEcZzBqbXZGKMK2OqW1oZsjtf/gQA==}
-    engines: {node: '>=8'}
-    hasBin: true
 
   import-meta-resolve@4.2.0:
     resolution: {integrity: sha512-Iqv2fzaTQN28s/FwZAoFq0ZSs/7hMAHJVX+w8PZl3cY19Pxk6jFFalxQoIfW2826i/fDLXv8IiEZRIT0lDuWcg==}
@@ -3568,10 +3559,6 @@ packages:
   loader-utils@2.0.4:
     resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
     engines: {node: '>=8.9.0'}
-
-  locate-path@5.0.0:
-    resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
-    engines: {node: '>=8'}
 
   locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
@@ -3929,17 +3916,9 @@ packages:
     resolution: {integrity: sha512-qFOyK5PjiWZd+QQIh+1jhdb9LpxTF0qs7Pm8o5QHYZ0M3vKqSqzsZaEB6oWlxZ+q2sJBMI/Ktgd2N5ZwQoRHfg==}
     engines: {node: '>= 0.4'}
 
-  p-limit@2.3.0:
-    resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}
-    engines: {node: '>=6'}
-
   p-limit@3.1.0:
     resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
     engines: {node: '>=10'}
-
-  p-locate@4.1.0:
-    resolution: {integrity: sha512-R79ZZ/0wAxKGu3oYMlz8jy/kbhsNrS7SKZ7PxEHBgJ5+F2mtFW2fK2cOtBh1cHYkQsbzFV7I+EoRKe6Yt0oK7A==}
-    engines: {node: '>=8'}
 
   p-locate@5.0.0:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
@@ -3948,10 +3927,6 @@ packages:
   p-retry@8.0.0:
     resolution: {integrity: sha512-kFVqH1HxOHp8LupNsOys7bSV09VYTRLxarH/mokO4Rqhk6wGi70E0jh4VzvVGXfEVNggHoHLAMWsQqHyU1Ey9A==}
     engines: {node: '>=22'}
-
-  p-try@2.2.0:
-    resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
-    engines: {node: '>=6'}
 
   param-case@3.0.4:
     resolution: {integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==}
@@ -4013,10 +3988,6 @@ packages:
   picomatch@4.0.5:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
     engines: {node: '>=12'}
-
-  pkg-dir@4.2.0:
-    resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
-    engines: {node: '>=8'}
 
   pkijs@3.4.0:
     resolution: {integrity: sha512-emEcLuomt2j03vxD54giVB4SxTjnsqkU692xZOZXHDVoYyypEm+b3jpiTcc+Cf+myooc+/Ly0z01jqeNHVgJGw==}
@@ -4240,9 +4211,9 @@ packages:
     resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
     engines: {node: '>= 20.19.0'}
 
-  rechoir@0.8.0:
-    resolution: {integrity: sha512-/vxpCXddiX8NGfGO/mTafwjq4aFa/71pvamip0++IQk3zG8cbCj0fifNPrjjF1XMXUne91jL9OoxmdykoEtifQ==}
-    engines: {node: '>= 10.13.0'}
+  rechoir@1.0.0:
+    resolution: {integrity: sha512-vyBa7bWz11iJRwzJR0nGLt6r45bymWfYXAgd1FmP08BNP/DHAVabgpGPyEXQmBtKvhgxi17SQz2szhvkberQsg==}
+    engines: {node: '>= 22.15.0'}
 
   reflect-metadata@0.2.2:
     resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
@@ -4304,10 +4275,6 @@ packages:
   require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
-
-  resolve-cwd@3.0.0:
-    resolution: {integrity: sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==}
-    engines: {node: '>=8'}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -4970,11 +4937,12 @@ packages:
     resolution: {integrity: sha512-nbJPD3mtV4FbuaOsvgmyInBAnkU3yA0HDzidKtFRK4gweGfodoGEFo6Egddgxzlrk+pk887mwgkxGafrsujfLA==}
     engines: {node: '>=8.5'}
 
-  webpack-cli@7.2.3:
-    resolution: {integrity: sha512-vDFU7jrfCctnN7jJQWPl+V26B51GLp11prVZXg50oeonsgeBzSTJEWmXkjHsOjTgMjlPOQM8GWLh33X9RN/0ow==}
+  webpack-cli@7.3.1:
+    resolution: {integrity: sha512-enXzN0/2fWHX3tP2gpTV6U8/zz5RSbfWjSAc0VXOi0+hOY4ePdHanA+2kxrAC/SX0LHO4fOX5c9G1TdwpvUj/g==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
+      '@bomb.sh/tab': ^0.0.22
       js-yaml: ^4.0.0 || ^5.0.0
       json5: ^2.2.3
       toml: ^3.0.0 || ^4.0.0 || ^5.0.0
@@ -4982,6 +4950,8 @@ packages:
       webpack-bundle-analyzer: ^4.0.0 || ^5.0.0
       webpack-dev-server: ^5.0.0 || ^6.0.0
     peerDependenciesMeta:
+      '@bomb.sh/tab':
+        optional: true
       js-yaml:
         optional: true
       json5:
@@ -6872,11 +6842,11 @@ snapshots:
 
   '@types/webgl2@0.0.5': {}
 
-  '@types/webpack@5.28.5(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)':
+  '@types/webpack@5.28.5(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)':
     dependencies:
       '@types/node': 26.6.6
       tapable: 2.3.3
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@napi-rs/image'
@@ -7268,7 +7238,7 @@ snapshots:
       '@babel/core': 8.0.10
       find-up: 5.0.0
     optionalDependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   babel-plugin-macros@3.1.0:
     dependencies:
@@ -7604,7 +7574,7 @@ snapshots:
       schema-utils: 4.3.3
       serialize-javascript: 7.0.4
       tinyglobby: 0.2.17
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   core-js-compat@3.49.0:
     dependencies:
@@ -7655,7 +7625,7 @@ snapshots:
       postcss-value-parser: 4.2.0
       semver: 7.8.5
     optionalDependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   css-select@4.3.0:
     dependencies:
@@ -8219,7 +8189,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   fill-range@7.1.1:
     dependencies:
@@ -8248,11 +8218,6 @@ snapshots:
       - supports-color
 
   find-root@1.1.0: {}
-
-  find-up@4.1.0:
-    dependencies:
-      locate-path: 5.0.0
-      path-exists: 4.0.0
 
   find-up@5.0.0:
     dependencies:
@@ -8434,7 +8399,7 @@ snapshots:
       pretty-error: 4.0.0
       tapable: 2.3.3
     optionalDependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   htmlparser2@6.1.0:
     dependencies:
@@ -8516,11 +8481,6 @@ snapshots:
     dependencies:
       parent-module: 1.0.1
       resolve-from: 4.0.0
-
-  import-local@3.2.0:
-    dependencies:
-      pkg-dir: 4.2.0
-      resolve-cwd: 3.0.0
 
   import-meta-resolve@4.2.0: {}
 
@@ -8798,10 +8758,6 @@ snapshots:
       emojis-list: 3.0.0
       json5: 2.2.3
 
-  locate-path@5.0.0:
-    dependencies:
-      p-locate: 4.1.0
-
   locate-path@6.0.0:
     dependencies:
       p-locate: 5.0.0
@@ -8919,7 +8875,7 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 4.8.1(webpack@5.112.2)
       terser: 5.51.2
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
     optionalDependencies:
       clean-css: 5.3.3
       html-minifier-terser: 6.1.0
@@ -9116,17 +9072,9 @@ snapshots:
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
-  p-limit@2.3.0:
-    dependencies:
-      p-try: 2.2.0
-
   p-limit@3.1.0:
     dependencies:
       yocto-queue: 0.1.0
-
-  p-locate@4.1.0:
-    dependencies:
-      p-limit: 2.3.0
 
   p-locate@5.0.0:
     dependencies:
@@ -9135,8 +9083,6 @@ snapshots:
   p-retry@8.0.0:
     dependencies:
       is-network-error: 1.3.2
-
-  p-try@2.2.0: {}
 
   param-case@3.0.4:
     dependencies:
@@ -9187,10 +9133,6 @@ snapshots:
   picomatch@4.0.4: {}
 
   picomatch@4.0.5: {}
-
-  pkg-dir@4.2.0:
-    dependencies:
-      find-up: 4.1.0
 
   pkijs@3.4.0:
     dependencies:
@@ -9471,9 +9413,7 @@ snapshots:
 
   readdirp@5.0.0: {}
 
-  rechoir@0.8.0:
-    dependencies:
-      resolve: 1.22.12
+  rechoir@1.0.0: {}
 
   reflect-metadata@0.2.2: {}
 
@@ -9546,10 +9486,6 @@ snapshots:
   require-directory@2.1.1: {}
 
   require-from-string@2.0.2: {}
-
-  resolve-cwd@3.0.0:
-    dependencies:
-      resolve-from: 5.0.0
 
   resolve-from@4.0.0: {}
 
@@ -9638,7 +9574,7 @@ snapshots:
   sass-loader@17.1.0(sass@1.107.1)(webpack@5.112.2):
     optionalDependencies:
       sass: 1.107.1
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   sass@1.107.1:
     dependencies:
@@ -9687,7 +9623,7 @@ snapshots:
       ajv-formats: 3.0.1
       ajv-keywords: 5.1.0(ajv@8.20.0)
     optionalDependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   seedrandom@2.4.3: {}
 
@@ -10045,7 +9981,7 @@ snapshots:
 
   style-loader@4.0.0(webpack@5.112.2):
     dependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
 
   stylis@4.2.0: {}
 
@@ -10344,7 +10280,7 @@ snapshots:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.112.2)
 
@@ -10382,21 +10318,19 @@ snapshots:
     optionalDependencies:
       jzz: 1.9.6
 
-  webpack-cli@7.2.3(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2):
+  webpack-cli@7.3.1(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2):
     dependencies:
       '@discoveryjs/json-ext': 1.1.0
       commander: 14.0.3
-      cross-spawn: 7.0.6
       envinfo: 7.21.0
-      import-local: 3.2.0
       interpret: 3.1.1
-      rechoir: 0.8.0
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      rechoir: 1.0.0
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
       webpack-merge: 6.0.1
     optionalDependencies:
       js-yaml: 4.3.1
       json5: 2.2.3
-      webpack-dev-server: 6.1.0(supports-color@5.5.0)(webpack-cli@7.2.3)(webpack@5.112.2)
+      webpack-dev-server: 6.1.0(supports-color@5.5.0)(webpack-cli@7.3.1)(webpack@5.112.2)
 
   webpack-dev-middleware@8.6.0(webpack@5.112.2):
     dependencies:
@@ -10405,13 +10339,13 @@ snapshots:
       range-parser: 1.3.0
       schema-utils: 4.8.1(webpack@5.112.2)
     optionalDependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
       ws: 8.21.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  webpack-dev-server@6.1.0(supports-color@5.5.0)(webpack-cli@7.2.3)(webpack@5.112.2):
+  webpack-dev-server@6.1.0(supports-color@5.5.0)(webpack-cli@7.3.1)(webpack@5.112.2):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -10438,15 +10372,15 @@ snapshots:
       webpack-dev-middleware: 8.6.0(webpack@5.112.2)
       ws: 8.21.0
     optionalDependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
-      webpack-cli: 7.2.3(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
+      webpack-cli: 7.3.1(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
     optional: true
 
-  webpack-dev-server@6.1.0(supports-color@8.1.1)(webpack-cli@7.2.3)(webpack@5.112.2):
+  webpack-dev-server@6.1.0(supports-color@8.1.1)(webpack-cli@7.3.1)(webpack@5.112.2):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -10473,8 +10407,8 @@ snapshots:
       webpack-dev-middleware: 8.6.0(webpack@5.112.2)
       ws: 8.21.0
     optionalDependencies:
-      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3)
-      webpack-cli: 7.2.3(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
+      webpack: 5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1)
+      webpack-cli: 7.3.1(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -10494,7 +10428,7 @@ snapshots:
 
   webpack-sources@3.6.0: {}
 
-  webpack@5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.2.3):
+  webpack@5.112.2(clean-css@5.3.3)(html-minifier-terser@6.1.0)(postcss@8.5.6)(uglify-js@2.8.29)(webpack-cli@7.3.1):
     dependencies:
       '@types/estree': 1.0.9
       '@types/json-schema': 7.0.15
@@ -10514,7 +10448,7 @@ snapshots:
       watchpack: 2.6.3
       webpack-sources: 3.6.0
     optionalDependencies:
-      webpack-cli: 7.2.3(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
+      webpack-cli: 7.3.1(js-yaml@4.3.1)(json5@2.2.3)(webpack-dev-server@6.1.0)(webpack@5.112.2)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@napi-rs/image'
