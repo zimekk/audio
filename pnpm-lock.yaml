@@ -356,7 +356,7 @@ importers:
         version: 19.3.1(react@19.3.1)
       react-guitar:
         specifier: ^1.1.2
-        version: 1.1.3(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
+        version: 1.1.3(@types/react@19.3.1)(react@19.3.1)(supports-color@8.1.1)
       react-guitar-sound:
         specifier: ^1.1.2
         version: 1.1.5(react@19.3.1)
@@ -429,10 +429,10 @@ importers:
         version: 26.6.6
       '@types/react':
         specifier: ^19.0.0
-        version: 19.3.0
+        version: 19.3.1
       '@types/react-dom':
         specifier: ^19.0.0
-        version: 19.3.0(@types/react@19.3.0)
+        version: 19.3.0(@types/react@19.3.1)
       '@types/react-router-dom':
         specifier: ^5.3.3
         version: 5.3.3
@@ -471,7 +471,7 @@ importers:
         version: 1.4.4
       react-hot-loader:
         specifier: ^4.13.1
-        version: 4.13.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        version: 4.13.1(@types/react@19.3.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       regenerator-runtime:
         specifier: ^0.14.0
         version: 0.14.1
@@ -1903,8 +1903,8 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@19.3.0':
-    resolution: {integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==}
+  '@types/react@19.3.1':
+    resolution: {integrity: sha512-HNTkBIm8zmHX8LUXX2vtZ/ONzehrV1J3abl2fUIiZ5qxTYRCj/z+rDeFwOltqCLl9lRdUTKWT41OLtYuFV/Arg==}
 
   '@types/redux-actions@2.6.5':
     resolution: {integrity: sha512-RgXOigay5cNweP+xH1ru+Vaaj1xXYLpWIfSVO8cSA8Ii2xvR+HRfWYdLe1UVOA8X0kIklalGOa0DTDyld0obkg==}
@@ -6038,7 +6038,7 @@ snapshots:
 
   '@emotion/memoize@0.9.0': {}
 
-  '@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)':
+  '@emotion/react@11.14.0(@types/react@19.3.1)(react@19.3.1)(supports-color@8.1.1)':
     dependencies:
       '@babel/runtime': 7.29.2
       '@emotion/babel-plugin': 11.13.5(supports-color@8.1.1)
@@ -6050,7 +6050,7 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       react: 19.3.1
     optionalDependencies:
-      '@types/react': 19.3.0
+      '@types/react': 19.3.1
     transitivePeerDependencies:
       - supports-color
 
@@ -6778,22 +6778,22 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
-  '@types/react-dom@19.3.0(@types/react@19.3.0)':
+  '@types/react-dom@19.3.0(@types/react@19.3.1)':
     dependencies:
-      '@types/react': 19.3.0
+      '@types/react': 19.3.1
 
   '@types/react-router-dom@5.3.3':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.3.0
+      '@types/react': 19.3.1
       '@types/react-router': 5.1.20
 
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.3.0
+      '@types/react': 19.3.1
 
-  '@types/react@19.3.0':
+  '@types/react@19.3.1':
     dependencies:
       csstype: 3.2.3
 
@@ -9325,9 +9325,9 @@ snapshots:
       '@tonaljs/midi': 4.10.2
       '@tonaljs/note': 4.12.1
 
-  react-guitar@1.1.3(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1):
+  react-guitar@1.1.3(@types/react@19.3.1)(react@19.3.1)(supports-color@8.1.1):
     dependencies:
-      '@emotion/react': 11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
+      '@emotion/react': 11.14.0(@types/react@19.3.1)(react@19.3.1)(supports-color@8.1.1)
       '@tonaljs/interval': 4.8.2
       '@tonaljs/note': 4.12.1
       classnames: 2.5.1
@@ -9340,7 +9340,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  react-hot-loader@4.13.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
+  react-hot-loader@4.13.1(@types/react@19.3.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       fast-levenshtein: 2.0.6
       global: 4.4.0
@@ -9353,7 +9353,7 @@ snapshots:
       shallowequal: 1.1.0
       source-map: 0.7.6
     optionalDependencies:
-      '@types/react': 19.3.0
+      '@types/react': 19.3.1
 
   react-hot-loader@4.13.1(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
     dependencies:
